@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{119}
+
+\begin{document}
+\section*{4.3: What Derivatives Tell Us}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 4.3, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving derivatives.
+		\item Find the intervals on which a function is increasing or decreasing.
+		\item Use the first derivative test to locate critical points and local and absolute extrema.
+		\item Sketch the graph of a function given properties of the function.
+		\item Determine the concavity on intervals and find inflection points.
+		\item Determine if critical points correspond to local maxima/minima using the second derivative test.
+		\item Compare the graphs of a function with the graphs of its first and second derivatives.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{First Derivatives}
+
+First derivatives tell us where a function is increasing or decreasing.
+\begin{itemize}
+\item If the derivative is \textit{positive} on an interval, then the function is \textit{increasing}.
+\item If the derivative is \textit{negative} on an interval, then the function is \textit{decreasing}.
+\end{itemize}
+
+Derivatives also allow us to classify critical points.
+
+\vspace{5mm}
+
+\boxenv{First Derivative Test.}{Suppose that $x=c$ is a critical point of a function $f$. If $f'$\dots
+\begin{itemize}
+\item changes from $+$ to $-$ around $x=c$, then $f(c)$ is a local maximum.
+\item changes from $-$ to $+$ around $x=c$, then $f(c)$ is a local minimum.
+\item does not change sign, then $f(c)$ is neither.
+\end{itemize}
+\vspace{-4mm}
+}
+
+\Example For the function $f(x)=x^3+x^2-x$, find the intervals on which $f$ increases and decreases and classify all critical points.
+
+\newpage
+
+\boxenv{Theorem.}{Suppose that $f$ is a continuous function with one and only one critical point. If that critical point is a local extremum, then it is also a global extremum.}
+
+\Example For $f(x)=\disp\frac{e^x}{e^{2x}+1}$, find the intervals on which $f$ increases and decreases and classify all critical points.
+
+\vspace{50mm}
+
+\subsection*{Second Derivatives}
+
+Second derivatives reveal information about the \textbf{curvature} or \textbf{concavity} of the graph of a function.
+
+\vspace{5mm}
+
+\boxenv{Theorem.}{Suppose that $f$ is twice differentiable on an open interval.
+\begin{itemize}
+\item If $f''(x)>0$ for all $x$ in the interval, then $f$ is concave up.
+\item If $f''(x)<0$ for all $x$ in the interval, then $f$ is concave down.
+\end{itemize}
+
+\vspace{-3mm}
+}
+
+\vspace{5mm}
+
+\boxenv{Definition.}{If $f$ is continuous at $x=c$ and $f$ changes concavity at that point (i.e.\ $f''$ changes sign), then the point $\lp c, f(c)\rp$ is called an \textbf{inflection point}.}
+
+\vspace{2mm}
+
+\begin{center}
+            \begin{tikzpicture}[scale=1.1]
+                \begin{axis}[
+                	axis x line=middle,
+                	xmax=4, xmin=-4,
+                	axis y line=center,
+                	ymax=3, ymin=-2.5,
+                	axis line style=<->,
+			ticks=none%,
+                	%xlabel=$x$,ylabel=$y$
+                    ]
+                    %\addplot[name path=f,smooth,domain=-2.3:2.5,color=blue,samples=100,thick] {0.3*(x+2)*x*(x-1)*(x-2)};
+                    \addplot[name path=f,smooth,domain=-0.604:1.104,color=blue,samples=100,thick] {0.3*(x+2)*x*(x-1)*(x-2)};
+                    \addplot[name path=f,smooth,domain=1.104:2.5,color=green,samples=100,->,thick] {0.3*(x+2)*x*(x-1)*(x-2)};
+                    \addplot[name path=f,smooth,domain=-2.3:-0.604,color=red,samples=100,<-,thick] {0.3*(x+2)*x*(x-1)*(x-2)};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+\newpage
+
+To locate inflection points, we will\dots
+\begin{enumerate}
+	\item[\tc{1}] Identify the value(s) where $f''$ is zero or fails to exist.
+	\item[\tc{2}] Identify whether $f''$ changes in sign around those value(s).
+\end{enumerate}
+
+\vspace{5mm}
+
+\Example Consider the function $f(x)=x-2\arctan(x)$.
+\begin{enumerate}
+\item[\tc{1}] Find the intervals where $f$ is increasing/decreasing and classify all critical points.
+\vspace{75mm}
+\item[\tc{2}] Find the intervals of concavity and any inflection points.
+\end{enumerate}
+
+\newpage
+
+If a function $f$ is twice differentiable, then the following test can also be applied to classify a critical point.
+
+\vspace{5mm}
+
+\boxenv{Second Derivative Test.}{Suppose that $f'(c)=0$ and that $f''(c)$ exists.
+\begin{enumerate}
+	\item If $f''(c)>0$ (i.e.\ $f$ is concave up), then $f(c)$ is a local minimum.
+	\item If $f''(c)<0$ (i.e.\ $f$ is concave down), then $f(c)$ is a local maximum.
+\end{enumerate}
+\vspace{-5mm}
+}
+
+\vspace{5mm}
+
+Note that this test does not apply if $f'(c)$ is undefined, because $f''(c)$ will also be undefined.
+
+\Example Determine the critical points of $f(x)=x^3-x$ and use the second derivative test to classify the critical points.
+
+\vfill
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c||c|c|}
+\hline
+\textbf{Function} & \textbf{First Derivative} & \textbf{Second Derivative} \\
+$f$ & $f'$ & $f''$ \\
+\hline
+Increasing & Positive & --- \\
+\hline
+Decreasing & Negative & --- \\
+\hline
+Local Maximum & Zero or DNE, $+$ to $-$ & Negative \\
+\hline
+Local Minimum & Zero or DNE, $-$ to $+$ & Positive\\
+\hline
+Concave Up & Increasing & Positive \\
+\hline
+Concave Down & Decreasing & Negative \\
+\hline
+Inflection Point & Local Max/Min & Zero or DNE, changes sign \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

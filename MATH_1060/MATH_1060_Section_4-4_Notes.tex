@@ -1,0 +1,267 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{123}
+
+\begin{document}
+\section*{4.4: Curve Sketching}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 4.4, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions about graphing functions.
+		\item Graph functions using analytic methods involving derivatives.
+		\item Graph a function given the graphs of its first and/or second derivatives.
+		\item Use the derivative of a function to sketch a possible graph of the function.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Motivation}
+
+The goal of this section is to take a given function and produce a sketch of its graph. You may have sketched functions graphs before by choosing several points and plugging them into the function. The tools we have learned thus far in our study of calculus --- namely, \textit{limits} and \textit{derivatives} --- will help us choose strategic points to build a ``mathematical description'' that will help us draw a fairly accurate sketch of the function.
+
+\subsection*{Strategy for Curve Sketching}
+
+To sketch the graph of a function $f$, there are several things we should determine.
+\begin{itemize}
+\item The domain of $f$.
+\item The $x$-intercepts and $y$-intercepts, if they exist.
+\item Any asymptotes (horizontal, vertical, or oblique).
+\item All critical points, if they exist. Classify them as local maxima or minima.
+\item The intervals for which $f$ increases or decreases.
+\item The intervals for which $f$ is concave up or concave down.
+\item Any inflection points, if they exist.
+\item The end-behavior of $f$ or the behavior near a boundary point.
+\end{itemize}
+
+We then put this information together to sketch the graph of $f$.
+
+\newpage
+
+\paragraph{A Review of Asymptotes.} Recall the following properties of different asymptotes that may exist for a function $f$. (Review Sections 2.4 and 2.5 for more details.)
+
+\vspace{5mm}
+
+
+\textbf{Horizontal asymptotes} are found by checking limits as $x\to\pm\infty$.
+$$\displaystyle\lim_{x\to\pm\infty}f(x)=L\;\Rightarrow\; y=L \text{ is a H.A.}$$
+
+\vspace{3mm}
+
+\textbf{Vertical asymptotes} when a function's denominator only is zero at a point $x=c$ and an infinite limit occurs as $x$ approaches $c$.
+
+$$\displaystyle\lim_{x\to c^+}f(x)=\pm\infty \text{ or } \displaystyle\lim_{x\to c^-}f(x)=\pm\infty \; \Rightarrow \; x=c\text{ is a V.A.}$$
+
+\vspace{3mm}
+
+\textbf{Oblique asymptotes} occur in rational functions when the numerator degree is \textit{strictly larger} than the denominator degree.
+
+\vspace{5mm}
+
+\Example Let's sketch the graph of $f(x)=3x^5-20x^3$.
+
+\begin{enumerate}
+\item[\tc{1}] State the domain of $f$.
+
+\vspace{40mm}
+
+\item[\tc{2}] Determine the $x$- and $y$-intercepts, if they exist.
+
+\end{enumerate}
+
+\newpage
+
+\ExampleCont Let's sketch the graph of $f(x)=3x^5-20x^3$.
+
+\begin{enumerate}
+
+\item[\tc{3}] Determine any asymptotes.
+
+\vspace{50mm}
+
+\item[\tc{4}] Determine and classify any critical point(s).
+
+\vspace{50mm}
+
+\item[\tc{5}] Determine the intervals for which $f$ increases and/or decreases.
+
+\vspace{40mm}
+
+\item[\tc{6}] Determine the intervals for which $f$ is concave up and/or concave down.
+\end{enumerate}
+
+\newpage
+
+\ExampleCont Let's sketch the graph of $f(x)=3x^5-20x^3$.
+
+\begin{enumerate}
+
+\item[\tc{7}] Determine any inflection points, if they exist.
+
+\vspace{50mm}
+
+\item[\tc{8}] Using the information you have gathered, sketch the graph of $f(x)=3x^5-20x^3$.
+
+\vspace{5mm}
+
+\begin{center}
+            \begin{tikzpicture}[scale=1.8]
+\begin{axis}[xshift=9cm,
+    xmin=-3,xmax=3,
+    ymin=-70,ymax=70,
+    xtick={\empty},
+    ytick={\empty},
+    extra x ticks={-2,-1.414,1.414,2},
+    extra x tick labels={$-2$,$-\sqrt{2}$,$\sqrt{2}$,$2$},
+    extra y ticks={-39.59,39.59,-64,64},
+    extra y tick labels={$-28\sqrt{2}$,$28\sqrt{2}$,$-64$,$64$},
+    axis lines=middle,
+    minor tick num=1,
+    enlargelimits={abs=0.5},
+    axis line style={latex-latex},
+    ticklabel style={font=\tiny,fill=none},
+    xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+    ylabel style={at={(ticklabel* cs:1)},anchor=south west}
+]
+    %\addplot[name path=f,smooth,domain=-4:4,color=red,samples=100,thick] {3*x^5 - 20*x^3};	
+\end{axis}
+            \end{tikzpicture}
+\end{center}
+\end{enumerate}
+
+\newpage
+
+\Example Sketch the graph of $f(x)=e^x+e^{-x}$.
+
+\begin{enumerate}
+\item[\tc{1}] State the domain of $f$.
+
+\vspace{30mm}
+
+\item[\tc{2}] Determine the $x$- and $y$-intercepts, if they exist.
+
+\vspace{40mm}
+
+\item[\tc{3}] Determine any asymptotes.
+
+\vspace{50mm}
+
+\item[\tc{4}] Determine and classify any critical points.
+
+\end{enumerate}
+
+\newpage
+
+\ExampleCont Sketch the graph of $f(x)=e^x+e^{-x}$.
+
+\begin{enumerate}
+\item[\tc{5}] Determine the intervals for which $f$ increases and/or decreases.
+
+\vspace{30mm}
+
+\item[\tc{6}] Determine the intervals for which $f$ is concave up and/or concave down.
+
+\vspace{30mm}
+
+\item[\tc{7}] Determine any inflection points, if they exist.
+
+\vspace{30mm}
+
+\item[\tc{8}] Sketch the graph of $f$ using the information you found.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+\begin{axis}[xshift=9cm,
+    xmin=-3,xmax=3,
+    ymin=-2,ymax=10,
+    xtick={\empty},
+    ytick={\empty},
+    extra x ticks={-3,3},
+    extra x tick labels={$-3$,$3$},
+    extra y ticks={2},
+    extra y tick labels={$2$},
+    axis lines=middle,
+    minor tick num=1,
+    enlargelimits={abs=0.5},
+    axis line style={latex-latex},
+    ticklabel style={font=\tiny,fill=none},
+    xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+    ylabel style={at={(ticklabel* cs:1)},anchor=south west}
+]
+    %\addplot[name path=f,smooth,domain=-4:4,color=red,samples=100,thick] {3*x^5 - 20*x^3};	
+\end{axis}
+            \end{tikzpicture}
+\end{center}
+
+\newpage
+
+\Example Sketch the graph of $f(x)=\disp\frac{1}{1+x^2}$.
+
+\begin{enumerate}
+\item[\tc{1}] State the domain of $f$.
+
+\vspace{30mm}
+
+\item[\tc{2}] Determine the $x$- and $y$-intercepts, if they exist.
+
+\vspace{40mm}
+
+\item[\tc{3}] Determine any asymptotes.
+
+\vspace{50mm}
+
+\item[\tc{4}] Determine and classify any critical points.
+
+\end{enumerate}
+
+\newpage
+
+\ExampleCont Sketch the graph of $f(x)=\disp\frac{1}{1+x^2}$.
+
+\begin{enumerate}
+\item[\tc{5}] Determine the intervals for which $f$ increases and/or decreases.
+
+\vspace{30mm}
+
+\item[\tc{6}] Determine the intervals for which $f$ is concave up and/or concave down.
+
+\vspace{30mm}
+
+\item[\tc{7}] Determine any inflection points, if they exist.
+
+\vspace{30mm}
+
+\item[\tc{8}] Sketch the graph of $f$ using the information you found.
+\end{enumerate}
+
+\begin{center}
+
+\begin{tikzpicture}[scale=1.6]
+\begin{axis}[xshift=9cm,
+    xmin=-2,xmax=2,
+    ymin=-0.15,ymax=1.15,
+    xtick={\empty},
+    ytick={\empty},
+    extra y ticks={0.5,1},
+    extra y tick labels={$\frac{1}{2}$,$1$},
+    extra x ticks={-1,1},
+    axis lines=middle,
+    minor tick num=1,
+    enlargelimits={abs=0.5},
+    axis line style={latex-latex},
+    ticklabel style={font=\tiny,fill=none},
+    xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+    ylabel style={at={(ticklabel* cs:1)},anchor=south west}
+]
+    %\addplot[name path=f,dashed,domain=-5:5,color=red,samples=100] {x-3};	
+\end{axis}
+            \end{tikzpicture}
+\end{center}
+
+
+
+\end{document}

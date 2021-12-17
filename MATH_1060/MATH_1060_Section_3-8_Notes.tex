@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{88}
+
+\begin{document}
+\section*{3.8: Implicit Differentiation}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.8, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving implicit differentiation.
+		\item Find derivatives using implicit differentiation.
+		\item Find second derivatives using implicit differentiation.
+		\item Use implicit differentiation to find slopes of curves at given points.
+		\item Use implicit differentiation along with the product, quotient, and chain rules to find derivatives.
+		\item Solve applications using implicit differentiation.
+		\item Answer questions involving tangent lines using implicit differentiation.
+		\item Find normal lines using implicit differentiation.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Implicit vs.\ Explicit}
+
+Thus far, we have been working with functions in \textbf{explicit form}. In other words, these functions are solved for $y$ completely in terms of $x$.
+
+$$y=x^2+2x+1\,\Longrightarrow\,\frac{dy}{dx}=2x+2$$
+
+\vspace{3mm}
+
+Now consider a function $y=f(x)$ presented in \textbf{implicit form}. 
+
+$$x^2+y^2=xy\,\Longrightarrow\,\frac{dy}{dx}=\text{???}$$
+
+\vspace{3mm}
+
+In this section, we will introduce the technique of \textbf{implicit differentiation} to find $\disp\frac{dy}{dx}$ when $y$ is not given or impossible to state in terms of $x$.
+
+\newpage
+
+\subsection*{Implicit Differentiation}
+
+Consider the equation $x^2+y^2=1$. There are two main steps to implicit differentiation.
+
+\begin{enumerate}
+	\item[\tc{1}] Differentiate both sides of the equation, remembering to apply the chain rule to each $y$ derivative.
+	\vspace{30mm}
+	\item[\tc{2}] Solve for $\disp\frac{dy}{dx}$.
+	\vspace{30mm}
+\end{enumerate}
+
+\paragraph{Example.} Consider $y-x^2+2x=1$. Note that this can be expressed as $y=x^2-2x+1$, allowing us to find $\disp\frac{dy}{dx}$ in the usual manner.
+
+$$\frac{dy}{dx}=2x-2$$
+
+\vspace{3mm}
+
+If we instead use implicit differentiation, we obtain the same result.
+
+$$\frac{dy}{dx}-2x+2=0 \,\Longleftrightarrow\,\frac{dy}{dx}=2x-2$$
+
+\vspace{3mm}
+
+\Example Consider the equation $y^2+3x=2$. Find $\disp\frac{dy}{dx}\bigg|_{(-1,\sqrt{5})}$.
+
+\newpage
+
+\Example Find $\disp\frac{dy}{dx}$ given that $yx^2+y^3=\cos y$. 
+
+\vspace{60mm}
+
+\Example Find $\frac{dy}{dx}$ given that $x^2y^2+e^y=\tan y$.
+
+\vspace{60mm}
+
+\Example Find the equation of the normal line at $(1,1)$ for $x^3+x^2y+4y^2=6$.
+
+\newpage
+
+\Example Find $\disp\frac{dy}{dx}$ given that $1+x=\sin\lp xy^2\rp$.
+
+\vspace{60mm}
+
+\Example The curves $x^2-y^2=5$ and $4x^2+9y^2=72$ intersect at $(3,2)$. Show that this intersection occurs at a right angle.
+
+\vspace{60mm}
+
+\boxenv{Remark.}{Every implicit equation has an underlying assumption that a function \\ $y=f(x)$ exists that will satisfy the equation. If there is no such function $y$, then $\disp\frac{dy}{dx}$ will represent a function that does not exist.}
+
+\vspace{3mm}
+
+\paragraph{Summary.} Here are some notes to keep in mind when using implicit differentiation.
+\begin{itemize}
+	\item Implicit differentiation should be used whenever we wish to find $\disp\frac{dy}{dx}$, but $y$ is not stated explicitly in terms of $x$.
+	\item This technique is a special case of the \textit{chain rule}.
+	\item All derivative rules that we have learned can be applied when using this technique.
+	\item Not every implicit equation is meaningful.   However, when asked to solve implicit equations in this course, you may assume that this is not the case.
+\end{itemize}
+
+\newpage 
+
+Note that where implicit differentiation is required, there may be more than one way to solve a problem. For example, consider the following example, in which you could choose to find the derivative by combining implicit differentiation with either the \textit{quotient rule} or the \textit{product rule}.
+
+\Example Find $\disp\frac{dy}{dx}$ for $\disp\frac{2x+y}{x^2}=y$.
+
+\end{document}

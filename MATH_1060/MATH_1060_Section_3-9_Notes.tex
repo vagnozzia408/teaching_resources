@@ -1,0 +1,191 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{93}
+
+\begin{document}
+\section*{3.9: Derivatives of Log and Exponential Functions}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.9, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving derivatives of logarithmic and exponential \\ functions.
+		\item Find derivatives involving logarithms and exponentials.
+		\item Find equations of tangent lines for exponential, logarithmic, and power functions.
+		\item find derivatives using logarithmic differentiation.
+		\item Find higher order derivatives of functions involving logarithms and exponentials.
+		\item Evaluate limits of logarithmic and exponential functions using the definition of the derivative.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Logarithmic and Exponential Functions}
+
+In this section, we will learn how to take derivatives of logarithmic and exponential functions.
+
+\begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                	axis x line=middle,
+                	xmax=4.5, xmin=-3.5,
+                	axis y line=center,
+                	ymax=9, ymin=-5.5,
+                	xlabel=$x$,ylabel=$y$,
+                	axis line style=<->
+                    ]
+                    \addplot[name path=f,smooth,domain=-3:2,color=blue,samples=100,<->,thick] {e^x};
+                    \addplot[name path=f,smooth,domain=0.01:4,color=red,samples=100,<->,thick] {ln(x)};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        
+\subsection*{Derivatives of Exponential Functions}
+
+Let $y=b^x$ where $b>0$. The derivative of $y$ is\dots
+
+$$\frac{d}{dx}\lp b^x\rp=b^x\ln b$$
+
+\vspace{3mm}
+
+In the case that $b=e$, the same rule applies.
+
+\newpage
+
+Remember when applying this derivative rule to be mindful of the \textit{chain rule}.
+
+$$\frac{d}{dx}\lp b^{g(x)}\rp=b^{g(x)}\ln b\cdot g'(x)$$
+
+\vspace{3mm}
+
+\textit{Proof of $\disp\frac{d}{dx}\lp b^x\rp=b^x\ln b$.} Using the limit definition of the derivative, the proof is as follows.
+
+\begin{align*}
+	\frac{d}{dx}\big(b^x\big) &= \lim_{h\to 0}\frac{b^{x+h}-b^x}{h} \\ 
+				      &= \lim_{h\to 0}\frac{b^xb^h - b^x}{h} \\ 
+				      &= \lim_{h\to 0}\frac{b^x(b^h - 1)}{h} \\ 
+				      &= b^x\underbrace{\lim_{h\to 0}\frac{b^h - 1}{h}}_{=\ln b} \\ 
+				      &= b^x\ln b
+\end{align*}
+\begin{flushright}
+	$\square$
+\end{flushright}
+
+
+Care must be taken to ensure that you do not conflate the derivative rule for \textit{power} functions with that for \textit{exponential} functions.
+
+$$\frac{d}{dx}\lp b^x\rp \neq xb^{x-1}$$
+
+\vspace{5mm}
+
+A general rule of thumb to help determine which rule is appropriate is to note where the variable $x$ appears in a function with an exponent.
+\begin{itemize}
+	\item If $x$ is the \textbf{base} of the function, use the \textbf{power rule}.
+	
+	\vspace{15mm}
+	
+	\item If $x$ is the \textbf{exponent} of the function, use the derivative rule for exponential functions.
+	
+	\vspace{15mm}
+	
+\end{itemize}
+
+\newpage
+
+\subsection*{Derivatives of Logarithmic Functions}
+
+Let $y=\log_b x$ where $b>0$. The derivative of $y$ is\dots
+
+$$\frac{d}{dx}\lp\log_b x\rp=\frac{1}{x\ln b}$$
+
+\vspace{3mm}
+
+In the case that $b=e$, we have the following result.
+
+\vspace{20mm}
+
+Again, be careful to apply the chain rule when appropriate.
+
+$$\frac{d}{dx}\lp\log_b g(x)\rp=\frac{1}{g(x)\ln b}\cdot g'(x)$$
+
+\vspace{5mm}
+
+\textit{Proof of $\disp\frac{d}{dx}\lp\log_b x\rp=\frac{1}{x\ln b}$.}
+
+\vspace{50mm}
+
+\Example Find $\disp\frac{dy}{dx}$ given that $y=x^2+2^x+\log_2 x-\ln x$.
+
+\vspace{30mm}
+
+\Example Find $y'$ given that $y=10^{x^3-3x}$.
+
+\newpage
+
+\Example Find the derivative of $y=\disp\frac{2^x}{3^x+4^x}$.
+
+\vspace{60mm}
+
+\Example Find $\disp\frac{dy}{dx}$ given that $y=\ln(kx)$ where $k\in\R$, $k\neq 0$.
+
+\vspace{60mm}
+
+\Example Find $f'$ given that $f(x)=\ln\lp xe^x-e^x\rp$.
+
+\newpage
+
+\paragraph{Applying Logarithm Laws.} We can often use properties of logarithms to simplify functions before finding the derivative.
+
+$$\log_b\lp f\times g\rp=\log_b f+\log_b g$$
+
+$$\log_b\lp f\div g\rp = \log_b f-\log_b g$$
+
+\vspace{3mm}
+
+\Example Find the derivative of $y=\ln\lp\sin x\cos x\rp$.
+
+\vspace{45mm}
+
+\Example Find the derivative of $f(x)=\ln\lp\disp\frac{x^2+1}{x^2-1}\rp$.
+
+\vspace{45mm}
+
+\Example Find $h'(\ln 2)$ given that $h(x)=\ln\lp e^{2x}+1\rp$.
+
+\newpage
+
+\Example Find the derivative of $y=\log_4\lp e^{2x}+3^{x^2}\rp$.
+
+\vspace{50mm}
+
+\subsection*{Logarithmic Differentiation}
+
+Earlier, we said that we can determine whether to use the power rule or the derivative rule for exponential functions based on whether the variable $x$ appears in the base or the exponent of the function. What should we do if $x$ appears in the base \textit{and} the exponent?
+
+$$\frac{d}{dx}\lp x^x\rp \neq x\cdot x^{x-1}$$
+
+$$\frac{d}{dx}\lp x^x\rp x^x\cdot \ln x$$
+
+\vspace{3mm}
+
+For such functions, we will use a technique called \textbf{logarithmic differentiation}. This technique uses the logarithm law that
+$$\ln\lp x^r\rp=r\ln (x).$$
+
+\vspace{5mm}
+
+\paragraph{Applying Logarithmic Differentiation.} The general process for applying this technique is to do the following\dots
+\begin{enumerate}
+	\item[\tc{1}] Set the function equal to $y$ and take the natural logarithm of both sides.
+	\item[\tc{2}] Use the logarithm law above to manipulate the equation.
+	\item[\tc{3}] Apply implicit differentiation.
+\end{enumerate}
+
+\newpage
+
+\Example Find the derivative of $y=x^x$.
+
+\vspace{100mm}
+
+\Example Find the derivative of $y=x^{\sin\lp \pi x\rp}$.
+\end{document}

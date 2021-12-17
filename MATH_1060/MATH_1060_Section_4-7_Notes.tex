@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{144}
+
+\begin{document}
+\section*{4.7: L'H\^opital's Rule}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 4.7, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving L'H\^opital's Rule.
+		\item Evaluate limits using the form $0/0$ or $\infty/\infty$ of L'H\^opital's Rule, if it applies.
+		\item Evaluate limits involving the indeterminate form $0\cdot \infty$.
+		\item Evaluate limits involving the indeterminate form $\infty-\infty$.
+		\item Evaluate limits involving the indeterminate forms $1^\infty$, $0^0$, and $\infty^0$.
+		\item Solve applications involving L'H\^opital's Rule.
+		\item Use limit methods to compare growth rates of functions.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Introduction to L'H\^opital's Rule}
+
+Recall that, when we learned to evaluate limits, we would often encounter limits for which direct substitution did not work, and we had to utilize another limit evaluation technique. In other words, attempting direct substitution resulted in an \textit{indeterminate form}. Now that we have learned about derivatives, we can introduce a useful theorem that allows us to more efficiently evaluate such limits.
+
+\vspace{5mm}
+
+\boxenv{L'H\^opital's Rule.}{Suppose that $f$ and $g$ are differentiable and $g'(x)\neq 0$ near $x=c$ (except possibly at $x=c$). Additionally, suppose that
+\begin{itemize}
+\item $\disp\lim_{x\to c}f(x)=0$ and $\disp\lim_{x\to c}g(x)=0$, or that
+\item $\disp\lim_{x\to c}f(x)=\pm\infty$ and $\disp\lim_{x\to c}g(x)=\pm \infty$.
+\end{itemize}
+
+In other words, we have an indeterminate form of type $\disp\frac{0}{0}$ or $\disp\frac{\infty}{\infty}$. Then
+
+\vspace{20mm}
+
+provided the limit exists.}
+
+\vspace{5mm}
+
+\textbf{A Note of Caution.} L'H\^opital's Rule applies \textbf{only} to a special class of limits, which means that it cannot be used in general. \textit{You can only use this rule if its conditions are met.} A misapplication of L'H\^opital's Rule is likely to lead to an incorrect conclusion.
+
+\newpage
+
+\textbf{Notation when Applying L'H\^opital's Rule.}
+
+\vspace{40mm}
+
+\Example Evaluate the following limits.
+
+\begin{enumerate}
+\item[\tc{1}] $\disp\lim_{x\to 0}\frac{3\sin(4x)}{5x}$
+
+\vspace{60mm}
+
+\item[\tc{2}] $\disp\lim_{x\to\infty}\frac{xe^x}{e^x+1}$
+
+\end{enumerate}
+
+\newpage
+
+\ExampleCont Evaluate the following limits.
+
+\begin{enumerate}
+
+\item[\tc{3}] $\disp\lim_{x\to 0}\frac{8x^2}{\cos(x)-1}$
+
+\vspace{60mm}
+
+\item[\tc{4}] $\disp\lim_{x\to\infty}\frac{\ln(x)}{x}$
+
+\vspace{60mm}
+
+\item[\tc{5}] $\disp\lim_{x\to\infty}\frac{\arctan(x)-\frac{\pi}{2}}{\frac{1}{x}}$
+
+\end{enumerate}
+
+\newpage
+
+\paragraph{Other Indeterminate Forms.} There exist several other indeterminate forms that may be algebraically manipulated in order to achieve the $\disp\frac{0}{0}$ or $\disp\frac{\infty}{\infty}$ indeterminate form required to apply L'H\^opital's Rule.
+
+\Example Evaluate $\disp\lim_{x\to 0^+}\sin(x)\ln(x)$.
+
+\vspace{65mm}
+
+\Example Evaluate $\disp\lim_{x\to\infty}\lp\sqrt{x+1}-\sqrt{x}\rp$.
+
+\newpage
+
+\paragraph{Indeterminate Powers.} We must also determine a way to handle limits involving indeterminate powers, which are of the following forms.
+
+$$1^\infty \hspace{30mm} 0^0 \hspace{30mm} \infty^0$$
+
+The following useful results may be helpful when evaluating such limits.
+\begin{itemize}
+\item $\ln(x)$ and $e^x$ are inverse functions, so $y=e^x\,\Longleftrightarrow\,\ln(y)=x$.
+\vspace{5mm}
+\item $\ln\big( f(x)^m\big)=m\ln \big( f(x)\big)$ for all $f(x)>0$ and for any $m\in\R$.
+\vspace{4mm}
+\item $\big(f(x)\big)^k=\disp\frac{1}{\big(f(x)\big)^{-k}}=\frac{1}{\frac{1}{\big(f(x)\big)^k}}$ for all $k\in \R$ and $f(x)\neq0$.
+\item $\disp\lim_{x\to c}f\big( g(x)\big)=f\lp\lim_{x\to c}g(x)\rp$ if $f$ is continuous at $\disp\lim_{x\to c}g(x)$.
+\end{itemize}
+
+\vspace{5mm}
+
+\Example Show that $\disp\lim_{x\to 0^+}\sqrt[x^2]{\sec x}=\sqrt{e}$.
+
+\newpage
+
+\Example Show that $\disp\lim_{x\to\infty}\sqrt[\sqrt{x}]{x}=1$.
+
+\vspace{100mm}
+
+\Example The exponential function has the limit definition $e^x=\disp\lim_{n\to\infty}\lp 1+\frac{x}{n}\rp^n$. Let's verify this identity.
+
+\newpage
+
+\subsection*{Comparing Function Growth Rates}
+
+\boxenv{Growth Rates.}{Suppose $f$ and $g$ are functions with $\disp\lim_{x\to\infty}f(x)=\lim_{x\to\infty}g(x)=\infty$.
+
+$f$ \textbf{grows faster than} $g$ as $x\to\infty$ if either of the following occur:
+
+$$\lim_{x\to\infty}\frac{g(x)}{f(x)}=0\,\Longleftrightarrow\lim_{x\to\infty}\frac{f(x)}{g(x)}=\infty.$$
+
+\vspace{2mm}
+
+On the other hand, $f$ and $g$ have \textbf{comparable growth rates} if 
+
+$$\lim_{x\to\infty}\frac{f(x)}{g(x)}=M$$
+
+\vspace{2mm}
+
+for some nonzero and finite value $M$, i.e.\ $M\in (0,\infty)$.
+}
+
+\vspace{5mm}
+
+For example, we have showed that $\disp\lim_{x\to\infty}\frac{\ln(x)}{x}\stackrel{\mathcal{L}}{=}\lim_{x\to\infty}\frac{1}{x}=0$. 
+
+\vspace{2mm}
+
+With the above information, we can say that $x$ \textit{grows faster than} $\ln(x)$.
+
+\vspace{5mm}
+
+\Example Determine the relative growth rates of $f(x)=x^2$ and $g(x)=e^{x^2}$.
+
+\vspace{50mm}
+
+\Example Determine the relative growth rates of $f(x)$ and $g(x)=\ln\lp x^k\rp$, where $k$ is a positive and nonzero real number.
+
+\newpage
+
+\paragraph{Summary.} Here are a few things to remember when applying the information from this section to work on problems.
+\begin{itemize}
+\item When applying L'H\^opital's Rule\dots
+\begin{itemize}
+	\item Always denote when you apply it by writing $\mathcal{L}$ or \textit{LR} above the equals sign on the corresponding step.
+	\item Note which indeterminate form the limit has off to the side to justify your application of the rule.
+\end{itemize}
+\item Be mindful of including proper limit notation.
+\item For problems with indeterminate powers, remember to exponentiate both sides when stating your final conclusion.
+\end{itemize}
+
+\end{document}

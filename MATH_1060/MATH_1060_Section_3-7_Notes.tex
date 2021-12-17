@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{83}
+
+\begin{document}
+\section*{3.7: The Chain Rule}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.7, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving the chain rule.
+		\item Identify inner and outer functions for composite functions, then apply the chain rule.
+		\item Find derivatives of functions involving the chain rule by using tables and graphs.
+		\item Find derivatives of basic functions using the chain rule.
+		\item Use the chain rule multiple times and use the chain rule with the product and quotient rules.
+		\item Find higher order derivatives using the chain rule.
+		\item Find slopes of curves and equations of tangent lines by using the chain rule.
+		\item Solve applications involving the chain rule.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Derivatives of Composite Functions}
+
+The \textbf{chain rule} allows us to take derivatives of composite functions.
+
+\vspace{3mm}
+
+\boxenv{The Chain Rule.}{Let $f$ and $g$ be two functions and let $h(x)=f\big( g(x)\big)$ be their composition. The derivative of $h$ is
+
+$$\frac{d}{dx}\Big( f \big( g(x) \big) \Big) = f'\big( g(x)\big) \cdot g'(x).$$
+
+\vspace{-3mm}}
+
+\vspace{5mm}
+
+In words, when applying the chain rule to a composite function, we take the derivative of the \textit{outside} function, keeping the inside function the same, then multiplying by the derivative of the \textit{inside} function.
+
+\Example Find the derivative of $y=\tan\lp x^2-3x\rp$.
+
+\newpage
+
+\paragraph{Alternative Definition.} Another formulation of the chain rule says that if $y=f(u)$ and $u=g(x)$, then the derivative $\frac{dy}{dx}$ is found as follows.
+
+$$\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx}$$
+
+\vspace{3mm}
+
+We will usually use the first form shown, but you should be familiar with this form as well.
+
+\vspace{5mm}
+
+\Example If $f(x)=\cos x$ and $g(x)=x^2-2x$, find the derivative of $h(x)=f\big( g(x)\big)$.
+
+\vspace{32mm}
+
+\Example Find $\disp\frac{dy}{dx}$ for $y=\sqrt{4+3x}$.
+
+\vspace{32mm}
+
+\Example Find the derivative of $y=\sec^2 x$. 
+
+\vspace{32mm}
+
+\Example Find the derivative of $f(x)= e^{x^2+x}-\cos 2x$.
+
+\vspace{32mm}
+
+\newpage
+
+\Example Find the derivative of $y=\disp\frac{e^{\pi x}}{e^x+e^{-x}}.$
+
+\vspace{32mm}
+
+\Example Find $\disp\frac{dy}{dx}$ for $y=\lp 2x^3+x^2\rp^{10}$.
+
+\vspace{32mm}
+
+\Example Find the derivative of $g(x)=x^2\lp x^3+2\rp ^4$.
+
+\vspace{32mm}
+
+\Example Find the derivative of $f(x)=\sqrt{x^4+x^3+x^2+x}$.
+
+\vspace{32mm}
+
+\Example Find $\disp\frac{dy}{dx}$ for $y=\sin\big(\cos\lp \tan x\rp\big)$.
+
+\newpage
+
+\Example Find $f'$ given that $f(x)=x^3 g(2x+1)$, where $g$ is differentiable.
+
+\vspace{40mm}
+
+\Example Find $\disp\frac{dy}{dx}$ for $y=\tan \lp \sin 2x\rp$.
+
+\vspace{40mm}
+
+\Example Differentiate $f(x)=e^{k\tan \sqrt{x}}$ for $k\in\R$, $k\neq 0$.
+
+\vspace{40mm}
+
+\Example Find the derivative of $g(t)=\sin^3(3t)$ and $f(t)=3\sin t^3$.
+
+\newpage
+
+\Example Find all values of $x$ where $y=(3x-1)^2(5-x)^4$ is horizontal.
+
+\vspace{50mm}
+
+\Example Suppose $f$ is differentiable with $f'(0)=3$ and $f'\lp\frac{\sqrt{2}}{2}\rp=2$. \\
+
+If $g(x)=f(\sin x)+f\lp x-\disp\frac{\pi}{4}\rp$, calculate $g'\lp\disp\frac{\pi}{4}\rp$.
+
+\vspace{50mm}
+
+\Example Suppose $f$ and $g$ are two lines with slopes $m$ and $\disp\frac{1}{m}$, respectively, where $m\neq 0$. If $y=f\big(g(x)\big)$, what is the value of $y'(c)$ where $c\in\R$?
+
+
+\end{document}

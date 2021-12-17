@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{54}
+
+\begin{document}
+\section*{3.1: Introduction to the Derivative}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.1, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving tangent lines and derivatives.
+		\item Solve applications involving the use of limits to calculate derivatives.
+		\item Use limit definitions to find equations of tangent lines.
+		\item Use limit definitions to evaluate derivatives at given points.
+		\item Compute average and instantaneous rates of change from graphs and tables.
+		\item Determine functions given limits of difference quotients.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{The Idea Behind Derivatives}
+
+One of the major questions in calculus is: How can we calculate the slope of a tangent line? We know that we can calculate an \textit{average} rate of change by finding the slope of a secant line. How can we calculate an \textit{instantaneous} rate of change?
+
+\vspace{5mm}
+
+\begin{center}
+            \begin{tikzpicture}[scale=1.5]
+                \begin{axis}[
+                	axis x line=middle,
+                	xmax=5.6, xmin=0,
+                	axis y line=center,
+                	ymax=150, ymin=60,
+                	xlabel=$x$,ylabel=$f$,
+                	xticklabels={},
+                	yticklabels={}
+                    ]
+                    \addplot[name path=f,smooth,domain=0:5,color=blue,samples=100,->,thick] {-16*x^2 + 96*x};
+          
+          		    \draw[color=blue] (4.7,120) node[anchor=south] {$f(x)$};
+
+                \end{axis}
+            \end{tikzpicture}
+            
+            \vspace{15mm}
+            
+            View an interactive demo here: \url{https://www.desmos.com/calculator/2vmz7bdvgo}
+
+        \end{center}
+
+\newpage
+
+\subsection*{The Derivative at a Point}
+
+\boxenv{Definition.}{The line tangent to the curve $y=f(x)$ at $x=a$ has slope
+
+$$m_{\text{tan}}=\lim_{x\to a}m_{\text{sec}}=\lim_{x\to a}\frac{f(x)-f(a)}{x-a},$$
+
+provided the limit exists. This limit is called the \textbf{derivative} of $f$ at the point $a$ and is denoted by $f'(a)$, read as ``$f$ prime of $a$.''
+
+\vspace{25mm}
+
+This value, when it exists, is sometimes called the \textbf{instantaneous rate of change} or the \textbf{slope of the curve}.
+}
+
+\vspace{5mm}
+
+Because derivatives are, by definition, limits, there is a useful property of limits that can help us understand derivatives.
+
+\vspace{3mm}
+
+\boxenv{Theorem.}{Suppose $\disp\lim_{x\to a}f(x)=L$ and $\disp\lim_{x\to a}f(x)=M$. Then $L=M$. In other words, if a limit exists, it is unique.}
+
+\vspace{3mm}
+
+Now consider the function $f(x)=\disp\frac{\sin x}{x}$. Note that $f$ is not continuous at $x=0$ because $f(0)$ is undefined. However, the following function \underline{is} continuous at $x=0$\dots
+
+$$f'(x)=\lim_{t\to x}\frac{\sin t}{t}$$
+
+\vspace{2mm}
+
+By the uniqueness of limits, we can say that the derivative is a \textbf{function}. In other words, for every point $a$, there is at most one value of $f'(a)$.
+
+\vspace{5mm}
+
+\Example Find the equation of the line tangent to $f(x)=\sqrt{3x}$ at $x=3$.
+
+\newpage
+
+\Example Find the equation of the line tangent to $f(x)=\disp\frac{1}{x}$ at $x=2$.
+
+\vspace{50mm}
+
+\Example Find the equation of the line tangent to $f(x)=x^2+2$ at $x=0$.
+
+\vspace{50mm}
+
+\paragraph{Alternative Definition of the Derivative.} If we let $h$ be the distance between $x$ and $a$, i.e.\ $h=x-a$, then
+$$x=a+h\text{ and } x\to a \,\Longleftrightarrow\, h\to 0,$$
+
+leading us to an equivalent formulation of the limit definition of a derivative at a point.
+
+\vspace{5mm}
+
+\boxenv{Definition.}{The \textbf{derivative} of a function $f$ at $x=a$, denoted $f'(a)$, is
+
+$$f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h},$$
+
+provided the limit exists.}
+
+\vspace{5mm}
+
+\boxenv{Definition.}{If $f'(a)$ exists, we say that $f$ is \textbf{differentiable} at $x=a$.}
+
+\newpage
+
+\Example Find the equation of the line tangent to $f(x)=2x^2-3x$ at $x=1$.
+
+\vspace{50mm}
+
+\Example Suppose that $y=-\frac{1}{2}x+5$ is tangent to $f$ at $x=2$. Find $f'(2)$.
+
+
+\end{document}

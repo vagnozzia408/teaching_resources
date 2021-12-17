@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{72}
+
+\begin{document}
+\section*{3.4: The Product and Quotient Rules}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.4, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving the product and quotient rules.
+		\item Find derivatives using two different methods.
+		\item Find derivatives of products and quotients of functions involving exponentials.
+		\item Find derivatives of products and quotients of algebraic expressions.
+		\item Find derivatives using the extended power rule.
+		\item Find slopes and equations of tangent lines of functions involving products and \\ quotients.
+		\item Solve applications involving the product rule and quotient rule.
+		\item Find higher order derivatives of products and quotients.
+		\item Find derivatives of products and quotient rules using given values or graphs.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{The Product Rule}
+
+To differentiate a product of two functions, we use a technique called the \textbf{product rule}.
+
+\vspace{3mm}
+
+\boxenv{The Product Rule.}{For two differentiable functions $f$ and $g$, the derivative of their product $fg$ is
+
+$$\lp fg\rp '=f'g+fg'.$$
+
+\vspace{3mm}
+
+Alternatively, the product rule can be expressed as follows.
+
+\vspace{15mm}}
+
+\vspace{5mm} For example, consider the function $y=x^2e^x$.
+
+$$\frac{d}{dx}\lp x^2 e^x\rp = 2xe^x+x^2e^x$$
+
+\newpage
+
+\textit{Proof of the Product Rule.} Suppose $f$ and $g$ are both differentiable and let $h(x)=f(x)g(x)$.
+\begin{align*}
+h'(x) &= \lim_{h\to 0}\frac{h(x+h)-h(x)}{h} \\
+&= \lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}\\
+&= \lim_{h\to 0}\frac{f(x+h)g(x+h) {\color{blue}\overbrace{- f(x)g(x+h) + f(x)g(x+h)}^{=0}} - f(x)g(x)}{h}\\
+&= \lim_{h\to 0}\frac{g(x+h)\big(f(x+h) - f(x)\big) + f(x)\big(g(x+h) - g(x)\big)}{h} \\
+	      &= \lim_{h\to 0}g(x+h)\underbrace{\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}}_{=f'(x)} + f(x)\underbrace{\lim_{h\to 0}\frac{g(x+h) - g(x)}{h}}_{=g'(x)} \\
+	      &= g(x) f'(x) + f(x) g'(x)
+\end{align*}
+\begin{flushright}
+	$\square$
+\end{flushright}
+
+\Example Find the derivative of $f(x)=x^4e^x$.
+
+\vspace{50mm}
+
+\Example Find the derivative of $f(x)=2e^x\lp x^3-3\rp$.
+
+\newpage
+
+\Example Determine a formula for the $n^\text{th}$ derivative of $f(x)=xe^x$.
+
+\vspace{60mm}
+
+\Example Find the derivative of $g(x)=6x^2\lp 3+2x^{-3}\rp$.
+
+\vspace{50mm}
+
+\Example Find the derivative of $h(x)=\disp\frac{70+2x^2}{x^3}$.
+
+\newpage
+
+\subsection*{The Quotient Rule}
+
+\boxenv{The Quotient Rule.}{For two differentiable functions $f$ and $g$, where $g(x)\neq 0$, the derivative of their quotient $\frac{f}{g}$ is
+
+$$\lp\frac{f}{g}\rp '=\frac{f'g-fg'}{g^2}.$$
+
+\vspace{3mm}
+
+Alternatively, the quotient rule can be expressed as follows.
+
+\vspace{15mm}}
+
+\vspace{3mm}
+
+Note that subtraction is not commutative, i.e.\ $x-y\neq y-x$, so the order of subtraction in the numerator is critical.
+
+\vspace{10mm}
+
+\Example Evaluate the expression $\disp\frac{d}{dx}\lp\frac{e^x}{x+1}\rp$.
+
+\vspace{50mm}
+
+\Example Find the derivative of $y=\disp\frac{x+2}{3x^2-x}$.
+
+\newpage
+
+\Example Find the derivative of $g(x)=\disp\frac{2+xe^x}{x^2-2}$.
+
+\vspace{55mm}
+
+\Example Find the equation of the line tangent to $y=\disp\frac{2x}{x+1}$ at $x=2$.
+
+\vspace{55mm}
+
+\Example if $h(x)=f(x)g(x)$, find $h'(2)$ given the following information.
+
+$$f(2)=-3\hspace{15mm} f'(2)=-2 \hspace{15mm} g(2)=4 \hspace{15mm} g'(2)=7$$
+
+\newpage 
+
+\Example Suppose $f$ is a differentiable function. Find an expression for the derivative of each of the following functions.
+
+\begin{enumerate}
+\item[\tc{1}] $y=x^2f(x)$
+
+\vspace{35mm}
+
+\item[\tc{2}] $y=\disp\frac{\sqrt{x}+xf(x)}{e^x}$
+
+\vspace{35mm}
+\end{enumerate}
+
+\Example Find the derivative for each of the following functions.
+
+\begin{enumerate}
+\item[\tc{1}] $g(x)=\disp\frac{2x^5+x-1}{e^x+9}$
+
+\vspace{35mm}
+
+\item[\tc{2}] $f(x)=\sqrt{x}\lp 3x^7-2\rp$
+\end{enumerate}
+\end{document}

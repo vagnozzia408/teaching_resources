@@ -1,0 +1,265 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{152}
+
+\begin{document}
+\section*{4.9: Antiderivatives}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 4.9, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving antiderivatives.
+		\item Find all antiderivatives of a function.
+		\item Determine the indefinite integral of a function.
+		\item Given a function, find the antiderivative satisfying a given condition.
+		\item Given the derivative of a function, find the function satisfying an initial value.
+		\item Graph the solutions to a differential equation, then the particular solution given an initial value.
+		\item Find a position function given a velocity function and an initial position or an acceleration function and an initial velocity and an \\ initial position.
+		\item Solve applications involving derivatives.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Introduction}
+
+The two major concepts in calculus that we have learned thus far are the \textit{limit} and the \textit{derivative}. The third major concept, introduced in this section, is that of the \textit{antiderivative}.
+
+\vspace{5mm}
+
+\boxenv{Definition.}{The function $F$ is called an \textbf{antiderivative} of $f$ if $F'(x)=f(x)$. In other words, an antiderivative $F$ is a function whose derivative is a given function $f$.}
+
+\vspace{5mm}
+
+\Example Let's list some antiderivatives for the function $f(x)=2x$. 
+
+\newpage
+
+\subsection*{The General Antiderivative}
+
+\boxenv{Theorem.}{Let $F$ be an antiderivative of $f$. Then all antiderivatives of $f$ have the form $F(x)+C$, where $C\in\R$ is an arbitrary constant.}
+
+\vspace{5mm}
+
+\Example Find the general antiderivative for $f(x)=2x$. 
+
+\vspace{20mm}
+
+\Example Find the antiderivatives of the following functions.
+\begin{enumerate}
+\item[\tc{1}] $y'=4x^3+3x^2+2x+1$
+
+\vspace{20mm}
+
+\item[\tc{2}] $f(x)=\disp\frac{2}{1+x^2}$
+
+\vspace{20mm}
+
+\item[\tc{3}] $f(x)=\cos x-\sin x+\sec^2 x$
+
+\vspace{20mm}
+
+\item[\tc{4}] $f(x)=3e^x+3^x\ln 3 + 3$
+
+\vspace{20mm}
+\end{enumerate}
+
+\subsection*{Indefinite Integrals}
+
+Recall that the differential operator $\disp\frac{d}{dx}$ instructs us to take the derivative of the function under consideration.
+
+
+$$\frac{d}{dx}\lp \arctan 2x\rp =\frac{2}{1+4x^2}$$
+
+\newpage
+
+The operation of \textbf{antidifferentiation} is denoted by an \textbf{indefinite integral}.
+
+$$\int f(x)\,dx=F(x)+C\text{, where } F'(x)=f(x)$$
+
+\vspace{3mm}
+
+The integral symbol $\disp\int$ must always be paired with the differential $dx$ (or a differential that corresponds to another variable, such as $dt$ or $d\theta$). We will explain what this differential represents in Chapter 5, but for now, know that this notation instructs us to find the general antiderivative for a function $f$.
+
+\vspace{3mm}
+
+$$\int f(x)\,dx \,\Longleftrightarrow\, \text{``find the general antiderivative of }f$$
+
+\vspace{3mm}
+
+We can thus write $\disp\int \frac{2}{1+4x^2}\,dx=\arctan 2x+C$.
+
+\vspace{3mm}
+
+\Example Evaluate the following indefinite integrals.
+
+\begin{enumerate}
+\item[\tc{1}] $\disp\int 2x\,dx$
+
+\vspace{20mm}
+
+\item[\tc{2}] $\disp\int\lp 3+e^x\rp dx$
+
+\vspace{20mm}
+
+\item[\tc{3}] $\disp\int \lp \sec\theta \tan \theta + \sec^2\theta\rp d\theta$
+\end{enumerate}
+
+\newpage
+
+\subsection*{Antiderivative Rules}
+
+We can find the antiderivative of a \textbf{constant} $k\in\R$.
+
+$$\int k\,dx=kx+C$$
+
+\vspace{5mm}
+
+Antidifferentiation is a \textbf{linear operation}, i.e.\ for $a,b\in\R$,
+
+$$\int \big( af(x)\pm bg(x)\big) dx = aF(x)\pm bG(x)+C.$$
+
+\vspace{5mm}
+
+To find the antiderivative of a \textbf{power term}, we reverse the power rule for derivatives.
+
+$$\int x^n\,dx=\frac{x^{n+1}}{n+1}+C\text{, where }n\neq -1$$
+
+\vspace{5mm}
+
+\Example Evaluate the indefinite integrals.
+
+\begin{enumerate}
+\item[\tc{1}] $\disp\int \lp x^5+x^3+x\rp dx$
+
+\vspace{30mm}
+
+\item[\tc{2}] $\disp\int\lp \frac{3}{\sqrt{x}}+\frac{2}{\sqrt{x^3}}\rp dx$
+
+\vspace{30mm}
+\end{enumerate}
+
+To handle powers of negative one, we use the following rule.
+$$\int x^{-1}\,dx=\int\frac{1}{x}\,dx=\ln|x|+C$$
+
+\vspace{3mm}
+
+The necessity of the absolute value will become clear later on.
+
+\newpage
+
+\Example Evaluate the indefinite integral $\disp\int\lp\frac{1}{x^3}+\frac{2}{x^2}+\frac{3}{x}\rp dx$.
+
+\vspace{30mm}
+
+\paragraph{Common Antiderivative Mistakes.} Be mindful of the following errors when evaluating indefinite integrals.
+
+\vspace{5mm}
+
+One mistake is to attempt to apply the ``powers of negative one'' rule from the previous page to other negative powers.
+
+$$\int x^{-3}\,dx=\int\frac{1}{x^3}\,dx\neq \ln\vert x^3\vert+C$$
+
+\vspace{5mm}
+
+Another temptation is to attempt to find the antiderivative of a product or quotient of functions in the manner below. Unfortunately, antiderivatives of products and quotients do not ``behave nicely.'' Unless the integrand can be simplified, we must use alternative methods to find the antiderivatives of such functions, which are taught in MATH 1080.
+
+$$\int f(x)g(x)\,dx\neq F(x)G(x)+C$$
+
+$$\int \frac{f(x)}{g(x)}\,dx\neq\frac{F(x)}{G(x)}+C$$
+
+\vspace{5mm}
+
+If presented with an indefinite integral of a product or quotient of functions in MATH 1060, you should \textbf{simplify} the integrand to find the antiderivative.
+
+\Example Evaluate the indefinite integral. 
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp\int t^2\lp 1-\frac{1}{t^2}+\frac{2}{t^3}\rp dt$
+
+\newpage
+
+\Example Evaluate the indefinite integral. 
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp \int \frac{x^3-x^2-2x}{x^2-2x}\,dx$
+
+\vspace{60mm}
+
+\Example True or False: $\disp\int\ln x\,dx=x\ln x+x+C$
+
+\vspace{50mm}
+
+\Example Evaluate the indefinite integral.
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp\int\frac{3+2\sqrt{1-x^2}}{\sqrt{1-x^2}}\,dx$
+
+\newpage
+
+\Example Evaluate the indefinite integral.
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp\int\lp t^2+1\rp\lp 2t-5\rp\,dt$
+
+\vspace{60mm}
+
+\Example Evaluate the indefinite integral.
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp\int\frac{\cos x - 1}{\sin^2 x}\,dx$
+
+\vspace{60mm}
+
+\subsection*{Introduction to Differential Equations}
+
+Antiderivatives are a critical element of solving differential equations.
+
+\vspace{3mm}
+
+\boxenv{Definition.}{An equation involving an unknown function and one or more of its derivatives is called a \textbf{differential equation}.}
+
+\vspace{5mm} For example, the following is a differential equation.
+
+$$4x^2y''+12xy'+3y=0$$
+
+We can see that the equation on the previous page involves both the first and second derivatives of some function $y$, but we don't know which function $y$ actually is. To solve a differential equation, we need to identify the {function} that satisfies such an equation. There are entire courses dedicated to differential equations, but we'll learn how to solve some basic ones in our course.
+
+\vspace{5mm}
+
+\Example Solve the differential equation $2y'-3=\cos t$.
+
+\vspace{60mm}
+
+\paragraph{Initial Value Problems.} If an initial condition is given (i.e.\ a particular value of the unknown function), it is possible to solve for the constant $C$. A differential equation with an initial condition is referred to as an \textbf{initial value problem}.
+
+\vspace{5mm}
+
+\Example Solve the initial value problem.
+$$e^x(y'-1)=e^{2x}\hspace{25mm} y(0)=3$$
+
+\newpage 
+
+\paragraph{Motion Problems Revisited.} Recall that, given a position function $s=f(t)$, we can find velocity and acceleration by taking the first and second derivatives of $s$, respectively. With the concept of antiderivatives, we can now see the following relationships.
+
+$$v(t)=\frac{ds}{dt}=s'(t)\,\Longrightarrow\, {s(t)=\int v(t)\,dt}$$
+
+$$a(t)=\frac{d^2s}{dt^2}=s''(t)=v'(t)\,\Longrightarrow\, v(t)=\int a(t)\,dt$$
+
+\vspace{3mm}
+
+Given initial conditions, we can ``recover'' the position function from an acceleration function.
+
+\vspace{5mm}
+
+\Example If $a(t)=-32$ ft/s$^2$, find the velocity and position functions, $s$ and $v$, given that $v(0)=2$ ft/s and $s(0)=10$ feet.
+
+
+\end{document}

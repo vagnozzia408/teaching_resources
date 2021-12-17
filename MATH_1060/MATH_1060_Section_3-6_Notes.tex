@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{78}
+
+\begin{document}
+\section*{3.6: Derivatives as Rates of Change}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.6, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving derivatives as rates of change.
+		\item Find functions for velocity and acceleration given position functions.
+		\item Solve applications involving position, velocity, and acceleration functions.
+		\item Find average and marginal cost profit functions.
+		\item Solve biological and physical applications involving derivatives as rates of change.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Instantaneous Rates of Change}
+
+Recall from Section 3.1 that the derivative of a function at a point represents the \textbf{instantaneous rate of change} of the function at that point. Thus, in applied settings, we can interpret the derivative as giving information about the instantaneous rate of change of some underlying quantity. In this section, we will look at a few applications involving the derivative.
+
+\subsection*{One-Dimensional Horizontal Motion}
+
+Suppose an object has position $f=s(t)$ at some time $t$. The \textbf{average velocity} of the object over the interval $\ls t_1, t_1+h\rs$ is
+
+$$\frac{\Delta s}{\Delta t}=\frac{s(t_1+h)-s(t_1)}{h}.$$
+
+\vspace{3mm}
+
+Taking a limit as the time interval shrinks to zero yields the \textbf{instantaneous velocity}.
+
+$$v(t_1)=\lim_{h\to 0}\frac{f(t_1+h)-f(t_1)}{h} \, \Longrightarrow \phantom{v(t)=\frac{ds}{dt}=s'(t)}$$
+
+\vspace{3mm}
+
+Hence, velocity is the derivative of position.
+
+\vspace{3mm}
+
+\paragraph{Speed.} Velocity is a directional quantity, meaning that the \textbf{sign} indicates the direction of motion. When dealing with horizontal motion, we typically take positive to mean \textit{right} and negative to mean \textit{left}. In vertical motion, we take positive to indicate \textit{up} and negative values to indicate \textit{down}.
+
+\vspace{3mm}
+
+If we are interested in the \textit{rate of progress}, we want the \textbf{speed}, which we define as the absolute value of velocity.
+
+\vspace{3mm}
+
+\newpage
+
+\paragraph{Acceleration.} Taking the derivative of velocity with respect to time gives \textbf{acceleration}. This is equivalent to taking the second derivative of the position function.
+
+$$a(t)=\frac{d}{dt}\lp \frac{ds}{dt}\rp=\frac{d^2s}{dt^2}=s''(t)$$
+
+\vspace{3mm}
+
+\boxenv{Definition.}{The \textbf{sign} or \textbf{signum function} is defined as follows.
+
+$$ \text{sgn}(x) = \begin{cases} -1 & x < 0 \\ \phantom{-}0 & x = 0 \\ +1 & x > 0 \end{cases} $$
+
+For instance, $\text{sgn}(-9)=-1$ and $\text{sgn}(12)=+1$.}
+
+\vspace{5mm}
+
+In a motion problem, an object is \textit{slowing down} when 
+
+$$\text{sgn}\lp v(t)\rp \neq \text{sgn}\lp a(t)\rp$$
+
+and \textit{speeding up} when
+
+$$\text{sgn}\lp v(t)\rp = \text{sgn}\lp a(t)\rp.$$
+
+\vspace{3mm}
+
+\Example Suppose the position of an object moving horizontally along a line is given by $s(t)=t^2-10t+12$, where $g$ is in seconds and $s$ is in feet.
+
+\begin{enumerate}
+\item[\tc{1}] Find the velocity function.
+
+\vspace{30mm}
+
+\item[\tc{2}] When is the object stationary, moving to the left, and moving to the right?
+
+\vspace{30mm}
+\end{enumerate}
+
+\newpage
+
+\ExampleCont
+\begin{enumerate}
+
+\item[\tc{3}] Determine the velocity, speed, and acceleration after three seconds.
+
+\vspace{30mm}
+
+\item[\tc{4}] Determine the acceleration of the object when its velocity is zero.
+
+\vspace{30mm}
+
+\item[\tc{5}] On what intervals is the object speeding up? Slowing down?
+
+\vspace{40mm}
+
+\end{enumerate}
+
+\subsection*{One-Dimensional Vertical Motion}
+
+Position, velocity, and acceleration have the same relationship through derivatives for vertical motion as they do for horizontal motion. Some additional facts about vertical motion in one dimension will be useful when solving application problems.
+
+\begin{itemize}
+\item An object thrown vertically reaches its maximum height when $v(t)=0$. This is the point at which the object changes direction.
+\item The object hits the ground when $s(t)=0$. 
+\end{itemize}
+
+\newpage
+
+\Example If a ball is thrown into the air with initial velocity of 40 ft/s, its height after $t$ seconds is given by $s(t)=40t-16t^2$ feet.
+
+\begin{enumerate}
+\item[\tc{1}] Find the velocity and acceleration functions.
+
+\vspace{30mm}
+
+\item[\tc{2}] What is the maximum height of the ball?
+
+\vspace{30mm}
+
+\item[\tc{3}] With what velocity will the ball hit the ground?
+
+\vspace{40mm}
+
+\end{enumerate}
+
+\subsection*{Marginal Cost}
+
+Suppose $C(x)$ is the total cost to produce $x$ units of a product. If the number of units is increased by $\Delta x$, then the \textbf{additional cost} is $\Delta C=C(x+\Delta x)-C(x)$.
+
+\vspace{3mm}
+
+The \textbf{average cost per item} of producing another $\Delta x$ items is $\disp\frac{\Delta C}{\Delta x}$.
+
+\vspace{3mm}
+
+As $\Delta x\to 0$, we obtain the derivative of the cost function. This is called the \textbf{marginal cost} and is a good estimate for the cost of producing the $(n+1)^\text{th}$ unit of the product.
+
+$$C'(n)\approx \Delta C=C(n+1)-C(n)$$
+
+\vspace{3mm}
+
+\newpage
+
+\Example Suppose a company produces $x$ units of a product at a cost of $C(x)=-0.04x^2+100x+800$ dollars.
+
+\begin{enumerate}
+\item[\tc{1}] Find and interpret $C(1000)$.
+
+\vspace{30mm}
+
+\item[\tc{2}] Find the marginal cost function.
+
+\vspace{30mm}
+
+\item[\tc{3}] Find and interpret $C'(1000)$.
+\end{enumerate}
+
+\end{document}

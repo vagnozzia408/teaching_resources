@@ -1,0 +1,192 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{58}
+
+\begin{document}
+\section*{3.2: The Derivative as a Function}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.2, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving the derivative as a function.
+		\item Obtain the graphs of derivative functions from graphs of functions.
+		\item Find points where functions are continuous and differentiable.
+		\item Find derivatives of functions using limits.
+		\item Solve applications involving derivatives as functions.
+		\item Use graphs of functions to analyze slopes of tangent lines.
+		\item Obtain graphs of functions from graphs of their derivative function.
+		\item Find equations of normal lines.
+		\item Find vertical tangent lines from graphs.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Defining the Derivative Function}
+
+In Section 3.1, we learned how to find the \textbf{derivative at a point} $x=a$.
+
+$$f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$$
+
+\vspace{2mm}
+
+If we wanted the derivative at a new point, this would require an entirely new limit. Fortunately, there is a way of calculating derivatives without having to recompute a new limit each time. Because we know that limits, and hence derivatives, are \textit{functions}, we will work towards finding the \textbf{derivative function}. Once found, we can calculate $f'(a)$ for whatever value of $a$ we would like.
+
+\vspace{5mm}
+
+\boxenv{Definition.}{The \textbf{derivative} of $f$ is the function defined by
+
+$$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h},$$
+
+provided the limit exists. The process of finding this limit, i.e.\ finding the derivative, is called \textbf{differentiation.}}
+
+\vspace{5mm}
+
+\boxenv{Remark.}{The domain of $f'$ is contained within the domain of $f$.}
+
+\newpage
+
+\paragraph{Derivative Notation.} The derivative (function) of $y=f(x)$ may be denoted in several different ways as follows.
+
+$$f'(x)=y'=y'(x)=\frac{dy}{dx}=\frac{df}{dx}$$
+
+\vspace{3mm}
+
+The symbol $\disp\frac{d}{dx}$ is called the \textbf{differential operator} and it instructs us to take the derivative. 
+
+$$\frac{d}{dx}(3x-5)\,\Longleftrightarrow\,\text{``take the derivative of }3x-5$$
+
+\vspace{3mm}
+
+The evaluation of a derivative at a point $x=a$ may be denoted as follows.
+
+$$f'(a)=y'(a)=\frac{dy}{dx}\bigg|_{x=a}=\frac{df}{dx}\bigg|_{x=a}$$
+
+\vspace{3mm}
+
+\Example Find the derivative of $y=3x-5$.
+
+\vspace{45mm}
+
+\Example Find the derivative of $f(x)=x^2+3x$.
+
+\vspace{50mm}
+
+\Example Find the slope of the tangent line at three different $x$ values for the function $f$ in the previous example.
+
+\newpage
+
+\Example Evaluate the following expression.
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp\frac{d}{dx}\lp\sqrt{x}\rp$
+
+\vspace{50mm}
+
+\Example For $y=\sqrt{x}$, at which $x$-value will the slope of the tangent line be one?
+
+\vspace{50mm}
+
+\Example Find $\disp\frac{dy}{dx}$ for $y=\disp\frac{1}{x+1}$.
+
+\newpage
+
+\subsection*{Normal Lines}
+
+Recall that the derivative at a point represents the slope of a tangent line at that point. We have already used derivatives to find the equation of a tangent line. We can also use derivatives to identify the slope (and thus equation) of a \textit{normal line}.
+
+\vspace{3mm}
+
+\boxenv{Definition.}{Two lines with slopes $m_1$ and $m_2$, respectively, are \textbf{perpendicular} if the slopes multiply to negative one.
+
+$$m_1 m_2 = -1\,\Longleftrightarrow\, m_1=-\frac{1}{m_2}$$
+
+Hence, $m_1$ and $m_2$ are \textbf{negative reciprocals.}}
+
+\vspace{3mm}
+
+\boxenv{Definition.}{A \textbf{normal line} to the graph of $y=f(x)$ at a point $x=c$ is perpendicular to the tangent line at that point.
+
+$$m_T m_N=-1\,\Longleftrightarrow\, m_N=-\frac{1}{m_T}=-\frac{1}{f'(c)}$$}
+
+\vspace{5mm}
+
+\Example The derivative of $f(x)=x^2+3x$ is $f'(x)=2x+3$. Find the equation of the normal line to $f(x)$ at $x=3$.
+
+\vspace{40mm}
+
+\subsection*{Derivative Examples}
+
+\Example Find the derivative of $f(x)=\sqrt{2-2x}$.
+
+\newpage
+
+\Example Find the derivative of $f(x)=\disp\frac{x}{x+1}$.
+
+\vspace{50mm}
+
+\subsection*{Differentiability}
+
+In Section 2.6, we learned about \textit{continuity}. This property of functions has a relationship with the differentiability of a function.
+
+\vspace{5mm}
+
+\boxenv{Theorem.}{If $f$ is differentiable at $x=c$, then it is continuous at $x=c$.}
+
+\vspace{5mm}
+
+Note that continuity does \underline{not} imply differentiability. Consider the absolute value function, $f(x)=\vert x \vert$. For the derivative to exist using its limit definition, the associated left- and right-hand limits must be equal.
+
+$$\lim_{x\to 0^+}\frac{\vert x+0\vert -\vert 0 \vert}{x-0}=\lim_{x\to 0^+}\frac{x}{x}=1$$
+
+$$\lim_{x\to 0^-}\frac{\vert x+0\vert - \vert 0 \vert}{x-0}=\lim_{x\to 0^-}-\frac{x}{x}=-1$$
+
+\vspace{3mm}
+
+Hence, $f'(0)$ does not exist although $f$ is continuous at $x=0$.
+
+\vspace{3mm}
+
+\paragraph{When Differentiability Fails.} A function will fail to be differentiable in the following situations.
+\begin{itemize}
+	\item Any \textbf{discontinuity} causes the derivative to not exist.
+	\item The existence of a \textbf{corner} or \textbf{cusp} will cause the derivative to not exist. (See the absolute value function example above.)
+	\item The existence of a \textbf{vertical tangent} will cause the derivative to not exist.
+	\item The derivative will not exist at an \textbf{endpoint} because a two-sided limit is not possible.
+\end{itemize}
+
+\newpage
+
+\Example Circle the locations within $\ls -2,2\rs$ where $f$ is not differentiable.
+
+\vspace{5mm}
+
+\begin{center}
+            \begin{tikzpicture}[scale=1.25]
+                \begin{axis}[
+                	axis x line=middle,
+                	xmax=2.5, xmin=-2.5,
+                	axis y line=center,
+                	ymax=1.75, ymin=0,
+	              	xlabel=$x$,ylabel=$f$,
+	              	x axis line style=<->
+                    ]
+                    \addplot[name path=f,smooth,domain=-2:0,color=blue,samples=100,thick] {abs(x+1)};
+                    \addplot[name path=f,smooth,domain=0:2,color=blue,samples=100,thick] {-(x-1)^2 + 1};
+ 
+		    \addplot[mark=*,color=blue] coordinates {(-2,1)};
+		    \addplot[mark=*,color=blue] coordinates {(0,0)};
+		    \addplot[mark=*,color=blue] coordinates {(2,0)};
+		    \addplot[mark=*,color=blue] coordinates {(1,1.5)};
+																						
+		    \addplot[mark=*,color=blue,fill=white] coordinates {(1,1)};
+		    \addplot[mark=*,color=blue,fill=white] coordinates {(0,1)};
+		\draw [dashed] (5,0) -- (5,5);			
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+\end{document}

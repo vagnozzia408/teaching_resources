@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{72}
+
+\begin{document}
+\section*{3.5: Trigonometric Limits and Derivatives}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.5, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving derivatives of trigonometric functions.
+		\item Find limits involving trigonometric functions.
+		\item Find derivatives of basic trigonometric functions.
+		\item Find derivatives of products, quotients, and powers of functions with trigonometric expressions.
+		\item Solve applications involving derivatives of trigonometric functions.
+		\item Find higher-order derivatives of functions involving trigonometric functions.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Trigonometric Limits}
+
+Before we look at derivative rules for trigonometric functions, let us revisit limits and introduce two special limits that will aid us in our development of such derivatives.
+
+\vspace{3mm}
+
+\boxenv{Special Trig Limits.}{Suppose $k\in \R$ with $k\neq 0$.
+
+$$\lim_{x\to 0}\frac{\sin kx}{kx}=1\hspace{15mm}\lim_{x\to 0}\frac{\cos kx -1}{kx}=0$$
+
+\vspace{-2mm}}
+
+\vspace{5mm}
+
+In addition, the following theorem will be useful.
+
+\vspace{3mm}
+
+\boxenv{Theorem.}{If $\disp\lim_{x\to c}=L$ with $L\neq 0$, then $\disp\lim_{x\to c}\frac{1}{f(x)}=\frac{1}{L}$.}
+
+\vspace{5mm}
+
+As a result, we can say that $\disp\lim_{x\to 0}\frac{kx}{\sin kx}=1$.
+
+\Example Find $\disp\lim_{h\to 0}\frac{ah}{\sin bh}$ if $a,b\in\R$, $b\neq 0$. Use your result to evaluate $\disp\lim_{h\to 0}\frac{\pi h}{\sin 2h}$.
+
+\newpage
+
+\Example Find $\disp\lim_{x\to 0}\frac{\sin 5x}{\sin 4x}$.
+
+\vspace{40mm}
+
+\subsection*{Derivatives of Trig Functions}
+
+Keeping in mind the limits introduced on the previous page, let us now find the derivative of the \textbf{sine function}, $f(x)=\sin x$, using the limit definition of the derivative. 
+
+\vspace{3mm}
+
+\textit{Hint: We will use the trig identity $\sin(a+b)=\sin a\cos b+\cos a\sin b$.}
+
+\newpage
+
+The derivative of the \textbf{cosine function} also follows from the limit definition of the derivative with the use of the special trig limits, similar to the manner in which the derivative of the sine function was derived on the previous page. The derivative of the \textbf{tangent function} can then be found by writing $\tan x=\disp\frac{\sin x}{\cos x}$ and applying the quotient rule.
+
+\vspace{5mm}
+
+You won't need to derive these derivatives (though that might be a good exercise for practice), but you will need to be able to apply them. The six \textbf{trigonometric derivatives} are summarized below.
+
+\vspace{3mm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Function $f$}    & $\sin x$ & $\cos x$  & $\tan x$  & $\csc x$        & $\sec x$       & $\cot x$   \\ \hline
+\textbf{Derivative $f'$} & $\cos x$ & $-\sin x$ & $\sec^2 x$ & $-\csc x \cot x$ & $\sec x \tan x$ & $-\csc^2 x$ \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{3mm}
+
+\Example Show that $\disp\frac{d}{dx}(\sec x)=\sec x \tan x$ using only the derivatives of the sine and cosine functions.
+
+\vspace{50mm}
+
+\Example Show that $\disp\frac{d}{dx}(\tan x)=\sec^2 x$ using only the derivatives of the sine and cosine functions.
+
+\vspace{2mm}
+
+\textit{Hint: Use the Pythagorean trig identity $\sin^2 x+\cos^2 x=1$.}
+
+\newpage
+
+\Example Find the derivative of $y=\disp\frac{\cot x-2x^3}{e^x-1}$.
+
+\vspace{30mm}
+
+\Example Find the derivative of $f(x)=\disp\frac{\tan x \cot x}{\csc x}$.
+
+\vspace{30mm}
+
+\Example Find $\disp\frac{ds}{dt}$ for $s=\sec t \tan t$.
+
+\vspace{50mm}
+
+\Example Find the derivative of $y=\pi \sin x \cos x$. 
+
+\newpage
+
+\Example Find the equation of the line tangent to $y=\disp\frac{\cos x}{1-\cos x}$ at $x=\disp\frac{\pi}{3}$.
+
+\vspace{60mm}
+
+\Example Evaluate the following limit.
+
+\vspace{5mm}
+
+\hspace{10mm} $\disp\lim_{h\to 0}\frac{\sin\lp\frac{\pi}{6}+h\rp-\frac{1}{2}}{h}$
+
+\vspace{60mm}
+
+\Example Locate the horizontal tangents for $f(x)=\sin x+\cos x$ on $\ls 0, 2\pi\rs$.
+
+\newpage
+
+\paragraph{Higher-Order Trig Derivatives.} Note the following pattern when taking derivatives of the sine function.
+
+$$ {\color{blue}\sin x} \stackrel{\frac{d}{dx}}{\longrightarrow} \cos x \stackrel{\frac{d}{dx}}{\longrightarrow} -\sin x \stackrel{\frac{d}{dx}}{\longrightarrow} -\cos x \stackrel{\frac{d}{dx}}{\longrightarrow} {\color{blue}\sin x} $$
+
+\vspace{3mm}
+
+You might notice that after taking the derivative four times, the pattern ``cycles'' back to the original function. The same cyclical pattern applies to the cosine function (but not to other trig functions). We can make the following generalization.
+
+\vspace{3mm}
+
+\boxenv{Lemma.}{Let $k\in\N$, $k>4$, and $f(x)=\sin x$ or $f(x)=\cos x$. Suppose $r$ is the remainder after computing $k\div 4$. Then $f^{(k)}(x)=f^{(r)}(x)$.}
+
+\vspace{3mm}
+
+\Example Find $f^{(99)}$ and $g^{(212)}$ for $f(x)=\sin x$ and $g(x)=\cos x$. 
+\end{document}

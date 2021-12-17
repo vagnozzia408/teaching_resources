@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{131}
+
+\begin{document}
+\section*{4.5: Applied Optimization}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 4.5, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving optimization.
+		\item Optimize the sum, product, or sum of squares of two number given constraints.
+		\item Solve optimization problems involving geometry or algebraically defined curves.
+		\item Solve applications involving optimization.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Optimization Problems}
+
+In \textbf{applied optimization} problems, the goal is to \textit{optimize} (i.e.\ maximize or minimize) a quantity, subject to one or more constraints.
+
+\Example What is the maximum value of $x+y$ if we must have $y+x^2=4$?
+
+\vfill
+
+\boxenv{Definition.}{In applied optimization problems, the \textbf{objective function} is the function you wish to maximize or minimize.}
+
+\vspace{3mm}
+
+\boxenv{Definition.}{For an applied optimization problem in a single variable, an \textbf{optimizer} is a value of the variable at which the function is maximized or minimized.}
+
+\newpage
+
+\paragraph{Strategy.} To solve an optimization problem, we follow this general procedure.
+
+\begin{enumerate}
+\item[\tc{1}] Draw a diagram if applicable and define all variables with units.
+\item[\tc{2}] Identify the objective function and any constraints that apply.
+\item[\tc{3}] Use the constraint equation to convert the objective function from a multivariable equation to a \textit{single}-variable equation.
+\item[\tc{4}] Find the domain of the single-variable objective function.
+\item[\tc{5}] Find critical points and locate possible optimizers. Discard any critical points that do not make sense in context.
+\item[\tc{6}] Verify that you have located the global extremum using the First or Second Derivative Test.
+\item[\tc{7}] Solve for the remaining variable and summarize your results, paying close attention to the quantity for which the problem is asking.
+\end{enumerate}
+
+\vspace{3mm}
+
+\Example Suppose $x$ and $y$ are positive numbers. What is the maximum value of $e^{x+y}$ if we must have that $x^2+y^2=1$?
+
+\newpage
+
+\Example A cylindrical tank must hold $4\pi$ m$^3$ of water. What are the dimensions of the tank that minimize its surface area? (The surface area of a cylinder is $S=2\pi r^2+2\pi rh$.)
+
+\newpage
+
+\Example A small paper container is constructed as follows: Squares of length $x$ are cut from the corners of a $12\times 12$ cm piece of cardstock. The remaining sides are then folded up and taped together. What are the dimensions of the square cutouts that maximize the volume of the container?
+
+\newpage
+
+\paragraph{The Distance Formula.} It is common in applied settings to want to maximize or minimize \textit{distance}. Recall how we can find the distance between two points $A(x_1,y_1)$ and $B(x_2,y_2)$.
+
+\vspace{70mm}
+
+\paragraph{Optimizing the Square.} In solving an optimization problem with an objective function~$f$, it is sometimes easier to work with $f^2$ versus $f$. The following theorem can help us.
+
+\vspace{5mm}
+
+\boxenv{Theorem.}{Suppose that $f$ is nonnegative, i.e.\ $f(x)\geq 0$ for all $x$ in the domain of $f$. Then we have the following equivalence.
+
+$$x_0\text{ minimizes (maximizes) } f^2 \,\Longleftrightarrow \, x_0\text{ minimizes (maximizes) }f$$
+
+\vspace{-3mm}
+}
+
+\vspace{5mm}
+
+Optimizing the quantity $f^2$ instead of $f$ is a process called \textbf{optimizing the square}.
+
+\vspace{5mm}
+
+Note that the square root function is always nonnegative on its domain, i.e.
+$$g(x)=\sqrt{f(x)}\geq 0 \text{ for all $x$ in the domain of }g.$$
+
+Hence, to find the optimizer of $g$, we can equivalently find the optimizer of $g^2=\lp\sqrt{f}\rp^2=f$.
+
+\newpage
+
+\Example If you start at the point $(1,1)$, to what point on the line $y=2x$ can we draw a line segment with minimum distance?
+
+\end{document}

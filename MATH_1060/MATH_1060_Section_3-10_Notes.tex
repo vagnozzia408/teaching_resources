@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{100}
+
+\begin{document}
+\section*{3.10: Derivatives of Inverse Trig Functions}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 3.10, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving derivatives of inverse trigonometric functions.
+		\item Find slopes and equations of tangent lines of inverse trigonometric functions.
+		\item Find derivatives of functions involving inverse trigonometric functions.
+		\item Solve applications involving derivatives of inverse functions.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{Inverse Trig Derivatives}
+
+Derivatives of the inverse trigonometric functions are shown below.
+
+\begin{center}
+\begin{tabular}{ccc}
+$\disp\frac{d}{dx}\big(\arcsin(x)\big)=\frac{1}{\sqrt{1-x^2}}$ &  & $\disp\frac{d}{dx}\big(\arccos(x)\big)=\frac{-1}{\sqrt{1-x^2}}$ \\
+& \hspace{10mm} & \\
+$\disp\frac{d}{dx}\big(\arctan(x)\big)=\frac{1}{1+x^2}$ & & $\disp\frac{d}{dx}\big(\arccot(x)\big)=\frac{-1}{1+x^2}$ \\
+& \hspace{10mm} & \\
+
+$\disp\frac{d}{dx}\big(\arcsec(x)\big)=\frac{1}{\vert x \vert \sqrt{x^2-1}}$ & & $\disp\frac{d}{dx}\big(\arccsc(x)\big)=\frac{-1}{\vert x \vert \sqrt{x^2-1}}$ \\
+\end{tabular}
+\end{center}
+
+\vspace{3mm}
+
+\Example Prove that $\disp\frac{d}{dx}\big(\arctan(x)\big)=\frac{1}{x^2}$.
+
+\newpage
+
+\paragraph{Reminders.} Be mindful of recognizing when to apply the \textit{chain rule}.
+
+$$\frac{d}{dx}\Big(\arcsin\big(f(x)\big)\Big)=\frac{1}{\sqrt{1-\big(f(x)\big)^2}}\cdot f'(x)$$
+
+\vspace{3mm}
+
+Also, be aware of equivalent notations for \textit{inverse trig functions}.
+
+$$\arccos(x)=\cos^{-1}(x)$$
+
+\vspace{5mm}
+
+\Example Find the derivative of $y=\arccos(3x-5)$.
+
+\vspace{40mm}
+
+\Example Find the derivative of $y=\disp\frac{\arctan(\pi x)}{\pi x-2}$.
+
+\vspace{40mm}
+
+\Example Find the derivative of $g(\theta)=\arcsin\lp\sqrt{\theta}\rp$.
+
+\newpage
+
+\Example Find the derivative of $f(x)=\arcsin\lp\tan x\rp$.
+
+\vspace{60mm}
+
+\Example Find the derivative of $f(x)=\tan(x)\arctan(x)$.
+
+\vspace{60mm}
+
+\Example Find the derivative of $f(x)=\arctan(\arctan x)$.
+
+\newpage
+
+\Example Find the line tangent to $f(x)=\arccos\lp x^2\rp$ at $x=\disp\frac{\sqrt{2}}{2}$.
+
+
+\vspace{100mm} 
+
+\Example Evaluate the limit $\disp\lim_{h\to 0}\frac{\arctan(1+h)-\arctan(1)}{h}$.
+\end{document}

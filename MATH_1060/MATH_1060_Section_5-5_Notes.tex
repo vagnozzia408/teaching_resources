@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{191}
+
+\begin{document}
+\section*{5.5: The Substitution Method}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 5.5, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving the Substitution Rule.
+		\item Evaluate indefinite integrals using substitution when the substitution is given.
+		\item Evaluate indefinite integrals using substitution when the substitution is not given.
+		\item Evaluate definite integrals using substitution.
+		\item Find areas of regions using integration that requires substitution.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{U-Substitution}
+
+When we differentiate a composite function, we do so using the \textbf{chain rule}.
+
+$$f\big( g(x)\big)\,\Longrightarrow\, f'\big( g(x)\big)\cdot g'(x)$$
+
+\vspace{5mm}
+
+In integration, we often need to apply the chain rule in reverse.
+
+$$f'\big( g(x)\big)\cdot g'(x)\,\Longrightarrow\, f\big( g(x)\big)+C$$
+
+\vspace{5mm}
+
+In general, applying the chain rule in reverse may not be straightforward. In such cases, the process is usually facilitated by making what we call a ``$u$-substitution.''
+
+\vspace{5mm}
+
+\paragraph{Strategy for Indefinite Integrals.} Suppose we have an indefinite integral of the form 
+$$\disp\int f\big(\textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)}\,dx.$$
+\begin{itemize}
+\item[\tc{1}] Set $\textcolor{blue}{u=g(x)}$ so that $\textcolor{red}{du=g'(x)\,dx}$.
+\item[\tc{2}] The integral may now be expressed as $\disp\int f(\textcolor{blue}{u})\,\textcolor{red}{du}$.
+\item[\tc{3}] If $F$ is an antiderivative for $f$, then $\disp\int f(\textcolor{blue}{u})\,\textcolor{red}{du}=F(\textcolor{blue}{u})+C$.
+\item[\tc{4}] We can now substitute $\textcolor{blue}{u=g(x)}$ into $F$ to obtain the final result.
+
+$$\int f\big( \textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)\,dx}=F\big(\textcolor{blue}{g(x)}\big) + C$$
+\end{itemize}
+
+\newpage
+
+\Example Apply the $u$-substitution method to evaluate $\disp\int \textcolor{red}{x}\sin(\textcolor{blue}{2x^2})\,\textcolor{red}{dx}$.
+
+\vspace{50mm}
+
+\Example Apply the $u$-substitution method to evaluate the indefinite integrals.
+\begin{itemize}
+	\item[\tc{1}] $\disp\int x\lp x^2+1\rp^4\,dx$
+	
+	\vspace{55mm}
+	
+	\item[\tc{2}] $\disp\int\frac{x}{\sqrt{4-9x^2}}\,dx$
+	
+\end{itemize}
+
+\newpage
+\ExampleCont Apply the $u$-substitution method to evaluate the indefinite integrals.
+\begin{itemize}
+	\item[\tc{3}] $\disp\int\tan x\,dx$
+	
+	\vspace{55mm}
+	
+	\item[\tc{4}] $\disp\int\sqrt{2x+1}\,dx$
+	
+	\vspace{55mm}
+	
+	\item[\tc{5}] $\disp\int \frac{1}{1+16x^2}\,dx$
+\end{itemize}
+
+\newpage
+
+\Example Evaluate the integral $\disp\int\sec^3(x)\tan(x)\,dx$.
+
+\vspace{55mm}
+
+\paragraph{Strategy for Definite Integrals.} For definite integrals, the process of $u$-substitution is nearly the same, but we must modify the limits of integration to correspond with the change of variable.
+
+\vspace{5mm}
+
+In other words, if $\textcolor{blue}{u=g(x)}$ and $\textcolor{red}{du=g'(x)\,dx}$, then
+
+$$\int_a^b f\big( \textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)}\,dx=\int_{u(a)}^{u(b)} f(\textcolor{blue}{u}\big)\,\textcolor{red}{du}.$$
+
+\vspace{3mm}
+
+\Example Evaluate the definite integral $\disp\int_2^e\frac{1}{x\lp\ln x\rp^2}\,dx$.
+
+\newpage
+
+\Example Evaluate the integral $\disp\int_{\ln\sqrt{3}}^{0}\frac{e^x}{1+e^{2x}}\,dx$.
+
+Hint: $e^{2x}=\lp e^x\rp^2$.
+
+\vspace{55mm}
+
+\Example Evaluate the integral $\disp\int_1^2\frac{10x^2}{x^3+2}\,dx$.
+
+\vspace{60mm}
+
+\Example Evaluate the integral $\disp\int_2^4 x\sqrt{4-x}\,dx$.
+
+\newpage
+
+\Example Evaluate the integral $\disp\int_2^5\frac{x+1}{x^2+2x}\,dx$.
+
+\vspace{60mm}
+
+\Example Evaluate the integral $\disp\int_\frac{\pi}{4}^\frac{3\pi}{4}\frac{\sin x}{\sqrt{1-\cos^2x}}\,dx$ in two ways.
+
+\vspace{2mm}
+
+Hint: For the second way, use the Pythagorean trig identity $\sin^2 x+\cos^2 x=1$.
+
+\newpage
+
+\Example Evaluate the integral $\disp\int_0^{\ln 2}\frac{e^{2x}}{1+e^x}\,dx$.
+
+\vfill
+
+\paragraph{Looking Ahead.} We often view differentiation and integration as ``inverses'' of one another, but in reality, integration is often a much more involved process than differentiation. Integration requires a collection of tools and ``tricks,'' and the substitution method is only one of those. If you take MATH 1080, you'll learn more of these integration techniques!
+\end{document}

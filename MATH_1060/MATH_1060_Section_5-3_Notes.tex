@@ -1,0 +1,257 @@
+\documentclass[12pt]{article}
+\input{MATH_1060_Preamble.tex}
+
+\setcounter{page}{176}
+
+\begin{document}
+\section*{5.3: The Fundamental Theorems of Calculus}
+
+\boxenv{Learning Objectives.}{Upon successful completion of Section 5.3, you will be able to\dots
+		
+	\begin{itemize}[leftmargin=6mm]
+		\item Answer conceptual questions involving the Fundamental Theorem of Calculus.
+		\item Given a graph and areas of designated regions, evaluate area functions.
+		\item Find and verify area functions.
+		\item Evaluate definite integrals using the Fundamental Theorem of Calculus.
+		\item Find areas bounded by functions.
+		\item Evaluate derivatives of definite integrals.
+		\item Evaluate area functions.
+		\item Maximize values of definite integrals and solve integral equations.
+	\end{itemize}
+	\vspace{-4mm}
+}
+
+\vspace{5mm}
+
+\subsection*{The First Fundamental Theorem of Calculus}
+
+\vspace{3mm}
+
+Recall from Section 4.9 that a function $F$ is called an \textbf{antiderivative} of $f$ on an interval $[a,b]$ if 
+$$F'(x)=f(x)\text{ for all }x\in[a,b].$$
+
+\vspace{5mm}
+
+\boxenv{First Fundamental Theorem of Calculus.}{If $f$ is continuous on $[a,b]$, then the function $F$ defined on $[a,b]$ by
+$$F(x)=\int_a^x f(t)\,dt$$
+
+\vspace{2mm}
+
+is continuous on $[a,b]$, differentiable on $[a,b]$, and has derivative
+$$F'(x)=\frac{d}{dx}\int_a^x f(t)\,dt=f(x)\text{ for all }x\in[a,b].$$
+
+In other words, $F'(x)=f(x)\,\Longrightarrow \, F$ is an antiderivative of $f$.}
+
+\vspace{5mm}
+
+The First Fundamental Theorem of Calculus (FTC1) establishes that \textit{differentiation} and \textit{integration} are, in a sense, inverse operations, much like multiplication and division. For example\dots
+
+\newpage
+
+\Example Find the local extrema for $F(x)=\disp\int_0^x\cos(t)\,dt$ on the interval $[0,2\pi]$.
+
+\vspace{50mm}
+
+\Example Find the intervals of increase/decrease and the intervals of concavity for 
+$$F(x)=\int_1^x\lp t^2-7t+10\rp\,dt.$$
+
+\vspace{50mm}
+
+\Example Find the equation of the line tangent to
+$$F(x)=\int_2^x\lp 3t^2-t\rp\,dt\text{ at }x=2.$$
+
+\newpage
+
+\boxenv{Chain Rule for Integral Functions.}{Let $f$ be a continuous function defined on $[a,b]$ and let $u$ be a continuous function defined on $[a,b]$ so that $a\leq u(x)\leq b$ for all $x\in [a,b]$. Furthermore, let $F$ be the function defined as follows.
+
+$$F(x)=\int_a^{u(x)} f(t)\,dt$$
+
+\vspace{2mm}
+
+Then $F'(x)=f\big( u(x)\big)\cdot u'(x)$ for all $x\in [a,b]$.}
+
+\vspace{3mm}
+
+\Example Find the derivative of $F(x)=\disp\int_0^{x^3}\lp 2z-z^2\rp\,dz$.
+
+\vspace{40mm}
+
+\Example Find the derivative of each of the following functions.
+
+\begin{itemize}
+	\item[\tc{1}] $F(x)=\disp\int_1^{\ln x}e^t\,dt$
+	
+	\vspace{25mm}
+	
+	\item[\tc{2}] $F(x)=\disp\int_{\tan x}^0\frac{1}{1+k^2}\,dk$
+	
+	\vspace{25mm}
+	
+\end{itemize}
+
+Where does the First Fundamental Theorem lead us? We will begin to see a pattern in the following example.
+
+\newpage
+
+\Example Use the First Fundamental Theorem of Calculus to evaluate $\disp\int_2^5\lp e^t+2t\rp\,dt$.
+
+\vspace{60mm}
+
+\subsection*{The Second Fundamental Theorem of Calculus}
+
+We now introduce the Second Fundamental Theorem of Calculus (FTC2), sometimes referred to as the \textit{Fundamental Theorem of Integral Calculus}.
+
+\vspace{5mm}
+
+\boxenv{Second Fundamental Theorem of Calculus.}{Let $f$ be continuous on $[a,b]$ and \\ suppose that $F$ is an antiderivative for $f$ on the same interval. Then
+$$\int_a^b f(x)\,dx=F(b)-F(a).$$
+
+\vspace{-3mm}}
+
+\vspace{5mm}
+
+Recall the definition of the definite integral as a limit of a Riemann sum.
+
+$$\lim_{n\to\infty}\sum_{i=1}^n f(x_i^*)\Delta x=\int_a^b f(x)\,dx.$$
+
+\vspace{3mm}
+
+The Second Fundamental Theorem of Calculus now allows us to evaluate integrals without dealing with this clunky limit!
+
+\vspace{5mm}
+
+\paragraph{Notation for Evaluating Definite Integrals.}
+
+\vspace{35mm}
+
+Because we are subtracting two antiderivatives, the ``$+C$'' may be ignored, as $C-C=0$.
+
+\newpage
+
+\Example We previously found that the area under $f(x)=x^2+1$ on $[0,2]$ is $\disp\frac{14}{3}$ through the limit of a Riemann sum. Using FTC2, now find this area directly.
+
+\vspace{30mm}
+
+\Example Evaluate the following definite integrals.
+
+\begin{itemize}
+	\item[\tc{1}] $\disp\int_{-1}^3 (2+x)\,dx$
+	
+	\vspace{30mm}
+	
+	\item[\tc{2}] $\disp\int_{-2}^{-1}\frac{2}{3x}\,dx$
+	
+	\vspace{30mm}
+	
+	\item[\tc{3}] $\disp\int_{\frac{\pi}{3}}^{\frac{\pi}{4}}\sec^2(x)\,dx$
+	
+	\vspace{30mm}
+	
+	\item[\tc{4}] $\disp\int_0^{1000}dx$
+\end{itemize}
+
+\newpage
+
+\ExampleCont Evaluate the following definite integrals.
+\begin{itemize}
+	\item[\tc{5}] $\disp\int_4^9\frac{\sqrt{u^3}-1}{\sqrt{u^3}}\,du$
+	
+	\vspace{30mm}
+	
+	\item[\tc{6}] $\disp\int_0^{\frac{\pi}{2}}(2-3\sin\theta)\,d\theta$
+	
+	\vspace{30mm}
+	
+	\item[\tc{7}] $\disp\int_1^{\sqrt{3}}\frac{4}{1+x^2}\,dx$
+	
+	\vspace{30mm}
+
+\end{itemize}
+
+\Example Solve the equation for $x$: $\disp\int_0^x\lp 4t-9\rp\,dt=-4.$
+
+\newpage
+
+\Example If $x>0$, solve for $x$: $\disp\int_x^{x^2}\frac{1}{t}\,dt=\pi$.
+
+\vspace{60mm}
+
+\Example Evaluate the definite integrals.
+\begin{itemize}
+	\item[\tc{1}] $\disp\int_1^3\lp x^2+\frac{1}{x^2}\rp\,dx$
+	
+	\vspace{30mm}
+	
+	\item[\tc{2}] $\disp\int_1^5 2\sqrt{x-1}\,dx$
+	
+	\vspace{30mm}
+	
+	\item[\tc{3}] $\disp\int_1^4 t\lp \sqrt{t}+t^{-2}\rp\,dt$
+	
+	\vspace{30mm}
+	
+\end{itemize}
+
+\newpage
+
+\ExampleCont Evaluate the definite integrals.
+
+\begin{itemize}
+	\item[\tc{4}] $\disp\int_{\frac{1}{2}}^{\frac{\sqrt{3}}{2}}\frac{2}{\sqrt{1-j^2}}\,dj$
+	
+	\vspace{35mm}
+	
+	\item[\tc{5}] $\disp\int_2^1\lp\frac{1}{x^4}-\frac{1}{\sqrt{x^5}}\rp\,dx$
+	
+	\vspace{35mm}
+\end{itemize}
+
+\Example Find a linear function $f$ passing through $(0,-3)$ with $\disp\int_0^1 f(x)\,dx=1$.
+
+\newpage
+
+\Example Find the maximum and minimum values of $\disp\int_0^x \cos(t)\,dt$ on the interval $(0,2\pi)$.
+
+\vspace{60mm}
+
+Recall that, for FTC2 to apply, the function $f$ must be continuous on the interval $[a,b]$. Because of this condition, note that we cannot use FTC2 to evaluate the following.
+
+$$\int_{-1}^2\frac{1}{x}\,dx\neq\ln |x|\Big|_{-1}^2=\ln(2)-\ln(1)=\ln(2)$$
+
+Why not?
+
+\vspace{10mm}
+
+\paragraph{Connection Back to Limits.} The two major thematic elements of calculus, the \textit{derivative} and the \textit{integral}, share a common element: both are limits. In fact, calculus does not exist without the limit!
+
+$$f'(x)=\textcolor{blue}{\lim_{h\to 0}}\frac{f(x+h)-f(x)}{h}$$
+
+\vspace{2mm}
+
+$$\int_a^b f(x)\,dx=\textcolor{blue}{\lim_{n\to\infty}}\sum_{i=1}^n f(x_i^*)\Delta x$$
+
+\vspace{2mm}
+
+\newpage
+
+\subsection*{Approximating Integrals}
+
+Broadly speaking, the main challenge of integration is finding an antiderivative. Sometimes, if the antiderivative is difficult to find, we may approximate a definite integral using the following method.
+
+\vspace{3mm}
+
+\boxenv{Integral Approximation.}{If $f$ is continuous on $[a,b]$, then
+$$\int_a^b f(x)\,dx\approx f(a)(b-a)\text{ so long as }b\text{ is ``close'' to }a.$$
+
+\vspace{-4mm}
+}
+
+\vspace{40mm}
+
+\Example Calculate an approximation to $\disp\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}x^2\cos(x)\,dx.$
+
+\vspace{110mm}
+
+Note: This integral requires a double application of ``integration by parts'' (MATH 1080).
+
+\end{document}
