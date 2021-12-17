@@ -1,0 +1,195 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 6 Practice Problems}
+\author{Section 6.1}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{4mm}
+
+\noindent The $4077^{th}$ Mobile Army Surgical Hospital is considering the purchase of a helicopter to transport critical patients. The \textbf{probability distribution} of $X$, the number of patient helicopter transports per month, is determined from a similarly-sized army hospital as given by the probability distribution below.
+
+\vspace{3mm}
+
+\begin{center}
+    \textbf{Number of Helicopter Transports per Month}
+    
+    \vspace{1mm}
+    
+    \begin{tabular}{| c | c | c | c | c | c | c | c |}
+        \hline
+        $X$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+         \hline
+        $P(X)$ & 0.15 & 0.20 & 0.34 & 0.19 & 0.06 & 0.05 & 0.01 \\
+         \hline
+    \end{tabular}
+	\end{center}
+\vspace{3mm}
+
+\noindent For all of the following problems, include \textbf{probability notation}, label values with the appropriate \textbf{symbol}, show your \textbf{work}, and include \textbf{units} wherever applicable.
+
+\vspace{3mm}
+
+\begin{questions} 
+		
+	\question  \textbf{Verify} that this is a valid discrete probability distribution.
+	
+	\begin{solution}[\stretch{1}]
+	
+	$0\leq P(x)\leq 1$ for all values of $x$
+	
+	\vspace{3mm}
+
+	$\sum P(x)=0.15+0.20+0.34+0.19+0.06+0.05+0.01=1$
+
+	\vspace{2mm}
+
+	\end{solution}
+	
+	\question Find the probability that a helicopter will \textbf{not be used} at all to transport patients in a month.
+	
+	\begin{solution}[\stretch{1}]
+
+	$P(X=0)=0.15$
+	
+	\vspace{2mm}
+	\end{solution}
+	
+	\question Find the probability that a helicopter will be used \textbf{at least once} to transport critical patients.
+	
+	\begin{solution}[\stretch{1}]
+
+	$P(X\geq 1)=1-P(X=0)=0.85$
+	
+	\vspace{2mm}
+	\end{solution}
+	
+	\question Find the \textbf{expected number} of times a helicopter will be used to transport critical patients each month. Show your work using the appropriate formula. (Use your calculator to \underline{check} your work.)
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{1mm}
+	$\mu_X=E(X)=0(0.15)+1(0.20)+2(0.34)+3(0.19)+4(0.06)+5(0.05)+6(0.01)=2$ transports
+	
+	\vspace{2mm}
+	\end{solution}
+	
+	\question \textbf{Interpret} the expected value in context of the problem.
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{1mm}
+	If we observed the number of helicopter transports for a large sample of months, we would expect the average number of transports per month to be 2 transports.
+	
+	\vspace{2mm}
+	\end{solution}
+	
+	\question Find the \textbf{standard deviation} of the number of times a helicopter will be used to transport critical patients in a month. Show your work using the appropriate formula. (Use your calculator to \underline{check} your work.)
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{2mm}
+	$\sigma_X^2=\sum \left[(x-\mu_X)^2\cdot P(x)\right]= (0-2)^2(0.15)+(1-2)^2(0.20)+\dots+(6-2)^2(0.01)=1.84$ transports$^2$
+	
+	\vspace{3mm}
+	
+	or $\sigma_X^2=\sum \left[ x^2 \cdot P(x) \right] -\mu_X^2 = 0^2(0.15)+1^2(0.20)+\dots+6^2(0.01)-2^2=1.84$ transports$^2$
+	\vspace{3mm}
+	
+	$\sigma_X=\sqrt{1.84 \text{ transports}^2}=1.36$ transports
+	\end{solution}
+	
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

@@ -1,0 +1,309 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 11 Practice Problems}
+\author{Section 11.1}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{2}
+\usepackage{cancel}
+
+\usepackage{scalerel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{2mm}
+
+\begin{questions} 
+
+\question An engineering education researcher wishes to determine whether there is a difference in the proportion of women enrolled in each of two engineering majors at U.S.\ colleges. She collects the following data from two random samples of U.S.\ college students enrolled in electrical and chemical engineering programs.
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\textbf{Engineering Major} & \textbf{Sample Size} & \textbf{Number of Women} & \textbf{Sample Proportion}\\
+\hline
+Electrical Engineering & 250 & 81 & \fillin[$\hat{p}_{\scaleto{E}{3pt}}=\frac{81}{250}=0.324$] \\
+\hline
+Chemical Engineering & 175 & 40 & \fillin[$\hat{p}_{\scaleto{C}{3pt}}=\frac{40}{175}=0.22857$]
+\end{tabular}
+\end{center}
+
+\noindent Construct a \textbf{90\% confidence interval} for the difference in the proportion of women enrolled in electrical engineering versus chemical engineering.
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part What are we estimating? (Define the parameters of interest.)
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+We are estimating $p_{\scaleto{E}{3pt}}-p_{\scaleto{C}{3pt}}$, where 
+
+$p_{\scaleto{E}{3pt}}=$ the true proportion of women enrolled in electrical engineering at U.S.\ colleges and 
+
+$p_{\scaleto{C}{3pt}}=$ the true proportion of women enrolled in chemical engineering at U.S.\ colleges.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Verify that the necessary conditions for a confidence interval for the difference in two population proportions are met.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+\begin{enumerate}
+	\item Independent random samples --- it is stated that U.S.\ college students were randomly selected from each engineering program.
+	
+	\item It can be reasonably assumed that $n_{\scaleto{E}{3pt}}=250< $ 5\% of all electrical engineering majors and
+	
+	 $n_{\scaleto{C}{3pt}}=175<$ 5\% of all chemical engineering majors.
+	
+	\item $n_{\scaleto{E}{3pt}}\hat{p}_{\scaleto{E}{3pt}}(1-\hat{p}_{\scaleto{E}{3pt}})=250(0.324)(1-0.324)=54.756 > 10$ and
+	
+	$n_{\scaleto{C}{3pt}}\hat{p}_{\scaleto{C}{3pt}}(1-\hat{p}_{\scaleto{C}{3pt}})=175(0.22857)(1-0.22857)=30.857 > 10$ 
+\end{enumerate}
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Compute the 90\% confidence interval for the parameter defined in Part (a).
+
+\begin{solution}[\stretch{1}]
+
+\begin{align*}
+\left(\hat{p}_{\scaleto{E}{3pt}}-\hat{p}_{\scaleto{C}{3pt}}\right) \pm z_{.05}\sqrt{\frac{\hat{p}_{\scaleto{E}{3pt}}(1-\hat{p}_{\scaleto{E}{3pt}})}{n_{\scaleto{E}{3pt}}}+\frac{\hat{p}_{\scaleto{C}{3pt}}(1-\hat{p}_{\scaleto{C}{3pt}})}{n_{\scaleto{C}{3pt}}}} &= (0.324-0.22857) \pm 1.645\sqrt{\frac{0.324(0.676)}{250}+\frac{0.22857(0.77143)}{175}} \\
+&= 0.09543 \pm 0.07140 \\ 
+%&= (0.02403, 0.16683) \\
+&\approx (0.024, 0.167)
+\end{align*}
+
+\end{solution}
+
+\part Interpret the confidence interval you found in Part (d).
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+We are 90\% confident that the true difference in the proportion of women in electrical engineering and women in chemical engineering (E--C) is between 0.024 and 0.167.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Based on the interval, can we infer that one type of engineering has a higher proportion of \mbox{women enrolled?}
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Yes, we can infer that electrical engineering has between 2.4\% and 16.7\% more women enrolled than chemical engineering because zero is not in the interval and the interval contains all positive values.
+
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+\question Suppose you wish to investigate whether the proportion of Clemson undergraduates who drink coffee regularly is lower than the proportion of Clemson graduate students who drink coffee regularly. You gather the following data from randomly selected undergraduate and graduate students at Clemson University.
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\textbf{Student Type} & \textbf{Sample Size} & \textbf{Drink Coffee} & \textbf{Sample Proportion}\\
+\hline
+Undergraduate & 320 & 206 & \fillin[$\hat{p}_{\scaleto{U}{3pt}}=\frac{206}{320}=0.64375$] \\
+\hline
+Graduate & 350 & 238 & \fillin[$\hat{p}_{\scaleto{G}{3pt}}=\frac{238}{350}=0.68$]
+\end{tabular}
+\end{center}
+
+\noindent Conduct a \textbf{hypothesis test} for the difference in the two proportions at the $\alpha=0.05$ level.
+
+\vspace{3mm} 
+
+\begin{parts}
+
+\part Define the parameters of interest in context and state your hypotheses.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Let $p_{\scaleto{U}{3pt}}=$ the true proportion of Clemson undergraduates who drink coffee regularly
+
+and $p_{\scaleto{G}{3pt}}=$ the true proportion of Clemson graduate students who drink coffee regularly.
+
+\vspace{3mm}
+
+$H_0:p_{\scaleto{U}{3pt}}=p_{\scaleto{G}{3pt}}$
+
+$H_1:p_{\scaleto{U}{3pt}}<p_{\scaleto{G}{3pt}}$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Check the appropriate conditions required for a valid hypothesis test.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+\begin{enumerate}
+	\item Independent random samples --- it is stated that Clemson undergraduate and graduate students were each randomly selected.
+	
+	\item It can be reasonably assumed that $n_{\scaleto{U}{3pt}}=320< $ 5\% of all Clemson undergraduates and
+	
+	 $n_{\scaleto{G}{3pt}}=350<$ 5\% of all Clemson graduate students.
+	
+	\item $n_{\scaleto{U}{3pt}}\hat{p}_{\scaleto{U}{3pt}}(1-\hat{p}_{\scaleto{U}{3pt}})=320(0.64375)(1-0.64375)=73.3875 > 10$ and
+	
+	$n_{\scaleto{G}{3pt}}\hat{p}_{\scaleto{G}{3pt}}(1-\hat{p}_{\scaleto{G}{3pt}})=350(0.68)(1-0.68)=76.16 > 10$ 
+\end{enumerate}
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Compute the test statistic.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\hat{p}_{\scaleto{U}{3pt}}=0.64375$, $\hat{p}_{\scaleto{G}{3pt}}=0.68$, $\hat{p}=\displaystyle \frac{x_{\scaleto{U}{3pt}}+x_{\scaleto{G}{3pt}}}{n_{\scaleto{U}{3pt}}-n_{\scaleto{G}{3pt}}}=\frac{206+238}{320+350}=\frac{444}{670}=0.66269$
+
+\vspace{3mm}
+
+$z_0=\displaystyle \frac{\hat{p}_{\scaleto{U}{3pt}}-\hat{p}_{\scaleto{G}{3pt}}}{\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_{\scaleto{U}{3pt}}}+\frac{1}{n_{\scaleto{G}{3pt}}}\right)}}=\frac{0.64375-0.68}{\sqrt{0.66269(1-0.66269)\left(\frac{1}{320}+\frac{1}{350}\right)}}\approx -0.99$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the associated p-value for the hypothesis test.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+p-value $=P(Z<-0.99)=0.1611$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part State your conclusion in context of the problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Do not reject $H_0$ because p-value $=0.1611>\alpha=0.05$. There is insufficient evidence to conclude that the proportion of Clemson undergraduates who drink coffee is lower than the proportion of Clemson graduate students who drink coffee.
+
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

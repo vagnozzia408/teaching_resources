@@ -1,0 +1,279 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 5 Practice Problems}
+\author{Sections 5.2--5.3}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{3mm}
+
+\begin{questions} 
+	
+	\vspace{3mm}
+	
+	\question Consider the following table of data collected from a sample of 36 students in STAT 3090 last fall. Students were asked whether they were a morning person or a night person, as well as what their hot beverage of choice is. Students could only choose one response for each variable.
+	
+	\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & \hspace{3mm} Coffee (C) \hspace{3mm} & \hspace{4mm} Tea (T) \hspace{4mm} & Hot Cocoa (H) & TOTAL\\
+ \hline
+ Morning Person (M) & 3 & 3 & 2 & 8 \\
+ \hline
+ Night Person (N) & 17 & 3 & 8 & 28 \\
+\hline
+TOTAL & 20 & 6 & 10 & 36 \\
+\hline
+\end{tabular}
+\end{center}
+
+For each of the following, use proper probability \textbf{notation}, write the associated \textbf{fraction}, and express your final answer as a \textbf{decimal} number rounded to four places. If you apply a probability rule (such as the Addition Rule or Complement Rule), \textbf{show the formula} in your work. 
+
+\vspace{3mm}
+
+Find the probability that a randomly selected student from the class\dots 
+
+\begin{parts}
+	
+	\vspace{3mm}
+	
+	\part Prefers tea
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(T)=\frac{6}{36}=0.1667$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is a morning person \textbf{and} prefers coffee
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(M\text{ and } C)=\frac{3}{36}=0.0833$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is a night person \textbf{and} prefers hot cocoa
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(N\text{ and } H)=\frac{8}{36}=0.2222$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Prefers tea \textbf{or} hot cocoa
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(T\text{ or } H)=\frac{6}{36}+\frac{10}{36}-0=\frac{16}{36}=0.4444$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Prefers coffee \textbf{or} is a morning person
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(C\text{ or } M)=\frac{20}{36}+\frac{8}{36}-\frac{3}{36}=\frac{25}{36}=0.6944$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is \textbf{not} a night person
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(N^C)=1-P(N)=1-\frac{28}{36}=\frac{8}{36}=0.2222$
+	\vspace{3mm}
+	\end{solution}
+	
+	
+	\part Does \textbf{not} prefer coffee or tea
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	There are two ways to think about this problem. You could directly apply the Complement Rule: $P\left((C \text{ or } T)^C\right)=1-P(C\text{ or } T)=1-\left(\frac{20}{36}+\frac{6}{36}-0\right)=\frac{10}{36}=0.2778$
+	
+	\vspace{3mm}
+	
+	Or you could consider that the complement of $C$ or $T$ is $(C\text{ or } T)^C=H$:
+	
+	$P\left((C\text{ or } T)^C\right)=P(H)=\frac{10}{36}=0.2778$
+	\vspace{3mm}
+	\end{solution}
+	
+\end{parts}
+
+\newpage
+
+\question Identify two mutually exclusive events in this situation. What is the probability of their \textbf{intersection}, i.e., the probability that they both occur at the same time? Express your answer using probability notation.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Example: ``Being a morning person and a night person are mutually exclusive. $P(M\cap N)=0$''
+
+\vspace{3mm}
+\end{solution} 
+
+\question There were two variables used to record responses from students in the sample: whether a student is a morning or night person, and what their hot beverage of choice is. 
+
+\vspace{3mm}
+
+\begin{parts}
+	\part What \textbf{type} of variables are these?
+	
+	\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Qualitative
+
+\vspace{3mm}
+\end{solution} 
+	
+	\part What \textbf{level of measurement} do both of these variables have?
+	\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Nominal
+
+\vspace{3mm}
+\end{solution}
+
+\end{parts}
+
+\question General Leia Organa can plan a campaign to fight one major intergalactic battle or three small galactic battles. She believes she has a probability of 0.77 of winning the large battle ($L$) and a probability of 0.89 of winning each of the small battles ($S$). Victories or defeats in the small battles are independent. Leia must win either the large battle or all three small battles to win the campaign. Which strategy should she choose?
+
+\vspace{3mm}
+
+\begin{parts}
+\part First find the probability of winning the large battle.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+$P(L)=0.77$
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the probability of winning all three small battles.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+$P(S \text{ and } S \text{ and } S) = P(S)P(S)P(S)=(0.89)^3=0.7050$
+\vspace{3mm}
+
+\end{solution}
+
+\part Which strategy should she choose if she wants to win the campaign? Justify your answer.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+She should choose to fight the large intergalactic battle since there is a higher probability of winning it than winning three small battles.
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+ 
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

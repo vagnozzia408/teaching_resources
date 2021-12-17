@@ -1,0 +1,627 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 7 Practice Problems}
+\author{Sections 7.1--7.3}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{4mm}
+
+\noindent For each problem, you should draw and label a sketch, include probability notation when appropriate, and show any work used to calculate probabilities and z-scores.
+
+\vspace{3mm}
+
+\begin{questions} 
+
+\question The height of hobbits, $X$, is normally distributed with a mean of 42 in.\ and a standard deviation of 2.7 in.
+\vspace{3mm}
+
+\begin{parts}
+
+\part Frodo is 46 inches tall. What proportion of hobbits is shorter than Frodo?
+
+\begin{solution}[\stretch{1}]
+
+\begin{multicols}{2}
+[]
+    \begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.7}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=-.5:\y] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.48$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 2) {0.9306};
+        \draw[-] (.6,1.8) -- (3,1);
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+    
+    \vspace{3mm}
+
+$z=\displaystyle\frac{46-42}{2.7}=1.48$
+
+\vspace{5mm}
+
+$P(X<46)=P(Z<1.48)=0.9306$
+
+\end{multicols}
+
+\end{solution}
+
+\part What is the probability that a randomly selected hobbit is between 40 and 45 inches tall?
+
+\begin{solution}[\stretch{1}]
+
+\begin{multicols}{2}
+[]
+    \begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\mu{3}
+        \def\y{4.2}
+        \def\x{2}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fx{2.5*1/exp(((\x-3)^2)/2)}
+        \fill [fill=purp!30] ({\x},0) -- plot[domain={\x}:{\y}] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.11$}};
+        \draw[dashed] ({\x},{\fx}) -- ({\x},0) node[below] {\small{$-0.74$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (5.5, 2.2) {0.6369};
+        \draw[-] (5.5,2) -- (3,1);
+        \node[] at (7.0,0) {$Z$};
+        \node[] at (.5,2) {0.2296};
+        \draw[-] (.5,1.8) -- (1.2,.3);
+
+    \end{tikzpicture}
+    
+    \vspace{3mm}
+
+$z_1=\displaystyle\frac{40-42}{2.7}=-0.74$
+
+\vspace{5mm}
+
+$z_2=\displaystyle\frac{45-42}{2.7}=1.11$
+
+\end{multicols}
+
+\vspace{1mm}
+
+$P(40<X<45) = P(-0.74<Z<1.11) = P(Z<1.11)-P(Z<-0.74) = 0.8665 - 0.2296 = 0.6369$
+
+\vspace{3mm}
+		   
+\end{solution}
+    
+\end{parts}
+
+\question The height of elves, $Y$, is normally distributed with a mean of 75 in.\ and a standard deviation of 3.5 in.
+
+\vspace{3mm} 
+
+\begin{parts}
+
+	\part Legolas is 80 inches tall. What is the probability that a randomly selected elf is taller than Legolas?
+	
+	\begin{solution}[\stretch{1}]
+	\begin{multicols}{2}
+[]
+    \begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.4}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+\fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.7] (\normaltwo) -- ({\y},0) -- cycle;        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.43$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 2) {0.9236};
+        \draw[-] (.6,1.8) -- (3,1);
+        \node[] at (7.0,0) {$Z$};
+        \node[] at (5.5,1) {$0.0764$};
+        \draw[-] (5.5,0.8) -- (5,.2);
+    \end{tikzpicture}
+    
+    \vspace{3mm}
+
+$z=\displaystyle\frac{80-75}{3.5}=1.43$
+
+\end{multicols}
+$P(X>80)=P(Z>1.43)= 1-P(Z<1.43)= 1-0.9236=0.0764$
+
+\vspace{3mm}
+	\end{solution}
+
+\part Find the minimum height of an elf who falls in the tallest 25\% of elves.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+\begin{multicols}{2}
+[]
+    \begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.2}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{?}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 2) {0.7500};
+        \draw[-] (.6,1.8) -- (3,1);
+        \node[] at (7.0,0) {$Z$};
+       	\node[] at (5.4,1) {0.2500};
+       	\draw[-] (5.4,0.8) -- (5,.2);
+    \end{tikzpicture}
+    
+    \vspace{3mm}
+
+From the table: $z\approx 0.67$
+
+\vspace{5mm}
+
+$0.67=\displaystyle\frac{x-75}{3.5}$
+
+\vspace{3mm}
+
+$x=0.67(3.5)+75=77.345$ in.
+
+\end{multicols}
+
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+
+\fullwidth{Use the standard normal distribution table to answer the following questions. Draw a sketch with the correct shaded area and show any work used to compute $z$-scores.}
+
+
+\vspace{3mm}
+
+		
+	\question  Find the following probabilities for a standard normal random variable $Z$.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part $P(Z<0.19)$
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	$P(Z<0.19)=0.5753$
+	
+	\vspace{1mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{3.4}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=-.5:\y] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{\hspace{4mm}$0.19$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1.8) {0.5753};
+        \draw[-] (.6,1.6) -- (2.8,.8);
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+	
+	\vspace{2mm}
+	
+	\end{solution}
+	
+	\part $P(Z>1.74)$
+	
+	\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	$P(Z>1.74)=1-P(Z<1.74)=1-0.9591=0.0409$
+	
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.4}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.74$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1.8) {0.9591};
+        \draw[-] (.6,1.6) -- (2.8,.8);
+        \node[] at (7.0,0) {$Z$};
+        \node[] at (5.5, 1.8) {0.0409};
+        \draw[-] (5.5,1.6) -- (5,.15);
+    \end{tikzpicture}
+	
+	\vspace{2mm}
+	
+	\end{solution}
+	
+	\part $P(-2.14\leq Z\leq 1.88)$
+	
+	\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	$P(-2.14\leq Z\leq 1.88)=P(Z<1.88)-P(Z<-2.14)=0.9699-0.0162=0.9537$
+	
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.6}
+        \def\z{1.15}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (\z,0) -- plot[domain=\z:\y] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.88$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-2.14$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1) {0.0162};
+        \draw[-] (.5,0.8) -- (.8,.15);
+        \node[] at (7.0,0) {$Z$};
+        \draw[-] (-.5,2.9) -- (\y,2.9);
+        \draw[-] (-.5,2.9) -- (-.5,2.7);
+        \draw[-] (\y,2.9) -- (\y,2.7);
+        \node[] at (2.05,3.1) {0.9699};
+    \end{tikzpicture}
+	
+	\vspace{2mm}
+	
+	\end{solution}
+	
+	\part $P(|Z|>1.52)$
+	
+	\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	$P(|Z|>1.52)=P(Z>1.52)+P(Z<-1.52)=2(0.0643)=0.1286$
+	
+	\vspace{3mm}
+	
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.2}
+        \def\z{1.8}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- ({6.5},0) -- cycle;
+        \fill [fill=purp!30] (-.5,0) -- plot[domain=-.5:\z] (\normaltwo) -- (\z,0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.52$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-1.52$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1) {0.0643};
+        \draw[-] (.5,0.8) -- (1,.2);
+        \node[] at (7.0,0) {$Z$};
+        \node[] at (5.5,1) {0.0643};
+        \draw[-] (5.5,0.8) -- (5,.2);
+    \end{tikzpicture}
+	
+	\end{solution}
+	
+	\end{parts}
+	
+	\newpage 
+	
+	\question The annual salaries of employees in a large company are approximately normally distributed with a mean of \$50,000 and a standard deviation of \$20,000.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+		
+		\part What proportion of employees at the company earn less than \$35,000?
+		
+		\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	$z=\frac{35,000-50,000}{20,000}=-0.75$
+	
+	\vspace{3mm}
+	
+	$P(Z<-0.75)=0.2266$
+	
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{2.2}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=-.5:\y] (\normaltwo) -- (\y,0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$-0.75$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 2) {0.2266};
+        \draw[-] (.5,1.8) -- (1.5,.5);
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+	
+	\vspace{3mm}
+	
+	\end{solution}
+		
+		\part What is the probability that a randomly selected employee at the company earn between \$45,000 and \$78,000?
+		
+		\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	$z=\frac{45,000-50,000}{20,000}=-0.25$ \hspace{10mm} $z=\frac{78,000-50,000}{20,000}=1.40$
+	
+	\vspace{3mm}
+	
+	$P(-0.25<Z<1.40)=P(Z<1.40)-P(Z<-0.25)=0.9192-0.4013=0.5179$
+	
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{2.5}
+        \def\z{4.5}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:\z] (\normaltwo) -- (\z,0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\hspace{-3mm}\small{$-0.25$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$1.40$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 2) {0.4013};
+        \draw[-] (.5,1.8) -- (1.5,.5);
+        \node[] at (7.0,0) {$Z$};
+        
+        \draw[-] (-.5,2.9) -- (\z,2.9);
+        \draw[-] (-.5,2.9) -- (-.5,2.7);
+        \draw[-] (\z,2.9) -- (\z,2.7);
+        \node[] at (2.0,3.1) {0.9192};
+    \end{tikzpicture}
+	
+	\vspace{3mm}
+	
+	\end{solution}
+		
+		\part What proportion of people earn more than \$117,000?
+			
+		\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	$z=\frac{117,000-50,000}{20,000}=3.35$
+	
+	\vspace{3mm} 
+	
+	$P(Z>3.35)=1-P(Z<3.35)=1-0.9996=0.0004$
+	
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{5.1}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$3.35$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1.8) {0.9996};
+        \draw[-] (.6,1.6) -- (2.8,.8);
+        \node[] at (7.0,0) {$Z$};
+        \node[] at (5.6, 1.3) {0.0004};
+        \draw[-] (5.6,1.1) -- (5.2,.15);
+    \end{tikzpicture}
+	
+	\vspace{3mm}
+	
+	\end{solution}	
+%			\newpage
+			
+		\part When the coronavirus pandemic caused business operations to be suspended and people to be placed on temporary leave from their jobs, the company gave its employees with the lowest 15\% of salaries a stipend to make up for lost time on the job. What is the salary cutoff that determines whether someone receives the stipend?
+		
+\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{2}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=-.5:\y] (\normaltwo) -- (\y,0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$-1.04$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 2) {0.1500};
+        \draw[-] (.5,1.8) -- (1.5,.5);
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+    
+    \vspace{3mm}
+    
+    From the table: $z\approx -1.04$
+    
+    (between $z=-1.03$ and $z=-1.04$, take the one with the probability closer to 0.1500)
+	
+	\vspace{3mm}
+	
+    $-1.04=\frac{x-50,000}{20,000}$
+    
+    \vspace{3mm}
+    
+    $x=-1.04(20,000)+50,000=\$29,200$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+		
+		\part To make up for some of the business losses, the company plans to ask employees with the highest 6\% of salaries to take one week of unpaid leave. What is the minimum salary that an employee who needs to take a week of unpaid leave will have?
+		
+		\begin{solution}[\stretch{1}]
+
+	\vspace{3mm}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.8}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.55$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1.8) {0.9400};
+        \draw[-] (.6,1.6) -- (2.8,.8);
+        \node[] at (7.0,0) {$Z$};
+        \node[] at (5.5, 1.8) {0.0600};
+        \draw[-] (5.5,1.6) -- (5,.15);
+    \end{tikzpicture}
+	
+	\vspace{3mm}
+    
+    From the table: $z=\frac{1.55+1.56}{2}=1.555$
+    
+    (between $z=1.55$ and $z=1.56$, probabilities are equally far from 0.9400, so take the average)
+	
+	\vspace{3mm}
+	
+    $1.555=\frac{x-50,000}{20,000}$
+    
+    \vspace{3mm}
+    
+    $x=1.555(20,000)+50,000=\$81,100$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+		
+		
+	\end{parts}
+	
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

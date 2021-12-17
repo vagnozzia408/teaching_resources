@@ -1,0 +1,355 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 4 Practice Problems}
+\author{Sections 4.1--4.2}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.25}
+\usepackage{cancel}
+
+\usepackage{scalerel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.4in}p{3.5in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{2mm}
+
+\noindent Use JMP to answer the following questions. Instructions for how to find the relevant values in JMP are included in Chapter 4 of your Lecture Guide.
+
+\begin{questions} 
+
+\question A company wishes to study the relationship between sales volume and the amount of money spent on advertisements. The following data are collected.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Advertising} & \textbf{Sales Volume} \\
+(thousand dollars) & (thousand dollars) \\
+\hline
+100 & 400 \\
+\hline
+200 & 550 \\
+\hline
+300 & 800 \\
+\hline
+400 & 1200 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+
+\begin{parts}
+
+\part Identify the \textbf{explanatory} and \textbf{response} variables.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+\underline{Explanatory}: Amount spent on advertising (in thous.\ dollars), \underline{Response}: Sales volume (in thous.\ dollars)
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find and interpret the \textbf{correlation coefficient} in context of the problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$r=0.9783$. There is a strong, positive linear relationship between amount spent on ads and  \mbox{sales volume.}
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Using \textbf{Table II} in Chapter 4 of your Lecture Guide, determine whether there is a linear relationship between the two variables.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Critical value for $n=4$: 0.950
+
+$|r|=|0.9782|=0.9783>0.950 \; \Rightarrow$ There is a linear relationship.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part What is the least-squares \textbf{regression equation}? 
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\hat{y}=75+2.65x$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Interpret the \textbf{slope} of the regression equation.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+For every additional one thousand dollars (\$1,000) spent on advertising, sales volume is predicted to increase on average by 2.65 thousand dollars (\$2,650).
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Does the \textbf{y-intercept} of the regression equation have a valid interpretation in this context? If so, interpret it. If not, explain why.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+The y-intercept of $b_0=75$ does not have a valid interpretation in this context because zero thousand dollars is outside the range of observed advertising expense amounts.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the \textbf{predicted} sales volume when \$400,000 are spent on advertising.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\hat{y}=75+2.65(400)=1135$ thousand dollars (\$1,135,000)
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the \textbf{residual} for when \$400,000 are spent on advertising.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$y-\hat{y}=1200-1135=65$ thousand dollars
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+\question An economist wants to determine the relationship between one's FICO score (a measure of credit score) and the interest rate of a 36-month auto loan. The data in the table below represent the interest rate (in percent) that a bank might offer on a 36-month auto loan for a sample of various FICO score.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{FICO Score} & 545 & 595 & 640 & 675 & 705 & 750 \\
+\hline
+\textbf{Interest Rate (\%)} & 18.982 & 17.967 & 12.218 & 8.612 & 6.680 & 5.150 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+
+\begin{parts}
+
+\part Identify the \textbf{explanatory} and \textbf{response} variables.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+\underline{Explanatory}: FICO score, \underline{Response}: Interest rate on a 36-month auto loan (in percent)
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find and interpret the \textbf{correlation coefficient} in context of the problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$r=-0.9759$. There is a strong, negative linear relationship between FICO score and interest rate.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Using \textbf{Table II} in Chapter 4 of your Lecture Guide, determine whether there is a linear relationship between the two variables.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Critical value for $n=6$: 0.811
+
+$|r|=|-0.9759|=0.9759>0.811 \; \Rightarrow$ There is a linear relationship.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part What is the least-squares \textbf{regression equation}? Round values to three decimal places.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\hat{y}=61.369-0.076x$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Interpret the \textbf{slope} of the regression equation.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+For every additional point on someone's FICO score, the interest rate on a 36-month auto loan is predicted to decrease on average by 0.076\%.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Does the \textbf{y-intercept} of the regression equation have a valid interpretation in this context? If so, interpret it. If not, explain why.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+The y-intercept of $b_0=61.369$ does not have a valid interpretation because a FICO score of zero is not within the range of observed credit scores.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the \textbf{predicted} sales volume for someone with a FICO score of 640. 
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\hat{y}=61.369-0.076(640)=12.729$\%
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the \textbf{residual} for someone with a FICO score of 640.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$y-\hat{y}=12.218-12.729=-0.511$\%
+
+\vspace{3mm}
+
+The interest rate for someone with a FICO score of 640 is actually 0.511\% less than the regression equation predicts.
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

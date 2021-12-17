@@ -1,0 +1,384 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 8 Practice Problems}
+\author{Sections 8.1--8.2}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{4mm}
+
+\begin{questions} 
+
+\question Let $X=$ the number of large bags of popcorn sold by a local movie theater in a day. Suppose that $X$ is normally distributed with a mean of 230 bags and a standard deviation of 29 bags.
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part Describe the distribution of $\overline{X}$, the \textbf{average} number of large bags of popcorn sold in a random sample of 7 days, by identifying the \textbf{mean} $\mu_{\overline{X}}$ and the \textbf{standard error} $\sigma_{\overline{X}}$.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\mu_{\overline{X}}=\mu_X=230$ large popcorn bags
+
+\vspace{3mm}
+
+$\sigma_{\overline{X}}= \frac{29}{\sqrt{7}}=10.96$ large popcorn bags
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Can we use the normal distribution to find probabilities for $\overline{X}$? How do you know?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Yes. Because the population $X$ is normally distributed, we can conclude that $\overline{X}$ is approximately normally distributed.
+
+\vspace{3mm}
+		   
+\end{solution}
+
+\part What is the probability that, on a \textbf{single} day, the theater will sell more than 250 popcorn bags?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$z=\frac{250-230}{29}=0.69$
+
+\vspace{3mm}
+
+$P(X>250)=P(Z>0.69)=1-P(Z<0.69)=1-0.7549=0.2451$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part If seven days are randomly selected, what is the probability that the \textbf{average} number of popcorn bags sold per day will be greater than 250?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$z=\frac{250-230}{10.96}=1.82$
+
+\vspace{3mm}
+
+$P(\overline{X}>250)=P(Z>1.82)=1-P(Z<1.82)=1-0.9656=0.0344$
+
+\vspace{3mm}
+
+\end{solution}
+    
+\end{parts}
+
+\question Leslie has been tasked with putting together a report for Ron regarding the use of a park in Pawnee. Previous data show that 72\% of the residents in Pawnee visited the park in the last month. 
+
+\begin{parts}
+
+\vspace{3mm}
+
+\part Describe the distribution of $\hat{p}$, the \textbf{proportion} of residents in a random sample of 150 who visit the park in a month, by identifying the \textbf{mean} $\mu_{\hat{p}}$ and \textbf{standard error} $\sigma_{\hat{p}}$. Round standard error to four decimal places.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\mu_{\hat{p}}=p=0.72$
+
+\vspace{3mm}
+
+$\sigma_{\hat{p}}=\sqrt{\frac{0.72(0.28)}{150}}=0.0367$
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Is the distribution of $\hat{p}$ approximately normally distributed? How can you tell?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$np(1-p)=150(0.72)(0.28)=30.24\geq 10 \Rightarrow \hat{p}$ is approximately normally distributed.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part What is the probability that more than 99 individuals in a random sample of 150 residents have visited the park in the last month?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\hat{p}=\frac{99}{150}=0.66$
+
+\vspace{3mm}
+
+$z=\frac{0.66-0.72}{0.0367}=-1.63$
+
+\vspace{3mm}
+
+$P(\hat{p}>0.66)=P(Z>-1.63)=1-P(Z<-1.63)=1-0.0516=0.9484$
+\end{solution}
+
+\end{parts}
+
+
+\newpage
+
+\question Given that a continuous random variable $X$ is normally distributed with a mean of 40 and a standard deviation of 13, calculate the probability that a sample of size 49 has a mean of\dots
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part Greater than 37
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$z=\frac{37-40}{\nicefrac{13}{\sqrt{49}}}=-1.62$
+
+\vspace{3mm}
+
+$P\left(\overline{X}>37\right)=P(Z>-1.62)=1-0.0526=0.9474$
+
+\vspace{3mm}
+\end{solution}
+
+\part At least 42.5
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$z=\frac{42.5-40}{\nicefrac{13}{\sqrt{49}}}=1.35$
+
+\vspace{3mm}
+
+$P\left(\overline{X}\geq42.5\right)=P(Z\geq1.35)=1-0.9115=0.0885$
+
+\vspace{3mm}
+\end{solution}
+
+\part Between 39 and 43
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+Lower $z=\frac{39-40}{\nicefrac{13}{\sqrt{49}}}=-0.54$, Upper $z=\frac{43-40}{\nicefrac{13}{\sqrt{49}}}=1.62$
+
+\vspace{3mm}
+
+$P\left(39<\overline{X}<43\right)=P(-0.54<Z<1.62)=0.9474-0.2946=0.6528$
+
+\vspace{3mm}
+\end{solution}
+
+\part No more than 35
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$z=\frac{35-40}{\nicefrac{13}{\sqrt{49}}}=-2.69$
+
+\vspace{3mm}
+
+$P\left(\overline{X}\leq35\right)=P(Z<-2.69)=0.0036$
+
+\vspace{3mm}
+\end{solution}
+
+\end{parts}
+
+\question All Clear Windows makes windows for use in homes and commercial buildings. The standards for glass thickness call for the glass to average 0.375 inches with a standard deviation of 0.050 inches. Let $\overline{X}$ represent the mean thickness of 50 randomly selected windows.
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part Describe the center, spread, and shape of the distribution of $\overline{X}$.
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+\underline{Center}: $\mu_{\overline{X}}=\mu_X=0.375$ in.
+
+\vspace{3mm}
+
+\underline{Spread}: $\sigma_{\overline{X}}=\frac{0.050}{\sqrt{50}}=0.007$ in.
+
+\vspace{3mm}
+
+\underline{Shape}: Because $n=50\geq30$, $\overline{X}$ follows an approx.\ normal distribution by the Central Limit Theorem.
+
+\vspace{3mm}
+\end{solution}
+
+\part Suppose a random sample of $n=50$ windows yields a mean thickness of 0.392 inches. What is the likelihood of observing a sample with a mean thickness at least as thick as ours?
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$z=\frac{0.392-0.375}{\nicefrac{0.050}{\sqrt{50}}}=2.40$
+
+\vspace{3mm}
+
+$P\left(\overline{X}>0.392\right)=P(Z>2.40)=1-0.9918=0.0082$
+
+\vspace{3mm}
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+\question A nationwide survey analyzing trends in popular media found that 81\% of U.S.\ college students prefer British baking shows over American baking shows. You are interested to see if this result holds at your university, which has a student population of about 30,000. You take a random sample of 140 students on campus and find that 125 of them prefer watching British baking shows.
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part Can you use the normal distribution to find probabilities for the sample proportion $\hat{p}$ of students at your university who prefer British baking shows? Check the appropriate condition to justify your answer.
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+Yes. Because $np(1-p)=140(0.81)(1-0.81)=21.546\geq10$, $\hat{p}$ follows an approximately normal distribution.
+
+\vspace{3mm}
+\end{solution}
+
+\part Find the probability of obtaining a sample where $\hat{p}$ is at least as great as your sample.
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$\hat{p}=\frac{125}{140}\approx0.89$
+\vspace{3mm}
+
+$z=\frac{0.89-0.81}{\sqrt{\frac{0.81(0.19)}{140}}}=2.41$
+
+\vspace{3mm}
+
+$P(\hat{p}>0.89)=P(Z>2.41)=1-0.9920=0.0080$
+\vspace{3mm}
+\end{solution}
+
+\part Does your result cause you to suspect that the national result is an over- or an underestimate for your university? Explain your reasoning.
+
+\begin{solution}[\stretch{4}]
+
+\vspace{3mm}
+
+The probability of obtaining a sample of 140 where 89\% or more prefer British baking shows is small (less than 1\%), meaning that this is a rare event. This may cause us to suspect that the national result underestimates the true proportion at our university. 
+
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

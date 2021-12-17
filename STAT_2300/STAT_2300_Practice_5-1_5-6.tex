@@ -1,0 +1,396 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{More Chapter 5 Practice}
+\author{Vagnozzi}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{3mm}
+
+\noindent This problem set is to help you become comfortable applying the counting rules and probability rules from \textbf{Chapter~5}. Many probability problems will use more than one rule, so a good strategy for answering probability questions is to first write down all the information you know from the problem, identify for what quantity you wish to solve, then identify any formulas that correspond to these pieces of information.
+
+\vspace{3mm}
+
+\noindent \textbf{Note:} This worksheet only contains problems related to Chapter 5, and is not comprehensive. It does not cover discrete probability distributions (Chapter 6), continuous probability distributions (Chapter 7), or the sampling distribution for sample mean (Section 8.1). To fully prepare for the exam, take advantage of as many resources as possible from the \textbf{Test \#2 Study Resources} page on Canvas.
+
+\vspace{3mm}
+
+\begin{questions} 
+
+	\question Your instructor has four favorite hiking locations in Clemson: Todd Creek Falls (T), Waldrop Falls (W), Meadow Falls~(M), and the Issaqueena Lake trail in the Experimental Forest (I). One weekend, she decides to spend both Saturday and Sunday hiking. Assuming she will only visit one hiking location in a day and won't hike the same trail twice, answer the following questions.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Construct a sample space of possible different ways Ms.\ V could hike over the two-day weekend.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	We assume that order matters unless we are told otherwise.
+	
+	\vspace{3mm}
+	
+	$S=\left\{\text{TW, TM, TI, WT, WM, WI, MT, MW, MI, IT, IM, IW}\right\}$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Your instructor is indecisive, so she decides to write the name of each hiking location on slips of paper, put them in a bowl, and randomly choose two locations. What is the probability that one of the hiking location she visits over the weekend will be Todd Creek Falls?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Randomly selecting the slips of paper means that each outcome is equally likely. There are 12 items in the sample space, so the probability of each is $\frac{1}{12}$.
+	
+	\vspace{3mm}
+	
+	$P(\text{visits Todd Creek Falls})=\displaystyle\frac{\text{\# outcomes including Todd Creek Falls}}{\text{total \# of possibilities}}=\frac{6}{12}=\frac{1}{2}$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part What is the probability that she chooses to hike the Issaqueena Lake trail on Saturday?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	$P(\text{visits Issaqueena Lake first})=\displaystyle\frac{\text{\# outcomes with I first}}{\text{total \# of possibilities}}=\frac{3}{12}=\frac{1}{4}$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\end{parts}
+	
+	\question Your Pie and BGR are two popular restaurants in Downtown Clemson. If a Clemson student is randomly selected, suppose the probability that they have eaten at Your Pie is 0.71 and the probability that they have eaten at BGR is 0.68. Suppose that, because each restaurant serves different types of food, these events are independent. Find the probability that a randomly selected Clemson student has eaten at either restaurant.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Information given: $P(\text{Your Pie})=0.71$, $P(\text{BGR})=0.68$, eating at Your Pie and BGR are independent events. We wish to find the probability that a student has eaten at Your Pie \textbf{or} BGR.
+	
+	\vspace{3mm}
+	
+	Applying the addition rule and the property that the events are independent:
+	
+	\begin{align*}
+	P(\text{Your Pie or BGR}) &= P(\text{Your Pie})+P(\text{BGR})-P(\text{Your Pie and BGR)})\\
+	&= P(\text{Your Pie})+P(\text{BGR})-P(\text{Your Pie})P(\text{BGR})\\
+	&= 0.71+0.68-(0.71)(0.68)\\
+	&= 0.9072
+	\end{align*}		
+	\end{solution}
+	
+\newpage
+	
+	\question Last semester, 11.5\% of Ms.\ V's STAT 2300 students were Animal and Veterinary Science majors and 50\% were sophomores. 63.6\% of the Animal and Veterinary Science majors were sophomores. 
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part If a student from Ms.\ V's STAT 2300 section was selected at random, what is the probability that they are a sophomore majoring in Animal and Veterinary Science?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Let $A$ be the event that one of Ms.\ V's STAT 2300 students is an Animal and Veterinary Science major and $S$ be the event that one of her students is a sophomore.
+	
+	\vspace{3mm}
+	
+	Information given: $P(A)=0.115$, $P(S)=0.50$, $P(S|A)=0.636$
+	
+	\vspace{3mm}
+	
+	We do not know whether being a sophomore and being an Animal and Veterinary Science major are independent, so we should use the \textbf{general multiplication rule} for probability to find the probability that a student is both a sophomore \textbf{and} an Animal and Vet Science major.
+	
+	\vspace{3mm}
+	
+	$P(A\text{ and }S)=P(S|A)P(A)=0.636(0.115)=0.0731$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Are being a sophomore and being an Animal and Veterinary Science major mutually exclusive? How do you know?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	A student may be both a sophomore \textbf{and} an Animal and Veterinary Science major. $A$ and $S$ are \textbf{not} mutually exclusive because $P(A\text{ and }S)\neq0$. 
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Are being a sophomore and being an Animal and Veterinary Science major independent? How do you know?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	We can see that $A$ and $S$ are not independent because $P(S|A)\neq P(S)$.
+	
+	\vspace{3mm}
+	
+	Another way that we could verify this is by checking whether $P(A)\cdot P(S)=P(A\text{ and }S)$:
+	$$P(A)\cdot P(S)=(0.115)(0.50)=0.0575\neq 0.0731=P(A\text{ and }S)$$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part What is the probability that a randomly selected STAT 2300 student from Ms.\ V's section is a sophomore or an Animal and Veterinary Science major?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	We are asked about an ``or'' event, indicating that we wish to find the union of $A$ and $S$. We can do so using the addition rule.
+		
+	\begin{align*}
+	P(A\text{ or }S) &= P(A)+P(S)-P(A\text{ and }S) \\
+	&= 0.115+0.50-0.0731 \\
+	&=0.5419
+	\end{align*}
+	
+	
+	\vspace{3mm}
+
+	\end{solution}
+	
+	\end{parts}
+	
+\newpage
+
+	\question 4-H is a youth development program for young people ages 8--18 years old to learn leadership, service, and other life skills. An avid 4-H member has attended a lot of 4-H events and now has an impressive collection of thirty-four 4-H t-shirts. He is attending a four-day event this summer and wants to wear a different shirt each day.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part He is curious to know how many four-day outfit possibilities he could have from his t-shirt collection. How many ways could he wear four different t-shirts over the four days?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	This scenario occurs \textbf{without replacement} because we are told to consider how he can wear \textit{different} shirts each day. Because we are interested in how he's wearing the t-shirts on each of the different days, we assume \textbf{order matters} here and can use the permutations rule (note that this is a special case of the multiplication rule for counting).
+	
+	\vspace{3mm}
+	
+	$34\cdot 33\cdot 32\cdot 31=1,113,024$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part How many ways are there to choose which four t-shirts he packs in his suitcase?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Because he can't pack the same shirt twice, this scenario occurs \textbf{without replacement}. The order in which he packs the t-shirts does \textbf{not} matter (he is packing them regardless of in which order he picks them), so we can use the combinations rule.
+	
+	\vspace{3mm}
+	
+	$_{34}C_4=\displaystyle\frac{34!}{4!(34-4)!}=\frac{34!}{4!\;30!}=\frac{34\cdot 33\cdot 32\cdot 31}{4\cdot 3\cdot 2\cdot 1}=46,376$ ways
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Out of his collection, seven of the t-shirts are green. What is the probability that he packs four green t-shirts?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Number of ways to choose four green t-shirts: $_7C_4=\displaystyle \frac{7!}{4!\;3!}=\frac{7\cdot 6\cdot 5\cdot \cancel{4}\cdot \cancel{3}\cdot \cancel{2}\cdot \cancel{1}}{\cancel{4}\cdot \cancel{3}\cdot \cancel{2}\cdot \cancel{1}\cdot 3\cdot 2\cdot 1}=35$ ways
+
+	\vspace{3mm}
+	
+	$P(\text{chooses four green shirts})=\displaystyle\frac{_7C_4}{_{34}C_4}=\frac{35}{46,376}=0.0008$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Nine of the t-shirts in his collection came from local county-level events. What is the probability that he does \textbf{not} pack a shirt from a county-level event?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Number of ways to choose a four shirts from a county-level event: 
+	$$_9C_4=\displaystyle\frac{9!}{4!\;5!}=\frac{9\cdot 8\cdot 7\cdot 6\cdot \cancel{5}\cdot \cancel{4}\cdot \cancel{3}\cdot \cancel{2}\cdot \cancel{1}}{4\cdot 3\cdot 2\cdot 1\cdot \cancel{5}\cdot \cancel{4}\cdot \cancel{3}\cdot \cancel{2}\cdot \cancel{1}}=126\text{ ways}$$
+		
+	\begin{align*}
+	P(\text{does not choose a county shirt}) &= 1-P(\text{chooses a county shirt})\\
+	&= 1-\displaystyle\frac{_9C_4}{_{34}C_4} \\
+	&= 1-\frac{126}{46,376} \\
+	&= 1-0.0027 \\
+	&= 0.9973
+	\end{align*}
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\end{parts}
+	
+	\newpage 
+	
+	\question Succulent Studios is a company that offers monthly succulent subscription boxes, in which two cute little plants are shipped to your front door for \$16.50 per month. Suppose there is a 15\% chance that a monthly box contains a rare succulent, a 2.5\% chance that it will have a third bonus succulent, and a 0.5\% chance that it will contain both. The company announces that they will include a bonus succulent for the month of December. Knowing this information, what is the probability that the box also contains a rare succulent?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	(Yes, this subscription service is real, and yes, your instructor is very extra and was totally signed up for this until she ran out of shelf space for plants.) 
+	
+	\vspace{3mm}
+	
+	Let $R$ be the event that the box includes a rare succulent and $B$ be the event that the box includes a bonus succulent.
+	
+	\vspace{3mm}
+	
+	Information given: $P(R)=0.15$, $P(B)=0.025$, $P(R\text{ and }B)=0.005$. We want to know the probability of a box containing a rare succulent \textbf{given} that it includes a bonus succulent.
+	
+	\vspace{3mm}
+	
+	$P(R|B)=\displaystyle\frac{P(R\text{ and }B)}{P(B)}=\frac{0.005}{0.025}=0.20$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\question In the intro survey at the beginning of the semester, 19.6\% of students suggested a country music artist for the class playlist, and 9.1\% of students specifically suggested country music by Morgan Wallen. If a student indicated a country music artist, what is the probability that it was Morgan Wallen?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	Let $C$ be the event that a student indicated a country music artist, and let $M$ be the event that a student indicated Morgan Wallen.
+	
+	\vspace{3mm}
+	
+	Information given: $P(C)=0.196$, $P(M\text{ and }C)=0.091$. We wish to determine, \textbf{given} that a student indicated a country music artist, the probability that it was Morgan Wallen. We use the definition of conditional probability.
+	
+	\vspace{3mm}
+	
+	$P(M|C)=\displaystyle\frac{P(M\text{ and }C)}{P(C)}=\frac{0.091}{0.196}=0.4643$
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+\end{questions}
+
+%-----------------------------------------------------------------------------%
+
+\end{document}

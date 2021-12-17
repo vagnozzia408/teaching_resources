@@ -1,0 +1,246 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 11 Practice Problems}
+\author{Section 11.2}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{xfrac}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+%\renewcommand{\arraystretch}{2}
+\usepackage{cancel}
+
+\usepackage{scalerel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{2mm}
+
+\noindent An instructor wants to use two standardized exams in her classes next year. This year, she randomly selects sixteen students from her sections of a large lecture course and asks them to ``test pilot'' the two exams. She wants to know if the exams are equally difficult and decides to check this by looking at the differences between students' scores. If the mean difference between scores for students is ``close enough'' to zero, she will make a practical conclusion that the exams are equally difficult.
+
+\vspace{1mm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Student} & \textbf{Exam 1 Score} & \textbf{Exam 2 Score} & \textbf{Difference} \\
+\hline
+Bob & 63 & 69 & 6 \\ 
+\hline
+Nina & 65 & 65 & 0 \\
+\hline
+Tim & 56 & 62 & 6 \\
+\hline
+Kate & 100 & 91 & $-$9 \\
+\hline
+Alonzo & 88 & 78 & $-$10 \\ 
+\hline
+Jose & 83 & 87 & 4 \\
+\hline
+Nikhil & 77 & 79 & 2 \\ 
+\hline 
+Julia & 92 & 88 & $-$4 \\ 
+\hline
+Tohru & 90 & 85 & $-$5 \\
+\hline 
+Michael & 84 & 92 & 8 \\
+\hline
+Jean & 68 & 69 & 1 \\
+\hline
+Indra & 74 & 81 & 7 \\
+\hline 
+Susan & 87 & 84 & $-$3 \\
+\hline
+Allen & 64 & 75 & 11 \\
+\hline
+Paul & 71 & 84 & 13 \\
+\hline 
+Edwina & 88 & 82 & $-$6 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+
+\noindent Use JMP to answer the following questions.
+
+\vspace{3mm}
+
+\begin{questions} 
+
+\question Find a 99\% confidence interval for the mean difference in exam scores.
+
+\begin{solution}[\stretch{1}]
+\underline{Conditions}:
+\begin{itemize}
+	\item Data are in matched pairs by student
+	\item The students are randomly selected from the population of all students in the instructor's classes
+	\item We do not know that $n=16$ is less than 5\% of the instructor's students, but this is a reasonable assumption to make if the instructor teaches large lecture sections.
+	\item You can check the normality assumption using a normal probability plot in JMP. Based on the normal probability plot of the differences, the population of differences is approximately normal because the points are approximately linear and fall within the curved boundaries.
+\end{itemize}
+
+\underline{Confidence Interval}: 
+
+$\overline{d}=1.3125$
+
+$s_d=7.00208$
+
+$df=16-1=15$
+
+$\alpha=1-0.99=0.01\;\Rightarrow\; t_{.005}=2.947$
+
+\begin{align*}
+\overline{d}\pm t_{\sfrac{\alpha}{2}} &= 1.3125 \pm 2.947\left(\frac{7.00208}{\sqrt{16}}\right) \\
+&= (-3.85, 6.47)
+\end{align*}
+
+\underline{Conclusion}: We are 99\% confident that the true mean difference in exam scores is between $-3.85$ and $6.47$ points. Because zero is contained in the interval, we have evidence that the exams are equally difficult.
+
+\end{solution}
+
+
+%\newpage
+
+\question Test whether there is a significant difference between the exam scores at the 0.01 level.
+
+\begin{solution}[\stretch{1}]
+\underline{Hypotheses}:
+$\mu_d=$ true mean difference in exam scores for this professor
+
+$H_0:\mu_d=0$
+
+$H_1:\mu_d\neq 0$
+
+\vspace{5mm}
+
+\underline{Conditions}: Conditions were met in Problem \#1
+
+\vspace{5mm}
+
+\underline{Test Statistic}: $t_0=\displaystyle\frac{\overline{d}-0}{\nicefrac{s_d}{\sqrt{n}}}-\frac{1.3125}{\nicefrac{7.00208}{\sqrt{16}}}=0.750$
+
+\vspace{5mm}
+
+\underline{P-Value}: 
+$$\text{p-value}=2\times P(t>0.750)$$
+$$0.20<P(t>0.750)<0.25$$
+$$0.40<\text{p-value}<0.50$$
+
+\vspace{2mm}
+\begin{center}
+\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.2}
+        \def\z{1.8}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- ({6.5},0) -- cycle;
+        \fill [fill=purp!30] (-.5,0) -- plot[domain=-.5:\z] (\normaltwo) -- (\z,0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$0.750$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-0.750$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+
+        \node[] at (7.0,0) {$t$};
+        \node[] at (5.5,1) {$P(t>0.750)$};
+        \draw[-] (5.5,0.8) -- (5,.2);
+    \end{tikzpicture}
+    \end{center}
+\vspace{2mm}
+
+\underline{Conclusion}: Do not reject $H_0$ because p-value$>\alpha=0.01$. We do not have sufficient evidence that the true mean difference in exam scores for this professor is different than zero.
+
+\end{solution}
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

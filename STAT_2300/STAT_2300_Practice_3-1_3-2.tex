@@ -1,0 +1,395 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 3 Practice Problems}
+\author{Sections 3.1--3.2}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{1mm}
+
+\begin{questions} 
+	
+	\question A data set has a mean that is much higher than the median. Which of the following is most likely \textbf{true}?
+	
+	\vspace{2mm}
+	
+	\begin{choices}
+	
+		\choice The distribution of values is symmetric.
+		\choice The distribution of values is skewed left.
+		\CorrectChoice The distribution of values is skewed right.
+		\choice The distribution has a few high outliers.	
+	
+	\end{choices}
+	
+	\vspace{3mm}
+	
+	\question The Clemson intramural basketball team has 15 players who are each a different height. The team trades its shortest player for a tall center who is now the tallest person on the team. Which of the statements is \textbf{false}?
+	
+	\vspace{2mm}
+	
+	\begin{choices}
+	
+		\choice The range of heights might be different.
+		\CorrectChoice The median height will remain the same.
+		\choice The mean height of the team will increase.
+		\choice The standard deviation of the heights might be different.	
+	
+	\end{choices}
+	
+	\vspace{3mm}
+	
+	\question \textbf{Explain} your reasoning for Question 2. Why did you choose your answer over the others?
+	
+	\begin{solution}[\stretch{1}]
+	
+		
+			Student answers will vary. Correct answers should include something about how the median will shift positions when the lowest observation is removed and a high observation is added.
+
+			\vspace{-1mm}
+		\end{solution}
+	
+	\question The number of coffee shop customers on a given day at Central Perk follows a distribution that is roughly symmetric and unimodal with a mean of 240 customers and a standard deviation of 20 customers.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Why is it appropriate to use the Empirical Rule here? (What do we know about the distribution that allows us to apply this rule?)
+	
+	\begin{solution}[\stretch{1}]
+	
+			\vspace{3mm}		
+		
+			The distribution is symmetric and unimodal (bell-shaped), so the Empirical Rule applies.
+
+			\vspace{3mm}		
+			
+		\end{solution}
+		
+		\part Use the Empirical Rule to draw a sketch of this distribution, labeling the horizontal axis.
+	
+	\begin{solution}[\stretch{2}]
+			
+			\begin{center}
+    \begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\mu{3}
+        \def\y{5}
+        \def\x{1}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fx{2.5*1/exp(((\x-3)^2)/2)}
+        \draw[domain=-.5:6.7,samples=100] plot (\normaltwo) node[right] {};
+        \draw[] ({\mu},{0}) -- ({\mu},-.1) node[below] {\small{$240$}};
+        
+        % Tick Marks for One Std Dev
+        \draw[] ({3.75},{0}) -- ({3.75},-.1) node[below] {\small{$260 $}};
+        \draw[] ({2.25},{0}) -- ({2.25},-.1) node[below] {\small{$220 $}};
+        \draw[] ({1.5},{0}) -- ({1.5},-.1) node[below] {\small{$200 $}};
+        \draw[] ({.75},{0}) -- ({.75},-.1) node[below] {\small{$180 $}};
+        \draw[] ({4.5},{0}) -- ({4.5},-.1) node[below] {\small{$280$}};
+        \draw[] ({5.25},{0}) -- ({5.25},-.1) node[below] {\small{$300$}};
+        
+        \draw[dashed] (\mu,0) -- (\mu,2.5) {};
+        
+        % Number Line
+        \draw[-] (-.5,-.1) -- (6.7,-.1) node[right] {};         
+    \end{tikzpicture}
+    \end{center}  
+			
+		\end{solution}
+	
+	\part According to the Empirical Rule, on what percentage of days can the coffee shop expect between 200 and 280 customers?
+	
+	\begin{solution}[\stretch{1}]
+	
+			\vspace{3mm}		
+		
+			200 is two standard deviations below the mean, and 280 is two standard deviations above. By the Empirical Rule, Central Perk can expect between 200 and 280 customers on \underline{95\% of days}.
+
+			\vspace{3mm}		
+			
+		\end{solution}
+	
+	\part The maximum occupancy of the coffee shop is 300 customers. According to the Empirical Rule, on what percentage of days can the coffee shop expect more than 300 customers?
+	
+	\begin{solution}[\stretch{1}]
+	
+			\vspace{3mm}		
+		
+			We would only expect the coffee shop to have to turn customers away on \underline{0.15\% of days}.
+			
+			\vspace{2mm}
+		
+			99.7\% of the data fall between 180 and 300 (3 standard deviations), so 100\% $-$ 99.7\% $=$ 0.3\% falls outside this range. The graph is symmetric and we are interested in the upper tail, so \mbox{0.3\% $\div$ 2 $=$ 0.15\%.} 
+
+			\vspace{3mm}		
+			
+		\end{solution}	
+		
+	\end{parts}
+	
+	\newpage	
+	
+	\question At an Amateur Rubik's Cube Competition, the solving times (in seconds) for each of ten randomly-selected participants are listed in the table below. 
+	
+	\begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        28 & 32 & 33 & 35 & 37 \\
+        \hline
+        39 & 42 & 46 & 51 & 59 \\
+        \hline 
+    \end{tabular}
+\end{center}
+
+Find the following statistics from your sample. For each one, be sure to \textbf{label} the values with the appropriate symbol, \textbf{show} your work, and include your \textbf{answer} with \textbf{units}.
+
+\vspace{3mm}
+
+\begin{parts}
+	
+	\part Calculate the \textbf{mean} of the distribution.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	$\displaystyle \overline{x}=\frac{28+32+33+35+37+39+42+46+51+59}{10}=\frac{402}{10}=40.2$ seconds
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Find the \textbf{median} of the distribution.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	$n=10$ is even, so we average the $\frac{n}{2}=5$th and 6th values.
+	
+	\vspace{3mm}
+	
+	Median $\displaystyle =\frac{37+39}{2}=38$ seconds
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Find the \textbf{range} of the distribution.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	$R=59-28=31$ seconds
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+	\part Find the \textbf{standard deviation} of the distribution. (A table like the one on p.\ 28 of the Lecture Notes is provided, but you do not have to use it as long as you show your work.)
+	
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+	\hline 
+	\hspace{4mm} $x$ \hspace{4mm} & \hspace{7mm} $(x-\overline{x})$ \hspace{7mm} & \hspace{7mm} $(x-\overline{x})^2$ \hspace{7mm} \\
+	\hline
+	\fillin[$28$] & \fillin[$-12.2$] & \fillin[$148.84$] \\
+	\hline
+	\fillin[$32$] & \fillin[$-8.2$] & \fillin[$67.24$] \\
+	\hline
+	\fillin[$33$] & \fillin[$-7.2$] & \fillin[$51.84$] \\
+	\hline
+	\fillin[$35$] & \fillin[$-5.2$] & \fillin[$27.04$] \\
+	\hline
+	\fillin[$37$] & \fillin[$-3.2$] & \fillin[$10.24$] \\
+	\hline
+	\fillin[$39$] & \fillin[$-1.2$] & \fillin[$1.44$] \\
+	\hline
+	\fillin[$42$] & \fillin[$1.8$] & \fillin[$3.24$] \\
+	\hline
+	\fillin[$46$] & \fillin[$5.8$] & \fillin[$33.64$] \\
+	\hline
+	\fillin[$51$] & \fillin[$10.8$] & \fillin[$116.64$] \\
+	\hline
+	\fillin[$59$] & \fillin[$18.8$] & \fillin[$353.44$] \\
+	\hline
+	\textbf{Sum:} & \fillin[$0$] & \fillin[$813.6$] \\
+	\hline
+	\end{tabular}
+	\end{center}
+	
+	\begin{solution}[\stretch{3}]
+	
+	\vspace{3mm}
+	
+	$\displaystyle s^2=\frac{\sum{(x-\overline{x})^2}}{n-1}=\frac{813.6}{9}=90.4$ seconds$^2$
+	
+	\vspace{1mm}
+	
+	If using Formula 4.5 (table not provided): $\displaystyle s^2=\frac{\sum x_i^2-\frac{(\sum x_i)^2}{n}}{n-1}=\frac{16,974-\frac{(402)^2}{10}}{9}=90.4$ seconds$^2$
+	
+	\vspace{3mm}
+	
+	$s=\sqrt{90.4}\approx 9.51$ seconds
+	
+	\vspace{3mm}
+	
+	\end{solution}
+	
+\end{parts}
+
+%	\question A company that produces longboard wheels wants to get an estimate of how many of the wheel bearings it produces on a given day are defective. The resident statistician at the company counts the number of defective bearings produced each day in the month of January. Her results are summarized below.
+%	
+%	\begin{center}
+%    \begin{tabular}{| c | c | }
+%        \hline
+%        \textbf{Defect Count} & \textbf{Frequency} \\ 
+%        \hline
+%        0 & 10\\
+%        \hline
+%        1 & 8\\   
+%        \hline
+%        2 & 7\\
+%        \hline
+%        3 & 3\\   
+%        \hline
+%        4 & 1\\
+%        \hline
+%        5 & 2\\   
+%        \hline
+%    \end{tabular}
+%\end{center}
+%
+%\begin{parts}
+%	\part What is the \textbf{mean} number of defective bearings produced each day by the company? Show your work.
+%	
+%	\begin{solution}[\stretch{1}]
+%	
+%	\vspace{3mm}
+%	
+%	$\overline{x}=\frac{0(10)+1(8)+2(7)+...+5(2)}{31}=\frac{45}{31}=1.45$ defects per day
+%	
+%	\vspace{3mm}
+%	
+%	\end{solution}
+%	
+%	\part What is the \textbf{median} number of defective bearings per day?
+%	
+%	\begin{solution}[\stretch{1}]
+%	
+%	\vspace{3mm}
+%	
+%	Since there are 31 observations, the median will be $16^{\text{th}}$ observation. The $16^{\text{th}}$ observation falls in the second row.
+%
+%\vspace{3mm}
+%
+%Median $=1$ defect per day
+%	
+%	\vspace{3mm}
+%	
+%	\end{solution}
+%	
+%\end{parts}
+%	
+
+\end{questions}
+
+%-----------------------------------------------------------------------------%
+
+\end{document}

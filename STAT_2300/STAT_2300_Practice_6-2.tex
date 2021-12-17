@@ -1,0 +1,205 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 6 Practice Problems}
+\author{Section 6.2}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{4mm}
+
+
+\noindent Build-a-Bear distributors claim that there is only a 2\% chance that an unstuffed bear has a sewing defect. Your store received a standard shipment of 200 unstuffed bears. Let $X=$ the number of bears with defects. Round all probabilities in the following problems to \textbf{four} decimal places.
+	
+	\vspace{3mm}
+
+\begin{questions} 
+		
+	\question What is the probability that \textbf{exactly} 10 bears have a defect? Show probability notation, the \textbf{binomial formula} with values plugged in, and your answer.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{2mm}
+
+	$P(X=10)=\phantom{!}_{200}C_{10}(0.02)^{10}(0.98)^{190}=0.0049$
+	
+	\vspace{2mm}
+
+	\end{solution}	
+	
+	\question What is the probability that \textbf{at least two} bears have defects? Show probability notation and your answer.
+	
+	\begin{solution}[\stretch{1}]	
+	\begin{align*}
+	P(X\geq 2) &= 1-P(X\leq 1) \\
+	&= 1-\Big(P(X=0)+P(X=1)\Big)\\
+	&= 1-\Big(\phantom{!}_{200}C_{0}(0.02)^0(0.98)^{200}+\phantom{!}_{200}C_{1}(0.02)^1(0.98)^{199}\Big)\\
+	&= 1 - (0.0176 + 0.0718) \\
+	&= 0.9106
+	\end{align*}
+	\end{solution}	
+	
+	\question What is the probability that \textbf{at most three} bears have a defect? Show probability notation and your answer.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\begin{align*}
+	P(X\leq 3) &= P(X=0)+P(X=1)+P(X=2)+P(X=3) \\
+	&= \phantom{!}_{200}C_{0}(0.02)^0(0.98)^{200}+\phantom{!}_{200}C_{1}(0.02)^1(0.98)^{199}+\phantom{!}_{200}C_{2}(0.02)^2(0.98)^{198}+\phantom{!}_{200}C_{3}(0.02)^3(0.98)^{197}\\
+	&= 0.0176+0.0718+0.1458+0.1963 \\ 
+	&= 0.4315
+	\end{align*}
+
+	\end{solution}	
+	
+	\question What is the probability that \textbf{between} three and five bears (inclusive) have defects? Show probability notation and your answer.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\begin{align*}
+	P(3\leq X \leq 5) &= P(X=3)+P(X=4)+P(X=5) \\
+	&= \phantom{!}_{200}C_{3}(0.02)^3(0.98)^{197}+\phantom{!}_{200}C_{4}(0.02)^4(0.98)^{196}+ \phantom{!}_{200}C_{5}(0.02)^5(0.98)^{195} \\ 
+	&= 0.1963 + 0.1973 + 0.1579 \\
+	&= 0.5515
+	\end{align*}	
+
+	\end{solution}	
+	
+	\question What is the probability that \textbf{more than 10} bears are defective? (Hint: Doing this by hand would be incredibly tedious. Practice answering binomial probability problems using JMP output instead! You can follow the instructions on pages 71--73 of your Lecture Notes to generate the JMP output you would be provided on an exam for this type of problem.)
+	
+	\begin{solution}[\stretch{1}]
+	$P(X>10)=1-P(X\leq 10)=1-0.9975=0.0025$
+	\end{solution}
+	\newpage 
+	\question What is the \textbf{expected number} of defective bears in your shipment? Include units, the appropriate symbol, and your calculations.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{2mm}
+
+	$\mu_X=E(X)=np=200(0.02)=4$ bears
+	
+	\vspace{2mm}
+
+	\end{solution}	
+	
+	\question \textbf{Interpret} the expected value you found in Question \#5.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{2mm}
+
+	If we observed a large number of 200-bear shipments from Build-a-Bear, we would expect the average number of defective bears to be 4.
+	
+	\vspace{2mm}
+
+	\end{solution}	
+	
+	\question What is the \textbf{standard deviation} of defective bears in your shipment? Include units, the appropriate symbol, and your calculations.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{2mm}
+
+	$\sigma_X=\sqrt{np(1-p)}=\sqrt{200(0.02)(0.98)}=\sqrt{3.92}=1.98$ bears
+	
+	\vspace{2mm}
+
+	\end{solution}		
+	 
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}

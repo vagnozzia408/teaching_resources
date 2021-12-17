@@ -1,0 +1,211 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 10 Practice Problems}
+\author{Section 10.1}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{1in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{4mm}
+
+\noindent An expensive new type of fertilizer is being tested on a plot of land at Schrute Farms to see whether it increases the amount of beets produced. The mean number of pounds of beets produced on this plot with the old fertilizer is 400 pounds. Dwight believes that the mean yield will increase with the new fertilizer.
+
+\begin{questions} 
+
+\vspace{1mm}
+
+\question Define the \textbf{target parameter} in this scenario.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+$\mu=$ the true mean beet yield (in pounds) of the plot with the new fertilizer
+
+\vspace{1mm}
+
+\end{solution}
+
+\question Determine the \textbf{null and alternative hypotheses} in this problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+$H_0:\mu=400$ lb
+
+$H_1:\mu>400$ lb
+
+\vspace{1mm}
+
+\end{solution}
+
+\question Is this a left-tailed, right-tailed, or two-tailed test?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+Right-tailed
+
+\vspace{1mm}
+
+\end{solution}
+
+\question Describe a \textbf{Type I error} in context of the problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+Rejecting a true $H_0$: Concluding that the new fertilizer increases yield when it actually does not.
+
+\vspace{1mm}
+
+\end{solution}
+
+\question What might be a \textbf{consequence} of committing a Type I error?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+Spending a lot of money on the new fertilizer when it doesn't have an overall positive effect on beet yield.
+
+\vspace{1mm}
+
+\end{solution}
+
+\question Describe a \textbf{Type II error} in context of the problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+Failing to reject a false $H_0$: Concluding that the new fertilizer does not increase yield when it actually does.
+
+\vspace{1mm}
+
+\end{solution}
+
+\question What might be a \textbf{consequence} of committing a Type II error?
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+Schrute Farms misses out on potential profit they could have had by increasing their beet yield with the new fertilizer.
+
+\vspace{1mm}
+
+\end{solution}
+
+\question Which of these types of error might we want to minimize? Justify your answer. 
+
+\begin{solution}[\stretch{1}]
+
+\vspace{1mm}
+
+Answers may vary. If a Type II error occurs, Schrute Farms doesn't lose anything tangible, so a Type I error might be more costly and thus have more serious consequences. We would probably want to minimize a Type I error. (You could do this by choosing a smaller significance level $\alpha$.)
+
+\vspace{1mm}
+
+\end{solution}
+
+
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}
