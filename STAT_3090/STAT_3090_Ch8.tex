@@ -3,8 +3,8 @@
 \documentclass[noanswers]{exam}
 \usepackage[utf8]{inputenc}
 
-\title{Extra Practice}
-\author{Chapters 6--8}
+\title{Practice Problems}
+\author{Chapter 8}
 \date{STAT 3090}
 
 \usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
@@ -83,22 +83,271 @@
 \CorrectChoiceEmphasis{\color{purp}\bfseries}
 \setlength\fillinlinelength{0in}
 \renewcommand{\arraystretch}{2}
-\usepackage{url}
+
 
 \begin{document}
-
-\noindent\begin{tabular}{@{}p{.5in}p{2.5in}@{}}
-Name: & \hrulefill 
-\end{tabular}
-
-\vspace{3mm}
-
-
-\noindent This document contains additional practice problems from Chapters 6--8 to help you as you prepare for Exam~\#2.
-
-\vspace{3mm}
+%\noindent\begin{tabular}{@{}p{1.05in}p{5.5in}@{}}
+%Group Members: & \hrulefill
+%\end{tabular}
+%
+%\vspace{3mm}
 
 \begin{questions} 
+		
+	\question Let $X=$ the number of large bags of popcorn sold by a local movie theater in a day. Suppose that $X$ is normally distributed with a mean of 230 bags and a standard deviation of 29 bags. Describe the distribution of $\overline{X}$, the \textbf{average} number of large bags of popcorn sold in a random sample of 7 days, by identifying the following.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part \textbf{Mean} of the Distribution of $\overline{X}$ (Use the symbol and value on page 117 of the Lecture Guide.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\overline{X}}=230$ large popcorn bags
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Standard Deviation} of the Distribution of $\overline{X}$ (Use the symbol and formula on page 117.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\sigma_{\overline{X}}=\displaystyle \frac{29}{\sqrt{7}}=10.96$ large popcorn bags
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Shape} of the Distribution of $\overline{X}$ (Use the flowchart on page 118 to determine whether $\overline{X}$ is normally distributed and how you know.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\overline{X}$ is approximately normally distributed because $X$ is normally distributed.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+	\question Suppose that $Y$ describes the number of tickets sold by the movie theater in a day, with a mean of 1040 tickets and a standard deviation of 212 tickets. Describe the distribution of $\overline{Y}$, the \textbf{average} number of tickets sold per day in a random sample of 55 days.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part \textbf{Mean} of the Distribution of $\overline{Y}$
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\overline{Y}}=1040$ tickets
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Standard Deviation} of the Distribution of $\overline{Y}$
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\sigma_{\overline{Y}}=\displaystyle \frac{212}{\sqrt{55}}=28.59$ tickets
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Shape} of the Distribution of $\overline{Y}$ (i.e.\ whether it's normally distributed and how you know!)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	By the Central Limit Theorem, $\overline{Y}$ is approximately normally distributed because the sample size is large enough ($n=55\geq 30$). 
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+\newpage
+
+\question Suppose that the number of Krabby Patties sold at the Krusty Krab on a randomly selected day, $X$, follows a normal distribution with a mean of 537 patties and a standard deviation of 38.6 patties.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Describe the distribution of $\overline{X}$, the mean number of Krabby Patties sold per day for a random sample of 27 days, by identifying the \textbf{mean} $\mu_{\overline{X}}$ and \textbf{standard error} $\sigma_{\overline{X}}$. Round standard error to four places.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\overline{X}}=537$ patties \hspace{10mm} $\sigma_{\overline{X}}=\frac{38.6}{\sqrt{27}}=7.4286$ patties
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part What distribution does $\overline{X}$ follow? How can you tell?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	The population $X$ is normally distributed, so $\overline{X}$ follows an approximately normal distribution.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part Suppose that a random sample of 27 days is selected. What is the probability that the sample mean number of Krabby Patties differs from the population mean by \textbf{more than} 15 patties? Include a probability statement, your answer, and an appropriately labeled and shaded sketch.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	Lower value: $537-15=522 \Rightarrow z=\frac{522-537}{7.4286}=-2.02$
+	
+	\vspace{3mm}
+	
+	Upper value: $537+15=552 \Rightarrow z=\frac{552-537}{7.4286}=2.02$
+	
+	\vspace{3mm}
+	
+	$P\left(\overline{X}<522\right)+P\left(\overline{X}>552\right)=P(Z<-2.02)+P(Z>2.02)=0.0217+0.0217=0.0434$
+	
+	\vspace{1mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+	\question A national survey estimated that of all U.S.\ citizens who had visited the hostpital within the last five years, approximately 69\% were satisfied with the treatment received during their visit. In an evaluation of their patient care standards, the staff at Grey-Sloan Memorial Hospital are interested in seeing how their hospital compares to the national result. They plan to interview a sample of 235 randomly selected patients who stayed at Grey-Sloan in the past five years.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Describe the distribution of $\hat{p}$, the proportion of satisfied patients in a sample of 235, by describing the \textbf{mean} $\mu_{\hat{p}}$ and \textbf{standard error} $\sigma_{\hat{p}}$. Round standard error to four decimal places.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\hat{p}}=p=0.69$ \hspace{10mm} $\sigma_{\hat{p}}=\sqrt{\frac{0.69(0.31)}{235}}=0.0302$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part What distribution does $\hat{p}$ follow? How can you tell?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$np=235(0.69)=162.15\geq 5$ and $n(1-p)=235(1-0.69)=72.85\geq 5$
+	
+	\vspace{3mm}
+	
+	$\Rightarrow \hat{p}$ follows an approximately normal distribution.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part What is the probability that the proportion of satisfied hospital patients at Grey-Sloan Memorial Hospital differs from the national result by \textbf{less than} 5\%? Include a probability statement, your answer, and an appropriately labeled and shaded sketch.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	Lower value: $0.69-0.05=0.64 \Rightarrow z=\frac{0.64-0.69}{0.0302}=-1.66$
+	
+	\vspace{3mm}
+	
+	Upper value: $0.69+0.05=0.74 \Rightarrow z=\frac{0.74-0.69}{0.0302}=1.66$
+	
+	\vspace{3mm}
+	
+	$P(0.64<\hat{p}<0.74)=P(-1.66<Z<1.66)=0.9031$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+\begin{solution}
+\textcolor{black}{Sketch for Problem \#1}
+
+\vspace{3mm}
+
+\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.5}
+        \def\z{1.5}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (-.5,0) -- plot[domain=-.5:\z] (\normaltwo) -- ({\z},0) -- cycle;
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- (6.5,0) -- cycle;
+
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$2.02$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-2.02$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1) {0.0217};
+        \draw[-] (.5,0.8) -- (.8,.15);
+        \node[] at (5.5, 1) {0.0217};
+        \draw[-] (5.5,0.8) -- (5.1,.15);
+
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+
+
+\vspace{5mm}
+
+\textcolor{black}{Sketch for Problem \#2}
+
+\vspace{3mm}
+
+\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4}
+        \def\z{2}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (\z,0) -- plot[domain=\z:\y] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.66$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-1.66$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (1.5, 2.2) {0.9031};
+        \draw[-] (1.5,2) -- (2.5,1.5);
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+
+\end{solution}
+		
+\newpage
 
 \question According to M\&M's, each package of Milk Chocolate M\&M's contains 24\% blue M\&M's. Suppose that you have a random sample of 200 Milk Chocolate M\&M's. Let $\hat{p}$ represent the proportion of blue M\&M's in your sample.
 
@@ -204,197 +453,6 @@ The sampling distribution of $\hat{p}$ is approximately normal because $np=9\geq
 
 \vspace{3mm}
 
-\question What is the area under the standard normal curve between the $z$-scores of $-0.5$ and 1.5?
-
-\vspace{3mm}
-
-\begin{choices}
-	\choice 0.3753
-	\choice $-0.6247$
-	\CorrectChoice 0.6247
-	\choice 0.6826
-\end{choices}
-
-\vspace{3mm}
-
-\question Which of the following is a continuous random variable?
-
-\vspace{3mm}
-
-\begin{choices}
-	\choice the number of grains of sand in a beach pail
-	\choice the number of grains of sand on one hundred yards of beach
-	\CorrectChoice the weight of sand in a beach pail
-	\choice All of the above are continuous random variables.
-\end{choices}
-
-\vspace{3mm} 
-
-\question A student is taking a True/False test consisting of 6 questions. If the student randomly selects each answer, what is the probability that they get at least two answers correct? You may assume that each answer is independent of another.
-
-\vspace{3mm}
-
-\begin{choices}
-	\choice 0.3438
-	\CorrectChoice 0.8906
-	\choice 0.6563
-	\choice 0.1094
-\end{choices}
-
-\vspace{3mm}
-
-\newpage
-\question $Z$ is a random variable from the Standard Normal Distribution. Find $P(Z=1.35)$.
-
-\vspace{3mm}
-
-\begin{choices}
-	\CorrectChoice $P(Z=1.35)=0$
-	\choice $P(Z=1.35)=0.9115$
-	\choice $P(Z=1.35)=0.0885$
-	\choice $P(Z=1.35)=0.8230$
-\end{choices}
-
-\vspace{3mm}
-
-\question Find the $z$-score such that the area to its right is 0.2389.
-
-\vspace{3mm}
-
-\begin{choices}
-	\choice $Z=0.00$
-	\CorrectChoice $Z=0.71$
-	\choice $Z=0.76$
-	\choice $Z=-0.71$
-\end{choices}
-
-\vspace{3mm}
-
-\question According to the U.S.\ Census Bureau, 13.1\% of U.S.\ adults have an advanced degree. A random sample of 5 U.S.\ adults is taken. Let $X$ be the number of U.S.\ adults in a sample of size 5 who have an advanced degree. If $X$ is a binomial random variable, what is the probability that at least one of these 5 people has an advanced degree?
-
-\vspace{3mm}
-
-\begin{choices}
-\choice 0.8690
-\CorrectChoice 0.5044
-\choice 0.4956
-\choice 0.6550
-\end{choices}
-
-\vspace{3mm}
-
-\question $W$ is a discrete random variable with the distribution given below.
-
-\begin{center}
-\begin{tabular}{c|ccc}
-$W$ & 1 & 2 & 4 \\
-\hline
-$P(W)$ & 0.2 & 0.5 & 0.3\\
-\end{tabular}
-\end{center}
-\begin{parts}
-
-\part What is the expected value of $W$?
-\vspace{3mm}
-\begin{choices}
-	\CorrectChoice 2.4
-	\choice 1.11
-	\choice 1.24
-	\choice 2
-\end{choices}
-
-\vspace{3mm}
-
-\part What is the standard deviation of $W$?
-
-\vspace{3mm}
-
-\begin{choices}
-\choice 2.4
-\CorrectChoice 1.11
-\choice 1.24
-\choice 2
-\end{choices}
-
-\end{parts}
-
-\newpage
-
-\question Which of the following is \underline{not} a property of the Standard Normal Distribution?
-
-\vspace{3mm}
-
-\begin{choices}
-\choice The mean of the Standard Normal Distribution is 0.
-\choice The variance of the Standard Normal Distribution is 1.
-\CorrectChoice The Standard Normal Distribution is left skewed.
-\choice The Standard Normal Distribution is symmetric.
-\end{choices}
-
-\vspace{3mm}
-
-\question The birth weight of newborn babies is approximately normally distributed with mean 7.5 lb and standard deviation 1.2 lb.
-
-\vspace{3mm}
-
-\begin{parts}
-
-\part Let $X$ represent the weight of a newborn baby. Which of the following probability statements can be used to solve for the probability that a newborn baby weighs at least 9 lb?
-
-\vspace{3mm}
-
-\begin{choices}
-\choice $P(X\geq 9)$
-\choice $P(X>9)$
-\choice $P(Z>1.25)$
-\CorrectChoice All of the above probability statements would be correct.
-\end{choices}
-
-\vspace{3mm}
-
-\part According to kidshealth.org, an underweight newborn weighs less than $X_{LOW}$. If approximately 5.05\% of newborns are born underweight, find $X_{LOW}$.
-
-\vspace{3mm}
-
-\begin{choices}
-\choice $X_{LOW}=7.52$ pounds
-\choice $X_{LOW}=1.64$ pounds
-\CorrectChoice $X_{LOW}=5.53$ pounds
-\choice $X_{LOW}=9.47$ pounds
-\end{choices}
-
-\vspace{3mm}
-
-\end{parts}
-
-\question Pulse rates of adult men are approximately normal with a mean of 70 and a standard deviation of 8. Which choice correctly describes how to find the proportion of men that have a pulse rate greater than 78?
-
-\vspace{3mm}
-
-\begin{choices}
-\choice Find the area to the left of $z=1$ under a standard normal curve.
-\choice Find the area between $z=-1$ and $z=1$ under a standard normal curve.
-\CorrectChoice Find the area to the right of $z=1$ under a standard normal curve.
-\choice Find the area to the right of $z=-1$ under a standard normal curve.
-\end{choices}
-
-\vspace{3mm}
-
-\question Suppose the Clemson women's softball team needs to win 4 out of 7 games in a championship game series. Once a team reaches the $4^\text{th}$ win, it is declared the winner of the series and the series ends. Let $X$ be the number of games played in the series. Could $X$ be considered a Binomial random variable?
-
-\vspace{3mm}
-
-\begin{choices}
-\choice Yes, since the only options for the outcomes of the game are Win, Lose, or Tie.
-\CorrectChoice No, since the number of games played is not fixed.
-\choice Yes, since the probability of winning a game is unknown.
-\choice No, since $X$ can only take values between 0 and 7.
-\end{choices}
-
-\vspace{3mm} 
-
-\newpage
-
 \question Steve and Tony are two tenured college professors in Georgia. Rather than spend their Friday evenings complaining about the heat, Steve and Tony sit down to play a game of poker. The winnings for each game have an unknown probability distribution with a mean of \$4 and a standard deviation of \$20. Let $X$ represent the winnings from a  game and let $\overline{X}$ represent the average winnings for a random sample of 35 games.
 
 \vspace{3mm}
@@ -444,47 +502,7 @@ $P(Z>-1.18)=\int_{-1.18}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx$ if u
 \end{solution}
 \end{parts}
 
-\question Polar Bear Frozen Foods manufactures frozen French fries for sale to grocery store chains. The final package weight is thought to have the probability density function $f(x)=\frac{1}{6}$, with $57\leq X\leq 63$, where $X$ represents the final package weight in ounces.
-
-\vspace{3mm}
-
-\begin{parts}
-\part What is the probability that a randomly selected package will weigh between 60 and 63 ounces? Include the correct probability statement in your answer. To show your work, write the correct integral that needs to be solved.
-
-\begin{solution}[\stretch{1}]
-\vspace{3mm}
-
-$P(60<X<63)=\int_{60}^{63}\frac{1}{6}dx=0.5$
-
-\vspace{3mm}
-\end{solution}
-
-\part What is the average weight of a package? Use the correct symbol for the mean. Include units in your answer. To show your work, write out the integral that needs to be solved.
-
-\begin{solution}[\stretch{1}]
-
-\vspace{3mm}
-
-$\mu_X=\int_{57}^{63}\frac{x}{6}dx=60$ oz
-
-\vspace{3mm}
-\end{solution}
-\end{parts}
-
 \newpage
-
-\question Without an appointment, the waiting time $t$ in minutes at the doctor's office has the probability density function $f(t)=\frac{1}{38}$, where $0\leq t\leq 38$. What is the probability that you will wait at least 26 minutes?
-
-\vspace{3mm}
-
-\begin{choices}
-\CorrectChoice 0.3158
-\choice 1
-\choice 0.6842
-\choice Cannot be determined since $f(t)$ is not a valid pdf.
-\end{choices}
-
-\vspace{3mm}
 
 \question Suppose it is known that approximately 2.5\% of people in the United States have red hair. Tim the Stats Man decided to take a random sample of 250 U.S.\ citizens and records their hair color. What is the probability that Tim finds that more than 6 people in that sample have red hair?
 
@@ -524,14 +542,6 @@ $\mu_X=\int_{57}^{63}\frac{x}{6}dx=60$ oz
 \end{choices}
 
 \vspace{3mm} 
-
-\question TD's has a sampler appetizer platter that lets you choose four appetizers for \$6.99. They have 11 appetizers to choose from. How many appetizer combinations could you choose?
-
-\begin{solution}[\stretch{1}]
-${11\choose 4}=\frac{11!}{4!(11-4)!}=330$ appetizer combinations
-\end{solution}
-
-\newpage 
 
 \question It has been determined that 80\% of apartments listed as ``apartment for rent'' on Craigslist have been rented within two weeks of the initial listing. We selected a random sample of 100 ``apartment for rent'' ads on Craigslist and tracked down the rental result for each. We define $\hat{p}$ as the proportion of apartments in our sample of size 100 that rent within two weeks of listing the ad.
 
@@ -578,9 +588,6 @@ $P(\hat{p}>0.75)=P(Z>-1.25)=0.8944$
 \end{parts}
 
 \end{questions}
-
-
-
 
 %-----------------------------------------------------------------------------%
 

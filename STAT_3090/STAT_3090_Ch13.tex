@@ -3,8 +3,8 @@
 \documentclass[noanswers]{exam}
 \usepackage[utf8]{inputenc}
 
-\title{Learning Activity 13}
-\author{Chapter 8}
+\title{Practice Problems}
+\author{Chapter 13}
 \date{STAT 3090}
 
 \usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
@@ -81,109 +81,82 @@
 \renewcommand{\solutiontitle}{}
 \SolutionEmphasis{\color{purp}}
 \CorrectChoiceEmphasis{\color{purp}\bfseries}
-\setlength\fillinlinelength{0in}
+\setlength\fillinlinelength{1.5in}
 \renewcommand{\arraystretch}{2}
 
 
 \begin{document}
-\noindent\begin{tabular}{@{}p{1.05in}p{5.5in}@{}}
-Group Members: & \hrulefill
-\end{tabular}
+%\noindent\begin{tabular}{@{}p{1.4in}p{5.2in}@{}}
+%Group Member Names: & \hrulefill
+%\end{tabular}
+%
+%\vspace{1mm}
+\noindent If you have group members who collaborated but were not logged into the Zoom session, please note in the submission comments how they collaborated on the learning activity.
 
-\vspace{3mm}
+\vspace{5mm}
 
-\begin{questions} 
+\noindent A major airline wishes to determine if it can predict the elapsed time of a flight delay in minutes, $y$, using the distance of the flight to the destination in miles, $x$. Simple linear regression was performed in JMP for a large sample of 29,009 delayed flights gathered during the previous year. (See the JMP dataset \verb|Airline Delays.jmp|.) Use the output below to answer the questions in this Learning Activity.
+
+\begin{multicols}{2}
+	\noindent \textbf{Scatter Plot of Elapsed Time vs.\ Distance}
+	\includegraphics[scale=.55]{STAT_3090_Ch13_ScatterPlot.PNG}
+	\begin{flushright}
+	\includegraphics[scale=.75]{STAT_3090_Ch13_LinReg.PNG}
+	\end{flushright}
+\end{multicols}
+
+\begin{questions}	
+	
+	\question Write the equation for the \textbf{least squares regression line} in terms of $x$ and $\hat{y}$, where $x=$ distance of the flight (in miles) and $\hat{y}=$ estimated elapsed time of the delay (in minutes).
 		
-	\question Let $X=$ the number of large bags of popcorn sold by a local movie theater in a day. Suppose that $X$ is normally distributed with a mean of 230 bags and a standard deviation of 29 bags. Describe the distribution of $\overline{X}$, the \textbf{average} number of large bags of popcorn sold in a random sample of 7 days, by identifying the following.
+	\begin{solution}[\stretch{1}]
+
+	\vspace{1mm}
 	
-	\vspace{3mm}
+	$\hat{y}=37.457047+0.1201603x$
 	
-	\begin{parts}
+	\vspace{1mm}
 	
-	\part \textbf{Mean} of the Distribution of $\overline{X}$ (Use the symbol and value on page 117 of the Lecture Guide.)
+	\end{solution}
+	
+	\question Interpret the \textbf{slope} of the estimated regression equation in context of the problem.
 	
 	\begin{solution}[\stretch{1}]
 	
-	\vspace{3mm}
-
-	$\mu_{\overline{X}}=230$ large popcorn bags
+	\vspace{1mm}
 	
-	\vspace{3mm}
-
-	\end{solution}	
+	$b_1=0.1201603$. For every additional mile of flight distance, the elapsed delay time will increase on average by 0.1202 minutes.
 	
-	\part \textbf{Standard Deviation} of the Distribution of $\overline{X}$ (Use the symbol and formula on page 117.)
+	\vspace{1mm}	
 	
-	\begin{solution}[\stretch{1}]
+	\end{solution}
 	
-	\vspace{3mm}
-
-	$\sigma_{\overline{X}}=\displaystyle \frac{29}{\sqrt{7}}=10.96$ large popcorn bags
-	
-	\vspace{3mm}
-
-	\end{solution}	
-	
-	\part \textbf{Shape} of the Distribution of $\overline{X}$ (Use the flowchart on page 118 to determine whether $\overline{X}$ is normally distributed and how you know.)
+	\question Is there a valid interpretation of the \textbf{$y$-intercept} in context of the problem? If so, interpret the $y$-intercept. If not, explain why.
 	
 	\begin{solution}[\stretch{1}]
 	
-	\vspace{3mm}
-
-	$\overline{X}$ is approximately normally distributed because $X$ is normally distributed.
+	\vspace{1mm}
 	
-	\vspace{3mm}
-
-	\end{solution}	
+	$b_0=37.457047$. There is no valid interpretation of the $y$-intercept in this context because it does not make sense to have a flight of $x=0$ miles long.
 	
-	\end{parts}
-		
-	\question Suppose that $Y$ describes the number of tickets sold by the movie theater in a day, with a mean of 1040 tickets and a standard deviation of 212 tickets. Describe the distribution of $\overline{Y}$, the \textbf{average} number of tickets sold per day in a random sample of 55 days.
+	\vspace{1mm}
 	
-	\vspace{3mm}
+	\end{solution}
 	
-	\begin{parts}
+	\question Interpret the \textbf{standard error} of prediction found by your regression analysis. Include units.
 	
-	\part \textbf{Mean} of the Distribution of $\overline{Y}$
 	
 	\begin{solution}[\stretch{1}]
 	
-	\vspace{3mm}
-
-	$\mu_{\overline{Y}}=1040$ tickets
+	\vspace{1mm}
 	
-	\vspace{3mm}
-
+	$s=18.71175$ minutes. For any given flight distance, the true elapsed delay time will vary from the predicted delay time on average by approximately 18.7 minutes.
+	
+	\vspace{1mm}
+	
 	\end{solution}	
 	
-	\part \textbf{Standard Deviation} of the Distribution of $\overline{Y}$
-	
-	\begin{solution}[\stretch{1}]
-	
-	\vspace{3mm}
-
-	$\sigma_{\overline{Y}}=\displaystyle \frac{212}{\sqrt{55}}=28.59$ tickets
-	
-	\vspace{3mm}
-
-	\end{solution}	
-	
-	\part \textbf{Shape} of the Distribution of $\overline{Y}$ (i.e.\ whether it's normally distributed and how you know!)
-	
-	\begin{solution}[\stretch{1}]
-	
-	\vspace{3mm}
-
-	By the Central Limit Theorem, $\overline{Y}$ is approximately normally distributed because the sample size is large enough ($n=55\geq 30$). 
-	
-	\vspace{3mm}
-
-	\end{solution}	
-	
-	\end{parts}
-		
 \end{questions}
-
 %-----------------------------------------------------------------------------%
 
 \end{document}

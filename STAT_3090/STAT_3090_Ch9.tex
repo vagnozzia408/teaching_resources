@@ -3,7 +3,7 @@
 \documentclass[noanswers]{exam}
 \usepackage[utf8]{inputenc}
 
-\title{Learning Activity 17}
+\title{Practice Problems}
 \author{Chapter 9}
 \date{STAT 3090}
 
@@ -81,27 +81,203 @@
 \renewcommand{\solutiontitle}{}
 \SolutionEmphasis{\color{purp}}
 \CorrectChoiceEmphasis{\color{purp}\bfseries}
-\setlength\fillinlinelength{1.5in}
+\setlength\fillinlinelength{0in}
 \renewcommand{\arraystretch}{2}
 
 
 \begin{document}
-\noindent\begin{tabular}{@{}p{1.4in}p{5.2in}@{}}
-Group Member Names: & \hrulefill
-\end{tabular}
+%\noindent\begin{tabular}{@{}p{1.05in}p{5.5in}@{}}
+%Group Members: & \hrulefill
+%\end{tabular}
+%
+%\vspace{3mm}
 
-\vspace{1mm}
-\noindent If you have group members who collaborated but were not logged into the Zoom session, please note in the submission comments how they collaborated on the learning activity.
-
-\vspace{5mm}
-
-\noindent Here are some problems to help you get comfortable working with the $t$-distribution! For each problem, \textbf{include a sketch} with the $t$ value on the horizontal axis and the corresponding shaded and labeled area. Use the \textbf{notation} on page 144 of the Lecture Guide to label your critical values.
+\noindent \textbf{Introduction to Confidence Intervals. }Social networking sites have become fixtures in the social lives of many people around the world. A Pew Research poll surveyed U.S.\ residents to ask about their use of social media and study trends in usage. Of the 156 respondents aged 18 to 22 who use Facebook, 30.77\% stated that they updated their Facebook status at least once per day.
 
 \vspace{3mm}
 
-\begin{questions}	
+\begin{questions}
+		
+	\question Is 0.3077 a parameter or a statistic? Explain.
+		
+	\begin{solution}[\stretch{1}]
 	
-	\question What is the $t$ critical value for a 90\% confidence interval for $\mu$ for a sample of size 17?
+	\vspace{1mm}
+
+	0.3077 is a \textbf{statistic} because it is a numerical summary of qualitative data from a \textbf{sample}.
+	
+	\vspace{1mm}
+
+	\end{solution}	
+	
+	\question Does this finding necessarily \textbf{prove} that 30.77\% of all U.S.\ residents aged 18--22 years old update their Facebook status at least once per day? Explain why or why not.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{1mm}
+
+	No. This does not prove anything about the true percentage because it is \textbf{estimated} from a sample, which yields incomplete information about the population of all U.S.\ 18--22 year olds.
+	
+	\vspace{1mm}
+
+	\end{solution}	
+		
+	\question We call the sample proportion $\hat{p}$ a \textbf{point estimate} for the population proportion $p$. The \textbf{\underline{estimated} \mbox{standard error}} of this sample statistic is defined as 
+
+$$SE=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.$$
+
+\vspace{1mm}
+
+	What is the difference between this estimate of standard error and the standard error $\sigma_{\hat{p}}$ we calculated in Chapter 8 for the sampling distribution of $\hat{p}$? (Hint: See page 124 of your Lecture Guide and compare.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{1mm}
+
+	The standard error $\sigma_{\hat{p}}$ uses the population proportion $p$, and this estimate of standard error $SE$ uses the sample proportion $\hat{p}$.
+	
+	\vspace{1mm}
+
+	\end{solution}	
+
+\question Compute the estimated standard error of our sample statistic, $\hat{p}=0.3077$. Show your work and round to four decimal places.
+
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{1mm}
+
+	$SE=\sqrt{\frac{0.3077(1-0.3077)}{156}}=0.0370$
+	
+	\vspace{1mm}
+
+	\end{solution}
+	
+	\question Let's say we want to estimate \textbf{within two standard errors} of $\hat{p}$. We can do so by calculating $\hat{p}-2(SE)$ and $\hat{p}+2(SE)$. Find these values and write your result as an interval in the format (lower, upper). This is called an \textbf{interval estimate} of $p$.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{1mm}
+
+	$\hat{p}\pm 2(SE)=0.3077\pm 2(0.0370)=0.3077\pm0.0740=(0.2337,0.3817)$
+	
+	\vspace{1mm}
+
+	\end{solution}
+	
+	\question Do you know for \textbf{certain} if $p$, the true proportion of \textbf{all} U.S.\ adults aged 18--22 who update their Facebook status at least one time per day, is contained in the interval? Why or why not?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{1mm}
+
+	We do not know for sure because this interval is based on data gathered from a sample, not the whole population. 
+	
+	\end{solution}
+	
+	Congratulations! You just constructed a \textbf{confidence interval}!
+	
+\newpage
+
+\question Taylor wants to estimate the true proportion of undergraduate students at Clemson University who watch \textit{Game of Thrones}. She randomly selects 450 Clemson undergraduate students and finds that 157 of them are dedicated \textit{Game of Thrones} fans and watch the show regularly.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Find a \textbf{point estimate} for the true proportion of Clemson students who watch \textit{Game of Thrones}. Label your value with the appropriate symbol and round your point estimate to four decimal places.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\hat{p}=\frac{157}{450}=0.3489$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part Determine whether the \textbf{two conditions} for inference using confidence intervals are met.
+		
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	(1) It is stated that a random sample of undergraduates is chosen from the population of Clemson students.
+	
+	\vspace{3mm}
+	
+	(2) The sampling distribution of $\hat{p}$ is normally distributed because $n\hat{p}=450(0.35)=157.5\geq5$ and $n(1-\hat{p})=450(0.65)=292.5\geq 5$.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part Find the \textbf{critical value} associated with a 94\% confidence level. You can do so either using the standard normal table or the \verb|invNorm| function in your calculator. (Drawing a sketch may be helpful.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\frac{\alpha}{2}=\frac{1-0.94}{2}=0.03$
+	
+	\vspace{3mm}
+	
+	Critical Value: $z_{.03}=\text{invNorm}(1-0.03,0,1)=1.88$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part Find a \textbf{94\% confidence interval} for the true proportion of Clemson students who watch \textit{Game of Thrones} based on the information gathered from Taylor's sample. \textbf{Show your work} by writing the confidence interval formula with the appropriate values plugged in. Round your final values to four decimal places and write your answer in interval notation.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\hat{p}\pm z_{\nicefrac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\;=\;0.3489\pm 1.88\sqrt{\frac{0.3489(1-0.3489)}{450}}\;=\;0.3489\pm0.0422\;=\;(0.3067,0.3911)$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Interpret} the confidence interval you found in Part (d).
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	CI Interpretation: We are 94\% confident that the true proportion of Clemson undergraduate students who watch \textit{Game of Thrones} is between 0.3067 and 0.3911.
+	
+	\vspace{3mm}
+	
+	\underline{\textbf{Note:}} If you downloaded LA 16 before noon on Friday, you may have downloaded a version that said to interpret the confidence \textbf{level}. This was my mistake --- I meant for you to interpret your \textbf{interval} from Part (d) --- but if you gave a correct interpretation of the confidence level, I did not take off points. 
+	
+	\vspace{3mm}
+	
+	Confidence Level Interpretation: If we took many samples of 450 randomly selected Clemson students, we would expect 94\% of the intervals to contain the true proportion who watch \textit{Game of Thrones}.
+	\end{solution}
+	
+	\vspace{3mm}
+	
+	\end{parts}
+	
+	\question Taylor wants to expand her study. What is the \textbf{minimum} number of students that she would need to sample in order to generate a 99\% confidence interval with a 5\% margin of error? You can use your point estimate from Problem \#1 in your calculations. \textbf{Show your work }and include units in your answer.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+	
+	$\displaystyle n=\frac{(2.576)^2(0.3489)(1-0.3489)}{(0.05)^2}=602.98\approx 603$ students
+	
+	\vspace{3mm}
+	\end{solution}
+
+
+\newpage
+
+\fullwidth{Here are some problems to help you get comfortable working with the $t$-distribution! For each problem, \textbf{include a sketch} with the $t$ value on the horizontal axis and the corresponding shaded and labeled area. Label your critical values using the notation introduced in the Lecture Guide.}
+
+\question What is the $t$ critical value for a 90\% confidence interval for $\mu$ for a sample of size 17?
 		
 	\begin{solution}[\stretch{1}]
 
@@ -237,10 +413,8 @@ Group Member Names: & \hrulefill
 	\end{multicols}
 
 	\end{solution}	
-	
-\end{questions}
 
-\noindent Before you leave the Zoom session today, check to see if you have the \verb|invT| function in your TI calculator. If you do not and would like to have it, come chat with me before you leave class!
+\end{questions}
 %-----------------------------------------------------------------------------%
 
 \end{document}
