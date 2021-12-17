@@ -1,0 +1,59 @@
+%%% DOCUMENT FORMATTING %%%
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+\newcommand{\disp}{\displaystyle}
+
+%%% HEADER %%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{MATH 1080}
+\rhead{Vagnozzi}
+\cfoot{\thepage}
+
+%%% MATH NOTATION & SYMBOLS %%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\ls}{\left[}
+\newcommand{\rs}{\right]}
+\newcommand{\lb}{\left\{}
+\newcommand{\rb}{\right\}}
+\newcommand{\arccot}{\text{arccot}}
+\newcommand{\arccsc}{\text{arccsc}}
+\newcommand{\arcsec}{\text{arcsec}} 
+
+%%% TABLES %%%
+\usepackage{colortbl}
+
+%%% GRAPHS %%%
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{angles,quotes}
+
+%%% ENVIRONMENTS %%%
+\newcommand{\Example}{\paragraph{\Writinghand \hspace{0.1mm} Example.}}
+\newcommand{\ExampleCont}{\paragraph{\Writinghand \hspace{0.1mm} Example (continued).}}
+\newcommand{\boxenv}[2]{
+	\fbox{
+	\begin{minipage}{0.97\textwidth}
+	\vspace{2mm}	
+	\paragraph{#1} #2
+	\vspace{2mm}
+	\end{minipage}
+	}}
+
+%%% FUN THINGS %%%
+\newcommand*\tc[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{marvosym}
+
+%%% MISC %%%
+\usepackage{hyperref}
