@@ -1,0 +1,452 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Practice Problems}
+\author{Chapter 5}
+\date{STAT 3090}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+\renewcommand{\arraystretch}{2}
+
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+\vspace{2mm}
+
+\noindent\begin{tabular}{@{}p{1.05in}p{3.2in}@{}}
+Group Members: & \hrulefill
+\end{tabular}
+
+\begin{questions} 
+	
+	\question Your favorite fast food joint has a specialty sandwich and side combo. For the sandwich you can order a hamburger (H) or a chicken sandwich (C), and for the side you can order fries (F), onion rings (R), or a \mbox{salad (S).}
+	
+\vspace{3mm}	
+	
+	\begin{parts}
+	
+	\part Describe the \textbf{sample space} $S$ of possible combos you could order. 
+	\begin{solution}[\stretch{1}]
+			\vspace{3mm}
+		
+			$S=\left\{\text{HF, HR, HS, CF, CR, CS}\right\}$ or $S=\left\{\text{(H,F), (H,R), (H,S), (C,F), (C,R), (C,S)}\right\}$
+
+			\vspace{3mm}	
+		\end{solution}
+		
+	\part Consider the event that someone orders fries as a side on their combo. Is this a \textbf{simple} or a \textbf{compound} event? How do you know?
+	\begin{solution}[\stretch{1}]
+			\vspace{3mm}
+		
+			Compound event --- more than one way to order a combo that includes fries
+
+			\vspace{3mm}	
+		\end{solution}
+		
+	\part The cashier is a little bit bored and decides to try and guess what sandwich and side combo customers will order. Let $A$ be the event that she guesses an order \textbf{correctly}. If all order combinations are equally likely, what is the probability of $A$? Use probability notation.
+		
+		\begin{solution}[\stretch{1}]
+			\vspace{1mm}	
+		
+			P(correct) $=P(A)= \displaystyle \frac{1}{6}$
+			
+			\vspace{1mm}	
+		\end{solution}	
+	
+\part Let $B$ be the event that a customer orders \textbf{onion rings} as their side. What is the probability of $B$?
+		
+		\begin{solution}[\stretch{1}]
+			\vspace{1mm}		
+			P(onion rings) $=P(B)= \displaystyle \frac{2}{6}=\frac{1}{3}$
+			
+			\vspace{3mm}	
+		\end{solution}	
+	
+	\end{parts}
+	
+	\question Consider a probability experiment in which you toss a coin three times.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+		\part Write out the \textbf{sample space} $S$ for the experiment. Let H denote heads and T denote tails.
+		
+		\begin{solution}[\stretch{1}]
+		\vspace{3mm}
+		
+		$S=\left\{\text{HHH, HHT, HTH, THH, HTT, TTH, THT, TTT}\right\}$
+		
+		\vspace{3mm}
+		
+		\end{solution}
+			
+		\part Find the probability of $C=$ \textbf{two out of three} tosses result in heads. Use probability notation.
+		
+		\begin{solution}[\stretch{1}]
+		\vspace{3mm}
+		Three outcomes with 2 heads $\Rightarrow$ P(2 heads) $=P(C) =\displaystyle\frac{3}{8}$
+		\vspace{3mm}
+		\end{solution}
+		
+		\part Find the probability of $D=$ the experiment results in \textbf{at least one} tails. Use probability notation.
+		
+		\begin{solution}[\stretch{1}]
+		\vspace{3mm}
+		Seven outcomes with at least one tail $\Rightarrow$ P(at least one tails) $=P(D)=\displaystyle \frac{7}{8}$
+		\vspace{3mm}
+		\end{solution}
+		
+		\part Describe the \textbf{complement} of event $D$, denoted $D^C$, in terms of the experiment.
+		
+		\begin{solution}[\stretch{1}]
+		\vspace{3mm}
+		$D^C=$ the event that you do NOT get at least one tails (or the event that you get no tails)
+		\vspace{3mm}
+		\end{solution}
+		
+	\part Find the probability of $D^C$ using \textbf{the complement rule} and your result in Part (c).
+		
+		\begin{solution}[\stretch{1}]
+		\vspace{3mm}
+		$P(D^C)= 1-\text{P(D)}=\displaystyle 1-\frac{7}{8}=\frac{1}{8}$
+		\vspace{3mm}
+		\end{solution}
+		
+	\part Describe two \textbf{mutually exclusive} events in your sample space.
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	Student answers may vary. An example might be ``getting all heads'' and ``getting all tails.''
+	\vspace{3mm}	
+	\end{solution}
+		
+	\end{parts}
+		
+%	\question Consider the following table of data collected from a sample of 36 students in STAT 3090 last fall.
+%	
+%	\begin{center}
+%\begin{tabular}{|c|c|c|c|c|}
+%\hline
+% & \hspace{3mm} Coffee (C) \hspace{3mm} & \hspace{4mm} Tea (T) \hspace{4mm} & Hot Cocoa (H) & TOTAL\\
+% \hline
+% Morning Person (M) & 3 & 3 & 2 & 8 \\
+% \hline
+% Night Person (N) & 17 & 3 & 8 & 28 \\
+%\hline
+%TOTAL & 20 & 6 & 10 & 36 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%
+%For each of the following, use proper probability \textbf{notation}, write the associated \textbf{fraction}, and express your final answer as a \textbf{decimal} number rounded to four places. Find the probability that a randomly selected student in the class\dots 
+%
+%\begin{parts}
+%	
+%	\part SEE STAT3090_FA19_LA7
+%	
+%\end{parts}
+
+\newpage
+
+\question Consider the following table of data collected from a sample of 36 students in STAT 3090 last fall. Students were asked whether they were a morning person or a night person, as well as what their hot beverage of choice is. Students could only choose one response for each variable.
+	
+	\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & \hspace{3mm} Coffee (C) \hspace{3mm} & \hspace{4mm} Tea (T) \hspace{4mm} & Hot Cocoa (H) & TOTAL\\
+ \hline
+ Morning Person (M) & 3 & 3 & 2 & 8 \\
+ \hline
+ Night Person (N) & 17 & 3 & 8 & 28 \\
+\hline
+TOTAL & 20 & 6 & 10 & 36 \\
+\hline
+\end{tabular}
+\end{center}
+
+For each of the following, use proper probability \textbf{notation}, write the associated \textbf{fraction}, and express your final answer as a \textbf{decimal} number rounded to four places. If you apply a probability rule (such as the Addition Rule or Complement Rule), \textbf{show the formula} in your work. 
+
+\vspace{3mm}
+
+Find the probability that a randomly selected student from the class\dots 
+
+\begin{parts}
+	
+	\vspace{3mm}
+	
+	\part Prefers tea
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(T)=\frac{6}{36}=0.1667$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is a morning person \textbf{and} prefers coffee
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(M\cap C)=\frac{3}{36}=0.0833$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is a night person \textbf{and} prefers hot cocoa
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(N\cap H)=\frac{8}{36}=0.2222$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Prefers tea \textbf{or} hot cocoa
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(T\cup H)=\frac{6}{36}+\frac{10}{36}-0=\frac{16}{36}=0.4444$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Prefers coffee \textbf{or} is a morning person
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(C\cup M)=\frac{20}{36}+\frac{8}{36}-\frac{3}{36}=\frac{25}{36}=0.6944$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Does \textbf{not} prefer coffee or tea
+	
+	\begin{solution}[\stretch{2}]
+	\vspace{3mm}
+	There are two ways to think about this problem. You could directly apply the Complement Rule: $P\left((C\cup T)^C\right)=1-P(C\cup T)=1-\left(\frac{20}{36}+\frac{6}{36}-0\right)=\frac{10}{36}=0.2778$
+	
+	\vspace{3mm}
+	
+	Or you could consider that the complement of $C\cup T$ is $(C\cup T)^C=H$:
+	
+	$P\left((C\cup T)^C\right)=P(H)=\frac{10}{36}=0.2778$
+	\vspace{3mm}
+	\end{solution}
+	
+\end{parts}
+
+\newpage
+
+\question Choose one of the probabilities that you calculated for Question 1 Parts (a)--(f). Write a sentence stating what the probability of a certain event is by stating the \textbf{sample} of interest, the \textbf{event} described, and the probability \textbf{value}.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Example for Part (a): ``The probability that a randomly selected student in the class prefers tea is 0.1667.''
+
+\vspace{3mm}
+\end{solution} 
+
+\question Identify two mutually exclusive events in this situation. What is the probability of their \textbf{intersection}, i.e., the probability that they both occur at the same time? Express your answer using probability notation.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Example: ``Being a morning person and a night person are mutually exclusive. $P(M\cap N)=0$''
+
+\vspace{3mm}
+\end{solution} 
+
+\question There were two variables used to record responses from students in the sample: whether a student is a morning or night person, and what their hot beverage of choice is. 
+
+\vspace{3mm}
+
+\begin{parts}
+	\part What \textbf{type} of variables are these?
+	
+	\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+Qualitative
+
+\vspace{3mm}
+\end{solution} 
+	
+	\part What \textbf{level of measurement} do both of these variables have?
+	\begin{solution}[\stretch{5}]
+
+\vspace{3mm}
+
+Nominal
+
+\vspace{3mm}
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+\question A survey of high school students indicated that 33\% are in a relationship, 25\% are involved in sports, and 11\% are involved in both. Use the information to answer the following questions.
+
+\vspace{3mm}
+
+\begin{parts}
+		
+	\part What is the probability that a student is involved in a relationship \textbf{given} that they're involved in sports? 
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(R|S) = \frac{P(R \cap S)}{P(S)} = \frac{0.11}{0.25} = 0.44$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is being in a relationship \textbf{independent} of being involved in sports? Justify your answer using probability (regardless of your own personal theories!).
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(R|S)=0.44 \neq P(R)=0.33 \; \Rightarrow$ These are \textbf{dependent} events.
+	\vspace{3mm}
+	\end{solution}
+
+\end{parts}
+
+\question A company has two suppliers for electrical components. China ships 73\% of the electrical components used by the supplier. The probability that the component will be defective \textbf{given} that it was shipped from China is 0.06. What is the probability that a randomly selected component received by the supplier will ship from China \textbf{and} be defective?
+
+\begin{solution}[\stretch{1}]
+\vspace{1mm}
+$P(C)=0.73$, $P(D|C)=0.06$
+
+\vspace{3mm}
+Using the Multiplication Rule: $P(C \cap D) = P(D|C)P(C) = 0.06(0.73) = 0.0438$
+\vspace{1mm}
+\end{solution}
+
+\question You have a standard deck of 52 cards. Recall that a deck of cards has four suites (hearts, diamonds, spades, clubs), each with thirteen values (2-10, J, Q, K, A). Find the probability that you draw two aces \textbf{in a row} without replacing the first ace. 
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{1mm}
+	$P(\text{1st A and 2nd A})=P(\text{1st A})\times P(\text{2nd A }|\text{ 1st A})=\frac{4}{52}\times\frac{3}{51}=0.0045$
+	\vspace{1mm}
+	\end{solution}
+	
+\question General Leia Organa can plan a campaign to fight one major intergalactic battle or three small galactic battles. She believes she has a probability of 0.77 of winning the large battle ($L$) and a probability of 0.89 of winning each of the small battles ($S$). Victories or defeats in the small battles are independent. Leia must win either the large battle or all three small battles to win the campaign. Which strategy should she choose?
+
+\vspace{3mm}
+
+\begin{parts}
+\part First find the probability of winning the large battle.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+$P(L)=0.77$
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the probability of winning all three small battles.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+$P(S \text{ and } S \text{ and } S) = P(S)P(S)P(S)=(0.89)^3=0.7050$
+\vspace{3mm}
+
+\end{solution}
+
+\part Which strategy should she choose if she wants to win the campaign? Justify your answer.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+She should choose to fight the large intergalactic battle since there is a higher probability of winning it than winning three small battles.
+\vspace{3mm}
+
+\end{solution}
+
+\end{parts}
+
+	
+\end{questions}
+
+%-----------------------------------------------------------------------------%
+
+\end{document}

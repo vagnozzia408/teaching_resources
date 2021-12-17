@@ -1,0 +1,246 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Learning Activity 17}
+\author{Chapter 9}
+\date{STAT 3090}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{1.5in}
+\renewcommand{\arraystretch}{2}
+
+
+\begin{document}
+\noindent\begin{tabular}{@{}p{1.4in}p{5.2in}@{}}
+Group Member Names: & \hrulefill
+\end{tabular}
+
+\vspace{1mm}
+\noindent If you have group members who collaborated but were not logged into the Zoom session, please note in the submission comments how they collaborated on the learning activity.
+
+\vspace{5mm}
+
+\noindent Here are some problems to help you get comfortable working with the $t$-distribution! For each problem, \textbf{include a sketch} with the $t$ value on the horizontal axis and the corresponding shaded and labeled area. Use the \textbf{notation} on page 144 of the Lecture Guide to label your critical values.
+
+\vspace{3mm}
+
+\begin{questions}	
+	
+	\question What is the $t$ critical value for a 90\% confidence interval for $\mu$ for a sample of size 17?
+		
+	\begin{solution}[\stretch{1}]
+
+\begin{multicols}{2}
+[]
+
+\begin{tikzpicture}
+        \def\normaltwo{\x,{2*1/exp(((\x-3)^2)/2)}}
+        \def\y{4}
+        \def\mu{3}
+        \def\fy{2*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,-.1) -- plot[domain=\y:6.5] (\normaltwo) -- (6.5,-.1) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},-.1) node[below] {\small{$t_{.05,16}$}};
+        \draw[] ({\mu},{0}) -- ({\mu},-.1) node[below] {\small{$0$}};
+        \draw[-] (-.7,-.1) -- (6.7,-.1) node[right] {};
+        \node[] at (7.0,-.1) {$t$};
+        \node[] at (5.5,1) {$0.05$};
+        \draw[-] (5.5,0.8) -- (4.5,.3);
+        \node at (3,1) {$0.95$};
+    \end{tikzpicture}
+    
+    $\alpha=1-0.90=0.10 \Rightarrow \nicefrac{\alpha}{2}=0.050$
+
+	$df=n-1=17-1=16$
+	
+	$t_{.05,16}=1.746$
+    
+\end{multicols}
+
+	\end{solution}
+	
+	\question What is the $t$ critical value for a 99\% confidence interval for $\mu$ for a sample of size 17?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\begin{multicols}{2}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.5}
+        \def\mu{3}
+        \def\fy{2*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,-.1) -- plot[domain=\y:6.5] (\normaltwo) -- (6.5,-.1) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},-.1) node[below] {\small{$t_{.005,16}$}};
+        \draw[] ({\mu},{0}) -- ({\mu},-.1) node[below] {\small{$0$}};
+        \draw[-] (-.7,-.1) -- (6.7,-.1) node[right] {};
+        \node[] at (7.0,-.1) {$t$};
+        \node[] at (5.5,1) {$0.005$};
+        \draw[-] (5.5,0.8) -- (4.8,.2);
+        \node at (3,1) {$0.995$};
+    \end{tikzpicture}
+    
+    $\alpha=1-0.99=0.01 \Rightarrow \nicefrac{\alpha}{2}=0.005$
+	
+	$df=n-1=16$
+	
+	$t_{.005,16}=2.921$
+	
+	
+	\end{multicols}
+
+	\end{solution}	
+	
+	\question Answer the following based on your results for Problems \#1 and \#2: When the confidence level \textbf{increases}, we expect the $t$ critical value to be \fillin[larger] (larger/smaller). This means that the width of our confidence interval will \fillin[increase] (increase/decrease).
+	
+	\vspace{3mm}
+	
+	\question What is the $t$ critical value for a 99\% confidence interval for $\mu$ for a sample of size 31?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\begin{multicols}{2}
+	
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.5}
+        \def\mu{3}
+        \def\fy{2*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,-.1) -- plot[domain=\y:6.5] (\normaltwo) -- (6.5,-.1) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},-.1) node[below] {\small{$t_{.005,30}$}};
+        \draw[] ({\mu},{0}) -- ({\mu},-.1) node[below] {\small{$0$}};
+        \draw[-] (-.7,-.1) -- (6.7,-.1) node[right] {};
+        \node[] at (7.0,-.1) {$t$};
+        \node[] at (5.5,1) {$0.005$};
+        \draw[-] (5.5,0.8) -- (4.8,.2);
+        \node at (3,1) {$0.995$};
+    \end{tikzpicture}
+	
+	$\alpha=0.005, \; df=31-1=30$
+	
+	$t_{.005,30}=2.750$
+	
+	\end{multicols}
+	
+	\end{solution}
+	
+	\question Answer the following based on your results for Problems \#2 and \#4: When the confidence level stays the same and \textbf{sample size increases}, we expect the $t$ critical value to be \fillin[smaller] (larger/smaller). This means that the width of our confidence interval will \fillin[decrease] (increase/decrease).
+	
+	\vspace{3mm}
+	
+%\newpage
+	\question Find the \textbf{approximate} $t$ critical value for a 95\% confidence interval for $\mu$ for a sample of size 84. Use the \textbf{t-table} (not a calculator). See Example 9.6 Part B.\ on page 145 of your lecture notes as a guide.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\begin{multicols}{2}
+
+	\begin{tikzpicture}
+        \def\normaltwo{\x,{2*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.25}
+        \def\mu{3}
+        \def\fy{2*1/exp(((\y-3)^2)/2)}
+        \fill [fill=purp!30] (\y,-.1) -- plot[domain=\y:6.5] (\normaltwo) -- (6.5,-.1) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},-.1) node[below] {\small{$t_{.025,83}$}};
+        \draw[] ({\mu},{0}) -- ({\mu},-.1) node[below] {\small{$0$}};
+        \draw[-] (-.7,-.1) -- (6.7,-.1) node[right] {};
+        \node[] at (7.0,-.1) {$t$};
+        \node[] at (5.5,1) {$0.025$};
+        \draw[-] (5.5,0.8) -- (4.8,.2);
+        \node at (3,1) {$0.975$};
+    \end{tikzpicture}
+
+	$\alpha=1-0.95=0.05 \Rightarrow \nicefrac{\alpha}{2}=0.025$
+	
+	$df=n-1=83$
+	
+	$t_{.025,83}\approx t_{.025,80}=1.990$
+	
+	\end{multicols}
+
+	\end{solution}	
+	
+\end{questions}
+
+\noindent Before you leave the Zoom session today, check to see if you have the \verb|invT| function in your TI calculator. If you do not and would like to have it, come chat with me before you leave class!
+%-----------------------------------------------------------------------------%
+
+\end{document}

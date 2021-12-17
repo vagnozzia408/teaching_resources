@@ -1,0 +1,587 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Extra Practice}
+\author{Chapters 6--8}
+\date{STAT 3090}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+\renewcommand{\arraystretch}{2}
+\usepackage{url}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.5in}p{2.5in}@{}}
+Name: & \hrulefill 
+\end{tabular}
+
+\vspace{3mm}
+
+
+\noindent This document contains additional practice problems from Chapters 6--8 to help you as you prepare for Exam~\#2.
+
+\vspace{3mm}
+
+\begin{questions} 
+
+\question According to M\&M's, each package of Milk Chocolate M\&M's contains 24\% blue M\&M's. Suppose that you have a random sample of 200 Milk Chocolate M\&M's. Let $\hat{p}$ represent the proportion of blue M\&M's in your sample.
+
+\vspace{3mm}
+			\begin{parts}
+	
+	\part Which parameter is being estimated by $\hat{p}$?
+		
+\vspace{3mm}
+	\begin{choices}
+	\choice The true average number of Milk Chocolate M\&M's that are blue.
+	\choice The proportion of blue candies in a sample of 200 Milk Chocolate M\&M's.
+	\choice The standard deviation of the proportion of blue candies in a sample of 200 Milk Chocolate M\&M's.
+	\CorrectChoice The true proportion of Milk Chocolate M\&M's that are blue.
+\end{choices}
+	
+\vspace{3mm}
+	
+	
+	\part What is the probability that the percentage of blue candies in your random sample of 200 M\&M's is 20\% or less?
+		
+	\vspace{3mm}
+	
+\begin{choices}
+	\choice 0.000
+	\CorrectChoice 0.093
+	
+	\choice 0.186
+	
+	\choice 0.200
+
+\end{choices}	
+
+\vspace{3mm}
+		
+\end{parts}
+
+\question The School of Mathematical and Statistical Sciences has found that for each exam, 3\% of the scantrons are not correctly filled out and the scantron machine will not record a score for those students. Often this is because students forget to bubble in their test version. Suppose that we have a random sample of 300 scantrons from students taking exams in the month of November. Let $p=$ the true proportion of scantrons that are incorrectly completed for exams taken in the month of November, and let $\hat{p}$ be the proportion of incorrectly completed scantrons in our random sample. Use this information to answer the following about the shape of the distribution of $\hat{p}$. 
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part Describe the center or mean of the sampling distribution of $\hat{p}$. (Include the correct symbol in your answer.)
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\mu_{\hat{p}}=p=0.03$
+
+\vspace{3mm}
+\end{solution}
+
+\part Describe the spread or standard error of the sampling distribution of $\hat{p}$. Round your answer to four decimal places.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\sigma_{\hat{p}}=\sqrt{\frac{0.03(0.97)}{300}}=0.0098$
+
+\vspace{3mm}
+\end{solution}
+
+\part Describe the shape of the sampling distribution of $\hat{p}$. Justify your reasoning.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+The sampling distribution of $\hat{p}$ is approximately normal because $np=9\geq 5$ and $n(1-p)=291\geq 5$. 
+
+\vspace{3mm}
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+\question The wait time at a particular coffee shop is normally distributed. Records indicate that the mean wait time is 4.5 minutes with a standard deviation of 2 minutes. Let $\overline{X}$ represent the mean wait time for a random sample of 25 customers. Describe the sampling distribution of $\overline{X}$.
+
+\vspace{3mm}
+\begin{choices}
+	\choice The sampling distribution is normally distributed with a mean of 4.5 minutes and a standard deviation of 2 minutes.
+	\choice The sampling distribution has a mean of 4.5 minutes and a standard deviation of $\frac{2}{\sqrt{25}}$ minutes, but may not be normally distributed.
+	\CorrectChoice The sampling distribution is normally distributed with a mean of 4.5 minutes and a standard deviation of $\frac{2}{\sqrt{25}}$ minutes.
+	
+	\choice There is not enough information to determine the sampling distribution of $\overline{X}$.
+\end{choices}
+\vspace{3mm}
+
+\question Thompson and Thompson is a steel bolts manufacturing company. One of their steel bolts products has a mean diameter of 130 mm and a standard deviation of 6 mm. If a random sample of 33 of these steel bolts is selected, what is the probability that the sample mean would be greater than 130.6 mm?
+
+\vspace{3mm}
+
+\begin{choices}
+	\CorrectChoice 0.28
+	\choice 0.72
+	\choice 0.46
+	\choice 0.53
+\end{choices}
+
+\vspace{3mm}
+
+\question What is the area under the standard normal curve between the $z$-scores of $-0.5$ and 1.5?
+
+\vspace{3mm}
+
+\begin{choices}
+	\choice 0.3753
+	\choice $-0.6247$
+	\CorrectChoice 0.6247
+	\choice 0.6826
+\end{choices}
+
+\vspace{3mm}
+
+\question Which of the following is a continuous random variable?
+
+\vspace{3mm}
+
+\begin{choices}
+	\choice the number of grains of sand in a beach pail
+	\choice the number of grains of sand on one hundred yards of beach
+	\CorrectChoice the weight of sand in a beach pail
+	\choice All of the above are continuous random variables.
+\end{choices}
+
+\vspace{3mm} 
+
+\question A student is taking a True/False test consisting of 6 questions. If the student randomly selects each answer, what is the probability that they get at least two answers correct? You may assume that each answer is independent of another.
+
+\vspace{3mm}
+
+\begin{choices}
+	\choice 0.3438
+	\CorrectChoice 0.8906
+	\choice 0.6563
+	\choice 0.1094
+\end{choices}
+
+\vspace{3mm}
+
+\newpage
+\question $Z$ is a random variable from the Standard Normal Distribution. Find $P(Z=1.35)$.
+
+\vspace{3mm}
+
+\begin{choices}
+	\CorrectChoice $P(Z=1.35)=0$
+	\choice $P(Z=1.35)=0.9115$
+	\choice $P(Z=1.35)=0.0885$
+	\choice $P(Z=1.35)=0.8230$
+\end{choices}
+
+\vspace{3mm}
+
+\question Find the $z$-score such that the area to its right is 0.2389.
+
+\vspace{3mm}
+
+\begin{choices}
+	\choice $Z=0.00$
+	\CorrectChoice $Z=0.71$
+	\choice $Z=0.76$
+	\choice $Z=-0.71$
+\end{choices}
+
+\vspace{3mm}
+
+\question According to the U.S.\ Census Bureau, 13.1\% of U.S.\ adults have an advanced degree. A random sample of 5 U.S.\ adults is taken. Let $X$ be the number of U.S.\ adults in a sample of size 5 who have an advanced degree. If $X$ is a binomial random variable, what is the probability that at least one of these 5 people has an advanced degree?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice 0.8690
+\CorrectChoice 0.5044
+\choice 0.4956
+\choice 0.6550
+\end{choices}
+
+\vspace{3mm}
+
+\question $W$ is a discrete random variable with the distribution given below.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+$W$ & 1 & 2 & 4 \\
+\hline
+$P(W)$ & 0.2 & 0.5 & 0.3\\
+\end{tabular}
+\end{center}
+\begin{parts}
+
+\part What is the expected value of $W$?
+\vspace{3mm}
+\begin{choices}
+	\CorrectChoice 2.4
+	\choice 1.11
+	\choice 1.24
+	\choice 2
+\end{choices}
+
+\vspace{3mm}
+
+\part What is the standard deviation of $W$?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice 2.4
+\CorrectChoice 1.11
+\choice 1.24
+\choice 2
+\end{choices}
+
+\end{parts}
+
+\newpage
+
+\question Which of the following is \underline{not} a property of the Standard Normal Distribution?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice The mean of the Standard Normal Distribution is 0.
+\choice The variance of the Standard Normal Distribution is 1.
+\CorrectChoice The Standard Normal Distribution is left skewed.
+\choice The Standard Normal Distribution is symmetric.
+\end{choices}
+
+\vspace{3mm}
+
+\question The birth weight of newborn babies is approximately normally distributed with mean 7.5 lb and standard deviation 1.2 lb.
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part Let $X$ represent the weight of a newborn baby. Which of the following probability statements can be used to solve for the probability that a newborn baby weighs at least 9 lb?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice $P(X\geq 9)$
+\choice $P(X>9)$
+\choice $P(Z>1.25)$
+\CorrectChoice All of the above probability statements would be correct.
+\end{choices}
+
+\vspace{3mm}
+
+\part According to kidshealth.org, an underweight newborn weighs less than $X_{LOW}$. If approximately 5.05\% of newborns are born underweight, find $X_{LOW}$.
+
+\vspace{3mm}
+
+\begin{choices}
+\choice $X_{LOW}=7.52$ pounds
+\choice $X_{LOW}=1.64$ pounds
+\CorrectChoice $X_{LOW}=5.53$ pounds
+\choice $X_{LOW}=9.47$ pounds
+\end{choices}
+
+\vspace{3mm}
+
+\end{parts}
+
+\question Pulse rates of adult men are approximately normal with a mean of 70 and a standard deviation of 8. Which choice correctly describes how to find the proportion of men that have a pulse rate greater than 78?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice Find the area to the left of $z=1$ under a standard normal curve.
+\choice Find the area between $z=-1$ and $z=1$ under a standard normal curve.
+\CorrectChoice Find the area to the right of $z=1$ under a standard normal curve.
+\choice Find the area to the right of $z=-1$ under a standard normal curve.
+\end{choices}
+
+\vspace{3mm}
+
+\question Suppose the Clemson women's softball team needs to win 4 out of 7 games in a championship game series. Once a team reaches the $4^\text{th}$ win, it is declared the winner of the series and the series ends. Let $X$ be the number of games played in the series. Could $X$ be considered a Binomial random variable?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice Yes, since the only options for the outcomes of the game are Win, Lose, or Tie.
+\CorrectChoice No, since the number of games played is not fixed.
+\choice Yes, since the probability of winning a game is unknown.
+\choice No, since $X$ can only take values between 0 and 7.
+\end{choices}
+
+\vspace{3mm} 
+
+\newpage
+
+\question Steve and Tony are two tenured college professors in Georgia. Rather than spend their Friday evenings complaining about the heat, Steve and Tony sit down to play a game of poker. The winnings for each game have an unknown probability distribution with a mean of \$4 and a standard deviation of \$20. Let $X$ represent the winnings from a  game and let $\overline{X}$ represent the average winnings for a random sample of 35 games.
+
+\vspace{3mm}
+
+\begin{parts}
+\part Explain why $\overline{X}$ has a normal distribution.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+$\overline{X}$ has a normal distribution because the sample size $n$ is greater than 30.
+\vspace{3mm}
+\end{solution}
+
+\part Give the mean and standard deviation of $\overline{X}$. Label each value with the appropriate symbol. Round your answer to two decimal places if appropriate.
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$\mu_{\overline{X}}=\$4$
+
+\vspace{3mm}
+
+$\sigma_{\overline{X}}=\frac{20}{\sqrt{35}}=\$3.38$
+\vspace{3mm}
+\end{solution}
+
+\part What is the probability that the average winnings for a random sample of 35 games will be greater than \$0.00? Label your answer with the appropriate probability notation. Round the final answer to four decimal places. To show your work, you may do one of the following: provide a well-labeled sketch with the appropriate area shaded, calculate the $z$-score and use the standard normal table, or write the correct integral for this problem.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$P(\overline{X}>0)=P\left(Z>\frac{0-4}{3.38}\right)=P(Z>-1.18)=0.8817$ if using rounded answer from Part (b) and calculator, $0.8816$ if using calculator and unrounded answer from Part (b), $0.8810$ if using table
+
+\vspace{3mm}
+
+Integral Notation:
+
+\vspace{1mm}
+
+$P(\overline{X}>0)=\int_0^{\infty}\frac{1}{3.38\sqrt{2\pi}}e^{-\frac{(x-4)^2}{2(3.38)^2}}dx$ if using the normal pdf
+
+$P(Z>-1.18)=\int_{-1.18}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx$ if using the standard normal pdf
+
+\vspace{3mm}
+\end{solution}
+\end{parts}
+
+\question Polar Bear Frozen Foods manufactures frozen French fries for sale to grocery store chains. The final package weight is thought to have the probability density function $f(x)=\frac{1}{6}$, with $57\leq X\leq 63$, where $X$ represents the final package weight in ounces.
+
+\vspace{3mm}
+
+\begin{parts}
+\part What is the probability that a randomly selected package will weigh between 60 and 63 ounces? Include the correct probability statement in your answer. To show your work, write the correct integral that needs to be solved.
+
+\begin{solution}[\stretch{1}]
+\vspace{3mm}
+
+$P(60<X<63)=\int_{60}^{63}\frac{1}{6}dx=0.5$
+
+\vspace{3mm}
+\end{solution}
+
+\part What is the average weight of a package? Use the correct symbol for the mean. Include units in your answer. To show your work, write out the integral that needs to be solved.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$\mu_X=\int_{57}^{63}\frac{x}{6}dx=60$ oz
+
+\vspace{3mm}
+\end{solution}
+\end{parts}
+
+\newpage
+
+\question Without an appointment, the waiting time $t$ in minutes at the doctor's office has the probability density function $f(t)=\frac{1}{38}$, where $0\leq t\leq 38$. What is the probability that you will wait at least 26 minutes?
+
+\vspace{3mm}
+
+\begin{choices}
+\CorrectChoice 0.3158
+\choice 1
+\choice 0.6842
+\choice Cannot be determined since $f(t)$ is not a valid pdf.
+\end{choices}
+
+\vspace{3mm}
+
+\question Suppose it is known that approximately 2.5\% of people in the United States have red hair. Tim the Stats Man decided to take a random sample of 250 U.S.\ citizens and records their hair color. What is the probability that Tim finds that more than 6 people in that sample have red hair?
+
+\vspace{3mm}
+
+\begin{choices}
+	\CorrectChoice 0.54
+	\choice 0.46
+	\choice 0.10
+	\choice 0.90
+\end{choices}
+
+\vspace{3mm}
+
+\question According to a report published by \textit{U.S. News and World Report}, 41\% of Clemson students live on campus. Is the proportion of Clemson students who live on campus in a sample of 60 students normally distributed?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice No, because the sample size is larger than 30.
+\choice Yes, because the sample size is larger than 30.
+\CorrectChoice Yes, because $60(0.41)\geq 5$ and $60(1-0.41)\geq5$.
+\choice No, because $60(0.41)\geq 5$ and $60(1-0.41)\geq5$.
+\end{choices}
+
+\vspace{3mm}
+
+\question A survey asks a random sample of 1200 adults in South Carolina if they support an increase in the state sales tax with the additional revenue going to education. Let $\hat{p}$ denote the proportion in the sample that say that they support an increase. Suppose that 40\% of all adults in South Carolina truly support an increase. What are the mean and standard deviation of the sampling distribution for $\hat{p}$?
+
+\vspace{3mm}
+
+\begin{choices}
+\choice $\mu_{\hat{p}}=0.60$, $\sigma_{\hat{p}}=0.0115$
+\choice $\mu_{\hat{p}}=480$, $\sigma_{\hat{p}}=288$
+\CorrectChoice $\mu_{\hat{p}}=0.40$, $\sigma_{\hat{p}}=0.0141$
+\choice $\mu_{\hat{p}}=0.40$, $\sigma_{\hat{p}}=0.0115$
+\end{choices}
+
+\vspace{3mm} 
+
+\question TD's has a sampler appetizer platter that lets you choose four appetizers for \$6.99. They have 11 appetizers to choose from. How many appetizer combinations could you choose?
+
+\begin{solution}[\stretch{1}]
+${11\choose 4}=\frac{11!}{4!(11-4)!}=330$ appetizer combinations
+\end{solution}
+
+\newpage 
+
+\question It has been determined that 80\% of apartments listed as ``apartment for rent'' on Craigslist have been rented within two weeks of the initial listing. We selected a random sample of 100 ``apartment for rent'' ads on Craigslist and tracked down the rental result for each. We define $\hat{p}$ as the proportion of apartments in our sample of size 100 that rent within two weeks of listing the ad.
+
+\vspace{3mm}
+
+\begin{parts}
+\part Is the proportion of apartments that will rent within two weeks in our sample of size 100 normally distributed? Support your response with the appropriate calculation(s).
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+
+$np=100(0.80)=80\geq 5$ and $n(1-p)=100(0.20)=20\geq 5 \Rightarrow$ Yes, $\hat{p}$ is normally distributed.
+
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the mean and standard error of the sampling distribution for $\hat{p}$ in this situation.
+
+\begin{solution}[\stretch{1}]
+
+\vspace{3mm}
+$\mu_{\hat{p}}=p=0.80$
+
+\vspace{3mm}
+
+$\sigma_{\hat{p}}=\sqrt{\frac{(0.80)(0.20)}{100}}=0.04$
+\vspace{3mm}
+
+\end{solution}
+
+\part Find the probability that more than 75 out of 100 ``apartment for rent'' ads will result in renting the unit within two weeks. Give a probability statement, show a z-score calculation, and round your final answer to four places.
+
+\begin{solution}[\stretch{3}]
+
+\vspace{3mm}
+$z=\frac{0.75-0.80}{0.04}-1.25$
+\vspace{3mm}
+
+$P(\hat{p}>0.75)=P(Z>-1.25)=0.8944$
+
+\end{solution}
+\end{parts}
+
+\end{questions}
+
+
+
+
+%-----------------------------------------------------------------------------%
+
+\end{document}

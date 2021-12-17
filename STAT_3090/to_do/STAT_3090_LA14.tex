@@ -1,0 +1,264 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Learning Activity 14}
+\author{Chapter 8}
+\date{STAT 3090}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+\renewcommand{\arraystretch}{2}
+
+
+\begin{document}
+\noindent\begin{tabular}{@{}p{1.05in}p{5.5in}@{}}
+Group Members: & \hrulefill
+\end{tabular}
+
+\vspace{3mm}
+
+\begin{questions} 
+		
+	\question Suppose that the number of Krabby Patties sold at the Krusty Krab on a randomly selected day, $X$, follows a normal distribution with a mean of 537 patties and a standard deviation of 38.6 patties.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Describe the distribution of $\overline{X}$, the mean number of Krabby Patties sold per day for a random sample of 27 days, by identifying the \textbf{mean} $\mu_{\overline{X}}$ and \textbf{standard error} $\sigma_{\overline{X}}$. Round standard error to four places.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\overline{X}}=537$ patties \hspace{10mm} $\sigma_{\overline{X}}=\frac{38.6}{\sqrt{27}}=7.4286$ patties
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part What distribution does $\overline{X}$ follow? How can you tell?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	The population $X$ is normally distributed, so $\overline{X}$ follows an approximately normal distribution.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part Suppose that a random sample of 27 days is selected. What is the probability that the sample mean number of Krabby Patties differs from the population mean by \textbf{more than} 15 patties? Include a probability statement, your answer, and an appropriately labeled and shaded sketch.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	Lower value: $537-15=522 \Rightarrow z=\frac{522-537}{7.4286}=-2.02$
+	
+	\vspace{3mm}
+	
+	Upper value: $537+15=552 \Rightarrow z=\frac{552-537}{7.4286}=2.02$
+	
+	\vspace{3mm}
+	
+	$P\left(\overline{X}<522\right)+P\left(\overline{X}>552\right)=P(Z<-2.02)+P(Z>2.02)=0.0217+0.0217=0.0434$
+	
+	\vspace{1mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+	\question A national survey estimated that of all U.S.\ citizens who had visited the hostpital within the last five years, approximately 69\% were satisfied with the treatment received during their visit. In an evaluation of their patient care standards, the staff at Grey-Sloan Memorial Hospital are interested in seeing how their hospital compares to the national result. They plan to interview a sample of 235 randomly selected patients who stayed at Grey-Sloan in the past five years.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part Describe the distribution of $\hat{p}$, the proportion of satisfied patients in a sample of 235, by describing the \textbf{mean} $\mu_{\hat{p}}$ and \textbf{standard error} $\sigma_{\hat{p}}$. Round standard error to four decimal places.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\hat{p}}=p=0.69$ \hspace{10mm} $\sigma_{\hat{p}}=\sqrt{\frac{0.69(0.31)}{235}}=0.0302$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part What distribution does $\hat{p}$ follow? How can you tell?
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$np=235(0.69)=162.15\geq 5$ and $n(1-p)=235(1-0.69)=72.85\geq 5$
+	
+	\vspace{3mm}
+	
+	$\Rightarrow \hat{p}$ follows an approximately normal distribution.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part What is the probability that the proportion of satisfied hospital patients at Grey-Sloan Memorial Hospital differs from the national result by \textbf{less than} 5\%? Include a probability statement, your answer, and an appropriately labeled and shaded sketch.
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	Lower value: $0.69-0.05=0.64 \Rightarrow z=\frac{0.64-0.69}{0.0302}=-1.66$
+	
+	\vspace{3mm}
+	
+	Upper value: $0.69+0.05=0.74 \Rightarrow z=\frac{0.74-0.69}{0.0302}=1.66$
+	
+	\vspace{3mm}
+	
+	$P(0.64<\hat{p}<0.74)=P(-1.66<Z<1.66)=0.9031$
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+\end{questions}
+
+\begin{solution}
+\textcolor{black}{Sketch for Problem \#1}
+
+\vspace{3mm}
+
+\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4.5}
+        \def\z{1.5}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (-.5,0) -- plot[domain=-.5:\z] (\normaltwo) -- ({\z},0) -- cycle;
+        \fill [fill=purp!30] (\y,0) -- plot[domain=\y:6.5] (\normaltwo) -- (6.5,0) -- cycle;
+
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$2.02$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-2.02$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (.5, 1) {0.0217};
+        \draw[-] (.5,0.8) -- (.8,.15);
+        \node[] at (5.5, 1) {0.0217};
+        \draw[-] (5.5,0.8) -- (5.1,.15);
+
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+
+
+\vspace{5mm}
+
+\textcolor{black}{Sketch for Problem \#2}
+
+\vspace{3mm}
+
+\begin{tikzpicture}
+        \def\normaltwo{\x,{2.5*1/exp(((\x-3)^2)/2)}}
+        \def\y{4}
+        \def\z{2}
+        \def\mu{3}
+        \def\fy{2.5*1/exp(((\y-3)^2)/2)}
+        \def\fz{2.5*1/exp(((\z-3)^2)/2)}
+        \fill [fill=purp!30] (\z,0) -- plot[domain=\z:\y] (\normaltwo) -- ({\y},0) -- cycle;
+        \draw[domain=-.5:6.5,samples=100] plot (\normaltwo) node[right] {};
+        \draw[dashed] ({\y},{\fy}) -- ({\y},0) node[below] {\small{$1.66$}};
+        \draw[dashed] ({\z},{\fz}) -- ({\z},0) node[below] {\small{$-1.66$}};
+        \draw[] ({\mu},{.1}) -- ({\mu},0) node[below] {\small{$0$}};
+        \draw[-] (-.7,0) -- (6.7,0) node[right] {};
+        \node[] at (1.5, 2.2) {0.9031};
+        \draw[-] (1.5,2) -- (2.5,1.5);
+        \node[] at (7.0,0) {$Z$};
+    \end{tikzpicture}
+
+\end{solution}
+
+%-----------------------------------------------------------------------------%
+
+\end{document}

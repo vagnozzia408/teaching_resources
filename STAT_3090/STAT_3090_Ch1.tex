@@ -1,0 +1,200 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Practice Problems}
+\author{Chapter 1}
+\date{STAT 3090}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\begin{document}
+
+\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+Name: & \hrulefill
+\end{tabular}
+
+
+\begin{questions} 
+
+	\question The Environmental Protection Agency (EPA) uses a few new automobiles of each model every year to collect data on gasoline mileage performance. For the 2017 Honda Accord model, they selected a sample of 16 cars and determined their average fuel efficiency to be 32.2 miles per gallon.
+	
+	\vspace{3mm}
+
+	\begin{parts}
+	
+		\part What is the \textbf{population of interest} in this study?
+	
+		\begin{solution}[\stretch{1}]	
+			\vspace{3mm}	
+		
+			All 2017 Honda Accords
+
+			\vspace{3mm}
+		\end{solution}
+	
+		\part Is the average fuel efficiency of 32.2 miles per gallon a statistic or a parameter? \textbf{Why}?
+	
+		\begin{solution}[\stretch{1}]
+			\vspace{3mm}
+				
+			32.2 mpg is a statistic because it is calculated from the sample of 16 Accords.
+
+			\vspace{3mm}	
+		\end{solution}	
+	\end{parts}
+
+	\question A student engagement committee at Clemson decides to conduct a survey to learn about how students are involved in campus clubs and organizations. The committee randomly selects 125 students and finds that 73\% report being involved in at least one club or organization on campus.
+
+\vspace{5mm}
+
+	\begin{parts}
+	
+		\part Identify the \textbf{sample} in this situation.
+		
+		\begin{solution}[\stretch{1}]
+			\vspace{3mm}
+					
+			125 Clemson students
+			
+			\vspace{3mm}
+		\end{solution}
+	
+		\part Describe the \textbf{population} in this situation.
+	
+		\begin{solution}[\stretch{1}]		
+			\vspace{3mm}				
+			All Clemson students
+			
+			\vspace{3mm}
+		\end{solution}
+		
+		\part Identify the \textbf{statistic} in this study.
+	
+		\begin{solution}[\stretch{1}]		
+			\vspace{3mm}				
+			The 73\% of students in the sample involved in at least one club or organization on campus
+			
+			\vspace{3mm}
+		\end{solution}
+		
+		\part Describe the \textbf{parameter} in this study.
+	
+		\begin{solution}[\stretch{1}]		
+			\vspace{3mm}				
+			The true percentage of Clemson students who are involved in at least one club or organization on campus
+			
+			\vspace{3mm}
+		\end{solution}
+
+	\end{parts}
+	
+	\question Identify the goal of each of the following as either \textbf{descriptive} or \textbf{inferential} statistics. Describe \textbf{why} you give your answer.
+	
+	\begin{parts}
+	\part A researcher wants to study the exercise habits of residents in Pickens County. She randomly selects a sample of residents using phone book listings and conducts short phone interviews with 203 residents who answer the phone, asking them about their weekly exercise routine. She finds that 62\% of residents in Pickens County exercise 2-3 times per week.
+	
+	\begin{solution}[\stretch{1}]		
+			\vspace{3mm}				
+			Inferential statistics --- the researcher wants to conclude something about the exercise habits of all residents in Pickens County and estimates her conclusion based on a sample.
+			
+			\vspace{3mm}
+		\end{solution}
+	
+	\part The owner of a small start-up business with 19 employees asks each of them to submit a timesheet logging their hours worked per day. He finds that, in the last week, the employees at his business worked an average of 9.5 hours per day.
+	
+	\begin{solution}[\stretch{1}]		
+			\vspace{3mm}				
+			Descriptive statistics --- the small business owner only wants to summarize the data collected from the employees at his company and is not trying to generalize to a larger population.
+			
+			\vspace{3mm}
+		\end{solution}
+	
+	\end{parts}
+	
+
+\end{questions}
+
+%-----------------------------------------------------------------------------%
+
+\end{document}

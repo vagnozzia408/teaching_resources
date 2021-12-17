@@ -1,0 +1,189 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Learning Activity 13}
+\author{Chapter 8}
+\date{STAT 3090}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+\renewcommand{\arraystretch}{2}
+
+
+\begin{document}
+\noindent\begin{tabular}{@{}p{1.05in}p{5.5in}@{}}
+Group Members: & \hrulefill
+\end{tabular}
+
+\vspace{3mm}
+
+\begin{questions} 
+		
+	\question Let $X=$ the number of large bags of popcorn sold by a local movie theater in a day. Suppose that $X$ is normally distributed with a mean of 230 bags and a standard deviation of 29 bags. Describe the distribution of $\overline{X}$, the \textbf{average} number of large bags of popcorn sold in a random sample of 7 days, by identifying the following.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part \textbf{Mean} of the Distribution of $\overline{X}$ (Use the symbol and value on page 117 of the Lecture Guide.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\overline{X}}=230$ large popcorn bags
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Standard Deviation} of the Distribution of $\overline{X}$ (Use the symbol and formula on page 117.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\sigma_{\overline{X}}=\displaystyle \frac{29}{\sqrt{7}}=10.96$ large popcorn bags
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Shape} of the Distribution of $\overline{X}$ (Use the flowchart on page 118 to determine whether $\overline{X}$ is normally distributed and how you know.)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\overline{X}$ is approximately normally distributed because $X$ is normally distributed.
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+	\question Suppose that $Y$ describes the number of tickets sold by the movie theater in a day, with a mean of 1040 tickets and a standard deviation of 212 tickets. Describe the distribution of $\overline{Y}$, the \textbf{average} number of tickets sold per day in a random sample of 55 days.
+	
+	\vspace{3mm}
+	
+	\begin{parts}
+	
+	\part \textbf{Mean} of the Distribution of $\overline{Y}$
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\mu_{\overline{Y}}=1040$ tickets
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Standard Deviation} of the Distribution of $\overline{Y}$
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	$\sigma_{\overline{Y}}=\displaystyle \frac{212}{\sqrt{55}}=28.59$ tickets
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\part \textbf{Shape} of the Distribution of $\overline{Y}$ (i.e.\ whether it's normally distributed and how you know!)
+	
+	\begin{solution}[\stretch{1}]
+	
+	\vspace{3mm}
+
+	By the Central Limit Theorem, $\overline{Y}$ is approximately normally distributed because the sample size is large enough ($n=55\geq 30$). 
+	
+	\vspace{3mm}
+
+	\end{solution}	
+	
+	\end{parts}
+		
+\end{questions}
+
+%-----------------------------------------------------------------------------%
+
+\end{document}
