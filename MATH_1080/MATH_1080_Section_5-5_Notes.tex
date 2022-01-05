@@ -70,7 +70,7 @@ $$\int_a^b f\big( \textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)}\,dx=\int_{u
        	xlabel=$x$,ylabel=$y$,
        	axis line style=<->
     ]
-    	\addplot[name path=f,smooth,domain=-5:5,color=blue,samples=100,<->,thick] {(2*x)/(x^2+1)^2};
+    	\addplot[name path=f,smooth,domain=-5.25:5.25,color=blue,samples=100,<->,thick] {(2*x)/(x^2+1)^2};
     \end{axis}
     \end{tikzpicture}
 \end{center}
@@ -88,8 +88,8 @@ $$\int_a^b f\big( \textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)}\,dx=\int_{u
        	xlabel=$u$,ylabel=$y$,
        	axis line style=<->
     ]
-    	\addplot[name path=f,smooth,domain=-5:-.9,color=blue,samples=100,<->,thick] {1/x^2};
-    	\addplot[name path=f,smooth,domain=.9:5,color=blue,samples=100,<->,thick] {1/x^2};
+    	\addplot[name path=f,smooth,domain=-5.25:-.9,color=blue,samples=100,<->,thick] {1/x^2};
+    	\addplot[name path=f,smooth,domain=.9:5.25,color=blue,samples=100,<->,thick] {1/x^2};
 
     \end{axis}
     \end{tikzpicture}
@@ -100,7 +100,7 @@ $$\int_a^b f\big( \textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)}\,dx=\int_{u
 
 \vspace{60mm}
 
-\Example $\disp\int_0^3\frac{v^2+1}{v^3+3v+4}\,dv$
+\Example $\disp\int_0^3\frac{w^2+1}{\sqrt{w^3+3w+4}}\,dw$
 
 \vspace{60mm}
 
@@ -116,6 +116,6 @@ $$\int_a^b f\big( \textcolor{blue}{g(x)}\big) \textcolor{red}{g'(x)}\,dx=\int_{u
 
 \vspace{60mm}
 
-\Example $\disp\int_0^4\frac{x}{\sqrt{1+2x}},dx$
+\Example $\disp\int_0^4\frac{x}{\sqrt{1+2x}}\,dx$
 
 \end{document}
