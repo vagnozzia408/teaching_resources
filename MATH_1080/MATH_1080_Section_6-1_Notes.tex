@@ -22,7 +22,7 @@
 
 \subsection*{Introduction}
 
-In this section, we will use the Second Fundamental Theorem of Calculus to work with the net change of a quantity. Recall this theorem from Calculus~I (Section~5.3 in MATH 1060).\\
+In this section, we will use integrals to study the relationship between a quantity's \textit{rate of change} and its \textit{net change} over time. Recall the Second Fundamental Theorem of Calculus from Calculus~I (Section~5.3 in MATH 1060).\\
 
 \boxenv{Second Fundamental Theorem of Calculus.}{Let $f$ be continuous on $[a,b]$ and \\ suppose that $F$ is an antiderivative for $f$ on the same interval. Then
 $$\int_a^b f(x)\,dx=\int_a^b F'(x)\,dx=F(b)-F(a).$$
@@ -45,15 +45,33 @@ $$Q(b)-Q(a)=\phantom{\large{\int_a^b Q'(t)\,dt}}$$
 \vspace{5mm}
 
 \boxenv{Definition.}{Given the initial value $Q(0)$, the \textbf{future value} of $Q$ at time $t\geq 0$ is
+\vspace{-1mm}
 $$Q(t)=\phantom{\large{Q(0)+\int_0^t Q'(x)\,dx}}$$
 
+\vspace{-3mm}
 }
+
+\newpage
+
+\Example Water flows from the bottom of a storage tank at a rate of $r(t)=200-4t$ liters per minute, where $0\leq t\leq 50$. Find the amount of water that flows from the tank during the first 10 minutes.
+
+\vspace{60mm}
+
+\Example When records were first kept $(t=0)$, the population of a rural town was 250 people. During the following years, the population grew at a rate of $P'(t)=30\left(1+\sqrt{t}\right)$, where $t$ is measured in years.
+
+\begin{enumerate}
+\item[(a)] Find the population after 9 years.
+
+\vspace{60mm}
+
+\item[(b)] find the population $P(t)$ at any time $t\geq 0$.
+\end{enumerate}
 
 \newpage
 
 \subsection*{Velocity, Position, Displacement, Distance, and Acceleration}
 
-Let $s(t)$ be the position (relative to the origin) of an object moving along a line at time $t$.\\
+\paragraph{In Terms of Net Change.} Let $s(t)$ be the position (relative to the origin) of an object moving along a line at time $t$.\\
 
 \boxenv{Definition.}{The \textbf{velocity} of the object at time $t$ is $v(t)=s'(t)$ and the \textbf{speed} of the object at time $t$ is $|v(t)|$.}
 
@@ -74,9 +92,9 @@ $$s(b)-s(a)=\phantom{\large{\int_a^b s'(t)\,dt=\int_a^b f(t)\,dt}}$$
 
 $$\phantom{\large{\int_a^b|v(t)|\,dt=\int_a^b|v(t)|\,dt=A_1+A_2}}$$}
 
-\vspace{5mm}
+\vspace{45mm}
 
-The object's \textit{position} can be calculated from its velocity as
+\paragraph{In Terms of Future Value.} The object's \textit{position} can be calculated from its velocity as
 
 $$s(t)=\phantom{\large{s(0)+\int_0^t v(x)\,dx}}$$
 
@@ -95,43 +113,28 @@ for $t\geq 0$, given $a(t)$ and initial velocity $v(0)$.
 \newpage
 
 
-\Example Consider an object moving along a line with velocity $v(t)=3t^2-6t$ on $[0,3]$, where time $t$ is measured in seconds and velocity has units of $m/s$.
+\Example Consider an object moving along a line with velocity $v(t)=3t^2-6t$ on $[0,3]$, where time $t$ is measured in seconds and velocity has units of m/s.
 
 \begin{enumerate}
 \item[(a)] Determine when the motion is in the positive direction and when it is in the negative direction.
 
-\vspace{35mm}
+\vspace{60mm}
 
 \item[(b)] Find the displacement over the interval $[0,3]$.
 
-\vspace{35mm}
+\vspace{60mm}
 
 \item[(c)] Find the distance traveled over the interval $[0,3]$.
 
-\vspace{35mm}
 \end{enumerate}
+
+\newpage
 
 \Example Consider an object moving along a line with velocity $v(t)=3\sin\left(\pi t\right)$ on $[0,4]$ with initial position $s(0)=1$. Determine the position function $s(t)$ for $t\geq 0$.
 
 \newpage
 
-\Example Find the position and velocity of an object moving along a straight line with acceleration $a(t)=\disp\frac{2t}{\left( t^2+1\right)^2}$, initial velocity $v(0)=0$, and initial position $s(0)=0$.
-
-\vspace{80mm}
-
-\Example Water flows from the bottom of a storage tank at a rate of $r(t)=200-4t$ liters per minute, where $0\leq t\leq 50$. Find the amount of water that flows from the tank during the first 10 minutes.
-
-\newpage
-
-\Example When records were first kept $(t=0)$, the population of a rural town was 250 people. During the following years, the population grew at a rate of $P'(t)=30\left(1+\sqrt{t}\right)$, where $t$ is measured in years.
-
-\begin{enumerate}
-\item[(a)] Find the population after 9 years.
-
-\vspace{80mm}
-
-\item[(b)] find the population $P(t)$ at any time $t\geq 0$.
-\end{enumerate}
+\Example Find the position and velocity of an object moving along a straight line with acceleration $a(t)=\disp\frac{2t}{\left( t^2+1\right)^2}$ ft$^2$/s, an initial velocity of $v(0)=0$ ft/s, and an initial position of $s(0)=0$ ft.
 
 \newpage
 
