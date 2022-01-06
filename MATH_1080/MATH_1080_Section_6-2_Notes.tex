@@ -28,33 +28,125 @@ In the next few sections, we will look at some geometric applications of integra
 
 We want to find the area of a region bounded by the curves $y=f(x)$ and $y=g(x)$ on the interval $a\leq x \leq b$.
 
-\vspace{50mm}
+\vspace{60mm}
 
 \boxenv{Definition.}{If $f$ and $g$ are continuous functions with $f(x)\geq g(x)$ on $[a,b]$, then the \textbf{area of the region} bounded by the curves $y=f(x)$, $y=g(x)$, and the lines $x=a$ and $x=b$ is
 
-$$A=\int_a^b\left[ f(x)-g(x)\right]\,dx.$$}
+$$A=\int_a^b\big[ f(x)-g(x)\big]\,dx.$$}
 
 \newpage
 
-\Example Find the area enclosed by the curves $y=e^x$, $y=x^2-1$, $x=-1$, and $x=1$.
+\Example Find the area enclosed by the curves $\textcolor{blue}{y=e^x}$, $\textcolor{red}{y=x^2-1}$, $x=-1$, and $x=1$.
 
-\vspace{100mm}
+\vspace{5mm}
 
-\Example Find the area between $y=12-x^2$ and $y=x^2-6$.
+\begin{tikzpicture}[scale=.9]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+    	xtick=\empty,
+    	ytick=\empty,
+        xmax=2.2, xmin=-2.2,
+        axis y line=center,
+        ymax=3.5, ymin=-1.5,
+        axis line style=<->,
+		xlabel=$x$,ylabel=$y$, 
+		axis on top                    	
+		]
+    \addplot[<->,name path=f,smooth,domain=-2:1.2,color=blue,samples=100,very thick] {e^x};
+    \addplot[<->,name path=g,smooth,domain=-2:2,color=red,samples=100,very thick] {x^2-1};
+    \end{axis}
+\end{tikzpicture}
+
+\vspace{50mm}
+
+\Example Find the area between $\textcolor{blue}{y=12-x^2}$ and $\textcolor{red}{y=x^2-6}$.
+
+\vspace{5mm}
+
+\begin{tikzpicture}[scale=.9]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+    	xtick=\empty,
+    	ytick=\empty,
+        xmax=5, xmin=-5,
+        axis y line=center,
+        ymax=13, ymin=-7,
+        axis line style=<->,
+		xlabel=$x$,ylabel=$y$, axis on top                    	]
+    \addplot[<->,name path=f,smooth,domain=-4.2:4.2,color=blue,samples=100,very thick] {12-x^2};
+    \addplot[<->,name path=g,smooth,domain=-4.2:4.2,color=red,samples=100,very thick] {x^2-6};
+    \end{axis}
+\end{tikzpicture}
 
 \newpage
 
 \Example Find the area of the region enclosed by the curves $y=\cos x$, $y=\sin 2x$, $x=0$, and $x=\disp\frac{\pi}{2}$.
 
-\vspace{60mm}
+\vspace{5mm}
+
+\begin{tikzpicture}
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+    	xtick=\empty,
+    	ytick=\empty,
+        xmax=3*pi/4+.1, xmin=-pi/4-.1,
+        axis y line=center,
+        ymax=1.2, ymin=-1.2,
+        axis line style=<->,
+		xlabel=$x$,ylabel=$y$, axis on top                    	]
+    \addplot[<->,name path=f,smooth,domain=-pi/4:3*pi/4,color=blue,samples=100,very thick] {cos(deg(x))};
+    \addplot[<->,name path=f,smooth,domain=-pi/4:3*pi/4,color=red,samples=100,very thick] {sin(deg(2*x))};
+    \end{axis}
+\end{tikzpicture}
+
+\newpage
 
 \Example Consider the region enclosed by $4x+y^2=12$ and $x=y$. Set up the integral(s) for the area\dots
 
 \begin{enumerate}
-\item[(a)] with respect to $x$.
+\item[(a)] with respect to $x$. (You do not need to evaluate this integral.)
 
-\vspace{60mm}
+\vspace{5mm}
 
-\item[(b)] with respect to $y$.
+\begin{tikzpicture}[scale=.9]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+    	xtick=\empty,
+    	ytick=\empty,
+        xmax=7, xmin=-7,
+        axis y line=center,
+        ymax=7, ymin=-7,
+        axis line style=<->,
+		xlabel=$x$,ylabel=$y$, axis on top                    	]
+    \addplot[<-,name path=g,smooth,domain=-6.9:3,color=blue,samples=500,very thick] {sqrt(12-4*x)};
+    \addplot[<-,name path=g,smooth,domain=-6.9:3,color=blue,samples=500,very thick] {-sqrt(12-4*x)};
+
+    \addplot[<->,name path=g,smooth,domain=-6.9:6.9,color=red,samples=100,very thick] {x};
+    \end{axis}
+\end{tikzpicture}
+
+\vspace{50mm}
+
+\item[(b)] with respect to $y$. (Evaluate this one instead!)
+
+\vspace{5mm}
+
+\begin{tikzpicture}[scale=.9]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+    	xtick=\empty,
+    	ytick=\empty,
+        xmax=7, xmin=-7,
+        axis y line=center,
+        ymax=7, ymin=-7,
+        axis line style=<->,
+		xlabel=$x$,ylabel=$y$, axis on top                    	]
+    \addplot[<-,name path=g,smooth,domain=-6.9:3,color=blue,samples=500,very thick] {sqrt(12-4*x)};
+    \addplot[<-,name path=g,smooth,domain=-6.9:3,color=blue,samples=500,very thick] {-sqrt(12-4*x)};
+
+    \addplot[<->,name path=g,smooth,domain=-6.9:6.9,color=red,samples=100,very thick] {x};
+    \end{axis}
+\end{tikzpicture}
+
 \end{enumerate}
 \end{document}
