@@ -24,29 +24,60 @@
 
 \subsection*{Volume by Cylindrical Shells}
 
-\textbf{Motivation for Another Method}
+\begin{minipage}{0.8\linewidth}
+\paragraph{Motivation.} Suppose we want to find the volume of a solid generated when a region is rotated about the $y$-axis. If using the Disk or Washer Method, we would need to make slices \textit{perpendicular} to the axis of rotation (the $y$-axis) and integrate with respect to $y$. To do so, we would need to write $y=f(x)$ in terms of $y$, but this may be difficult for some functions.
+\end{minipage}%
 
-\vspace{30mm}
+\subsubsection*{Shell Method}
 
-\textbf{Shell Method}
-
-\newpage
-
-\Example Let $R$ be the region bounded by $y=e^{-x^2}$, $y=0$, $x=0$, and $x=1$. Find the volume of the solid generated when $R$ is rotated about the $y$-axis.
+Instead, we can create slices that are \textbf{parallel} to the axis of rotation. Rather than generating disk or washer cross sections, this will generate a series of \textbf{cylindrical shells}.
 
 \newpage
 
-\Example Let $R$ be the region bounded by $y=x^3$, $y=8$, and $x=0$. Find the volume of the solid generated when $R$ is rotated about the $x$-axis.
+\boxenv{Shell Method about a Vertical Line.} {Let $f$ be a continuous function $f(x)\geq 0$ on the interval $[a,b]$. If the region $R$ bounded by the graph of $f$, the $x$-axis, and the lines $x=a$ and $x=b$ is revolved about a vertical line (such as the $y$-axis), the volume of the resulting solid of revolution is
+
+$$V=\int_a^b2\pi r(x)h(x)\,dx,$$
+
+where $r(x)$ is the radius of the cylindrical shell and $h(x)$ is the height of the shell.}
+
+\vspace{5mm}
+
+\textbf{Note:} If a region between $y=c$ and $y=d$ is instead rotated about a horizontal line (such as the $x$-axis), the Shell Method can be used by creating horizontal slices and integrating with respect to $y$.
+$$V=\int_c^d 2\pi r(y)h(y)\,dy$$
+
+\Example Let $R$ be the region bounded by $y=e^{-x^2}$, $y=0$, $x=0$, and $x=1$. Use the Shell Method to find the volume of the solid generated when $R$ is rotated about the $y$-axis.
+
+\vspace{5mm}
+
+\begin{tikzpicture}[scale=0.9]
+	\begin{axis}[grid=none,
+		xtick=\empty,
+		ytick=\empty,
+       	axis x line=middle,
+       	xmax=2.1, xmin=-2.1,
+       	axis y line=center,
+       	ymax=1.2, ymin=-.5,
+       	xlabel=$x$,ylabel=$y$, axis on top,
+       	axis line style = <->
+    ]
+		\addplot[name path=f,smooth,domain=-2:2,color=blue,samples=100,thick,<->] {e^(-x^2)};
+   \end{axis}
+\end{tikzpicture}
 
 \newpage
 
-\Example Let $R$ be the region bounded by $y=x^3$, $x=2$, and $y=0$.
+\Example Let $R$ be the region bounded by $y=x^3$, $y=8$, and $x=0$. Use the Shell Method to find the volume of the solid generated when $R$ is rotated about the $x$-axis.
+
+\newpage
+
+\Example Let $R$ be the region bounded by $y=x^3$, $x=2$, and $y=0$. Use the Shell Method to set up the integral(s) needed to find the volume of the solid generated when $R$ is rotated about\dots
+
 \begin{itemize}
-\item[(a)] Set up the integral(s) needed to find the volume of the solid generated when $R$ is rotated about the line $x=3$.
+\item[(a)] the line $x=3$.
 
 \vspace{95mm}
 
-\item[(b)] Set up the integral(s) needed to find the volume of the solid generated when $R$ is rotated about the line $y=-1$.
+\item[(b)] the line $y=-1$.
 \end{itemize}
 
 \end{document}
