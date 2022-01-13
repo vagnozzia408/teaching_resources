@@ -1,0 +1,192 @@
+%% In the documentclass line, replace "noanswers" with "answers" to view the key.
+
+\documentclass[noanswers]{exam}
+\usepackage[utf8]{inputenc}
+
+\title{Chapter 5 Practice Problems}
+\author{Sections 5.4 \& 5.7}
+\date{STAT 2300}
+
+\usepackage[bottom=2.2cm, left=2.2cm, right=2.2cm, top=2.2cm]{geometry}
+%\usepackage[paperheight=11in, paperwidth=17in, margin=1in]{geometry}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{multicol}
+\setlength{\columnsep}{1in}
+\usepackage{nicefrac}
+
+\usepackage{multirow}
+\usepackage{enumitem}[shortlabels]
+\usepackage{tabu}
+\definecolor{purp}{RGB}{102,0,204}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash $}X<{$}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+
+
+\makeatletter
+\pagestyle{headandfoot}
+\firstpageheader{\@date}{\@title}{\@author}
+\firstpageheadrule
+\runningfootrule
+\runningfooter{}{\thepage\ / \numpages}{\@title}
+\makeatother
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\mat}[4]{\left( \begin{tabular}{>{$}c<{$} >{$}c<{$}} #1&#2 \\ #3&#4 \end{tabular} \right)}
+\newcommand{\msc}[1]{\mathds{#1}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\so}{\implies}
+\newcommand{\set}[2]{\left\{ #1 \:|\: #2 \right\}}
+\newcommand{\bso}{\Longleftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\olin}[1]{\overline{#1}}
+\newcommand{\Img}[1]{\text{Im}\left(#1\right)}
+\newcommand{\llra}{\longleftrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}[1]{\xrightarrow{#1}}
+\newcommand{\wo}{\setminus}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\Aut}[1]{\text{Aut}\left(#1\right)}
+\newcommand{\Inn}[1]{\text{Inn}\left(#1\right)}
+\newcommand{\syl}[2]{\text{Syl}_{#1}(#2)}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\infnorm}[1]{\left\|#1\right\|_{\infty}}
+\newcommand{\xn}{\{x_n\}}
+\newcommand{\sig}{\sigma}
+\newcommand{\id}{\text{id}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\ran}[1]{\text{Ran}(#1)}
+\newcommand{\nCr}[2]{\binom{#1}{#2}}
+\newcommand{\Exr}[1]{\paragraph{Exercise #1:}}
+\newcommand{\pg}{\paragraph{}}
+\newcommand{\ulin}[1]{\underline{#1}}
+\newcommand{\tc}[1]{\textcolor{purp}{#1}}
+
+% Solution Specs
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{purp}}
+\CorrectChoiceEmphasis{\color{purp}\bfseries}
+\setlength\fillinlinelength{0in}
+
+%\begin{solution}[\stretch{1}]
+%	hurp durp flurp
+%\end{solution}
+
+%\pagestyle{empty}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{cancel}
+
+\begin{document}
+
+%\noindent\begin{tabular}{@{}p{.3in}p{3in}@{}}
+%Name: & \hrulefill
+%\end{tabular}
+%
+%\vspace{3mm}
+
+\begin{questions} 
+		
+	\question A survey of high school students indicated that 33\% are in a relationship, 25\% are involved in sports, and 11\% are involved in both. Use the information to answer the following questions.
+
+\vspace{3mm}
+
+\begin{parts}
+		
+	\part What is the probability that a student is involved in a relationship \textbf{given} that they're involved in sports? 
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(R|S) = \frac{P(R \cap S)}{P(S)} = \frac{0.11}{0.25} = 0.44$
+	\vspace{3mm}
+	\end{solution}
+	
+	\part Is being in a relationship \textbf{independent} of being involved in sports? Justify your answer using probability (regardless of your own personal theories!).
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(R|S)=0.44 \neq P(R)=0.33 \; \Rightarrow$ These are \textbf{dependent} events.
+	\vspace{3mm}
+	\end{solution}
+
+\end{parts}
+
+\question A company has two suppliers for electrical components. China ships 73\% of the electrical components used by the supplier. The probability that the component will be defective \textbf{given} that it was shipped from China is 0.06. What is the probability that a randomly selected component received by the supplier will ship from China \textbf{and} be defective?
+
+\begin{solution}[\stretch{1}]
+\vspace{1mm}
+$P(C)=0.73$, $P(D|C)=0.06$
+
+\vspace{3mm}
+Using the Multiplication Rule: $P(C \cap D) = P(D|C)P(C) = 0.06(0.73) = 0.0438$
+\vspace{1mm}
+\end{solution}
+
+\question You have a standard deck of 52 cards. Recall that a deck of cards has four suites (hearts, diamonds, spades, clubs), each with thirteen values (2-10, J, Q, K, A). Find the probability that you draw two aces \textbf{in a row} without replacing the first ace. 
+	
+	\begin{solution}[\stretch{1}]
+	\vspace{1mm}
+	$P(\text{1st A and 2nd A})=P(\text{1st A})\times P(\text{2nd A }|\text{ 1st A})=\frac{4}{52}\times\frac{3}{51}=0.0045$
+	\vspace{1mm}
+	\end{solution}
+	
+\question Your Pie, a great pizza place in Clemson, has 10 vegetable and 8 meat toppings to choose from. You have a coupon for a free pizza with five toppings. Use this information to answer the following questions.
+
+\vspace{3mm}
+
+\begin{parts}
+
+\part How many ways could you choose five \textbf{different toppings}? (Hint: Use the Combinations Rule.)
+
+\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$\displaystyle\phantom{!}_{18}C_5=\frac{18!}{5!(18-5)!}=8,568$ ways to choose five different toppings
+	\vspace{1mm}
+	\end{solution}
+	
+	\vspace{3mm}
+	
+\part How many ways could you choose five  \textbf{different vegetable toppings}?
+
+\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$\displaystyle\phantom{!}_{10}C_5=\frac{10!}{5!(10-5)!}=252$ ways to choose five different vegetable  toppings
+	\vspace{1mm}
+	\end{solution}
+	
+	\vspace{3mm}
+	
+\part If you randomly select toppings, what is the \textbf{probability} that you choose five different vegetable \mbox{toppings?} Round your answer to four decimal places. (Hint: Use your answers from parts a and b.)
+
+\begin{solution}[\stretch{1}]
+	\vspace{3mm}
+	$P(\text{5 different veggie toppings})=\displaystyle\frac{\phantom{!}_{10}C_5}{\phantom{!}_{18}C_5}=\frac{252}{8,568}=0.0294$
+	\vspace{3mm}
+	\end{solution}
+
+
+\end{parts}
+	
+	
+
+
+ 
+\end{questions}
+%-----------------------------------------------------------------------------%
+
+\end{document}
