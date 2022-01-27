@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{34}
 
 \begin{document}
 \section*{6.7: Physical Applications}
@@ -41,13 +41,13 @@ If the density varies with the object, we need to use calculus. The problem of f
 
 \Example A thin bar is represented by the interval $0\leq x\leq\pi$. Find the mass of this bar if its density is given by $\rho(x)=1+\sin x$.
 
-\vspace{100mm}
+\vfill
 
 \subsection*{Work}
 
-\textbf{Work} is an important concept for determining the amount of energy needed to perform various tasks. Work is done when a force moves an object.\\
+Work is an important concept for determining the amount of energy needed to perform various tasks. \textbf{Work} is done when a force moves an object.\\
 
-\textbf{Examples of situations where we want to find the amount of work done.}
+Examples of situations where we want to find the amount of work done include\dots
 \begin{itemize}
 \item the work needed to lift a heavy object
 \item the work needed to wind up a heavy chain
@@ -55,6 +55,127 @@ If the density varies with the object, we need to use calculus. The problem of f
 \item the work needed to stretch or compress a spring
 \end{itemize}
 
+\boxenv{Work Done by a Constant Force.}{If an object is moved a distance $d$ in the direction of an applied \underline{constant} force $F$, then the \textbf{work} done by the constant force is
+$$W=F\cdot d.$$
 
+\textbf{Note:} Force is mass times acceleration, $F=m\cdot a$.}
 
+\newpage
+
+\textbf{Note on Units.}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ & \textbf{SI Metric System} \\
+\hline
+Displacement & meter (m) \\
+\hline
+Mass & kilogram (kg) \\
+\hline
+Force & newton (N $=$ kg $\cdot$ m/s$^2$)\\
+\hline
+Work & joule (J $=$ N $\cdot$ m)\\
+\hline
+\end{tabular}
+\end{center}
+
+\Example How much work is required to move an object from $x=0$ to $x=10$ (measured in meters) in the presence of a constant force of 3 N acting along the $x$-axis?
+
+\vspace{40mm}
+
+We know that $W=F\cdot d$ for a constant force. What if the force \textit{varies}?
+
+\vspace{3mm}
+
+Suppose an object moves along the $x$-axis in the positive direction from $x=a$ to $x=b$. At each point, a force $F(x)$ acts on the object. How do we find the work done?
+
+\vfill
+
+\boxenv{Work Done by a Variable Force.}{If an object is moved along a straight line by a continuously varying force $F(x)$, then the \textbf{work} done by the variable force as the object is moved from $x=a$ to $x=b$ is
+
+\vspace{18mm}
+}
+
+\newpage
+
+\subsubsection*{Work and Springs}
+
+For problems involving springs, we will need the following law from physics.\\
+
+\boxenv{Hooke's Law.}{The force required to maintain a spring stretched $x$ units beyond its natural length is proportional to $x$:
+$$F(x)=kx\text{, where $k$ is a positive constant called the \textbf{spring constant}}.$$
+
+\vspace{-3mm}}
+
+\Example Suppose a force of 30 N is required to stretch and hold a spring 0.2 m from its equilibrium position. How much work is required to compress the spring 0.4 m from its equilibrium position? Assume Hooke's Law is obeyed.
+
+\newpage
+
+\Example A spring requires 100 J of work to be stretched 0.5 m from its equilibrium position. How much work is required to stretch the spring 1.25 m from its equilibrium position? Assume Hooke's Law is obeyed.
+
+\vspace{100mm}
+
+\subsubsection*{Work and Lifting Problems}
+
+Now we will look at finding the work needed to lift an object (such as a rope, cable, or chain) when the motion is vertical and the force is due to gravity. We use that $F=mg$, where $g=9.8$ m/s$^2$ is the acceleration due to gravity. We'll need calculus to find the work done when lifting ropes, chains, and cables because different parts of the rope/chain/cable will be lifted different distances.\\
+
+\textbf{Finding work done in lifting problems:} Suppose we have a chain of length $L$ meters with constant density $\rho$ kg/m hanging vertically from a scaffolding platform at a construction site. How can we find the work done in lifting the chain to the platform?
+
+\newpage 
+
+\Example A heavy rope 20 m long hangs over the edge of a building 40 m high. The rope has a linear density of 2 kg/m.
+
+\begin{itemize}
+
+\item[(a)] How much work is done in pulling the rope to the top of the building?
+
+\vfill
+
+\item[(b)] How much work is done in pulling half the rope to the top of the building?
+
+\vfill 
+
+\item[(c)] A 30 kg load is attached to the bottom of the rope and lifted to the top of the building. How much work is done?
+
+\vfill 
+
+\end{itemize}
+
+\newpage
+
+\subsubsection*{Work and Pumping Liquids Out of Tanks}
+
+\textbf{Finding work done in pumping problems:} Suppose a fluid (such as water) with density $\rho$ is pumped out of a tank to a height $h$ above the bottom of the tank. How much work is required, assuming the tank is full of water?
+
+\newpage 
+
+\Example A circular swimming pool has a diameter of 8 meters, the sides are 2 meters high, and the depth of the water is 1.5 meters. The density of water is 1000 kg/m$^3$.
+
+\begin{itemize}
+\item[(a)] How much work is required to pump all of the water out over the side?
+
+\vfill
+
+\item[(b)] How much work is required to pump half the water out over the side?
+
+\vfill
+\end{itemize}
+
+\newpage
+
+\subsection*{Force and Pressure}
+
+We want to determine the force exerted on a surface by a body of water. We will also need to know about pressure. \textbf{Pressure} is a force per unit area (e.g., N/m$^2$).\\
+
+\textbf{Idea:} Say we have water putting pressure on a surface of area $A$ m$^2$ that is $h$ meters below the surface. Then the pressure on the surface is computed as
+
+$$\text{pressure}=\frac{\text{force}}{A}=\frac{\text{volume}\cdot\text{density}\cdot g}{A}=\frac{Ah\rho g}{A}=\rho gh$$
+
+and is called the \textbf{hydrostatic pressure} (pressure of water at rest). Note that hydrostatic pressure has the same magnitude in all directions, so the hydrostatic pressure on a vertical wall in a pool at depth $h$ is the same as the hydrostatic pressure on a horizontal surface at depth $h$.\\
+
+How do we find the force on a vertical wall, such as the face of a dam, assuming the water completely covers the face of the dam and the water level is at the top of the dam?
+
+\newpage
+
+\Example A plate shaped like an isosceles triangle with a height of 1 m is placed on a vertical wall 1 m below the surface of a pool filled with water. Compute the force on the plate.
 \end{document}
