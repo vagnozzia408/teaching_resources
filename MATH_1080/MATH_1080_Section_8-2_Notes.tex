@@ -1,7 +1,10 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\DeclareSymbolFont{matha}{OML}{txmi}{m}{it}% txfonts
+\DeclareMathSymbol{\varv}{\mathord}{matha}{118}
+
+\setcounter{page}{50}
 
 \begin{document}
 \section*{8.2: Integration by Parts}
@@ -20,6 +23,93 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Introduction}
+
+We will spend the next several sections learning new integration techniques. As we study each technique, notice the types of functions that the technique is used to integrate. \textit{Pattern recognition} --- recognizing which types of integrals can be solved with which technique --- is key to choosing the appropriate technique required to solve a problem. 
+
+
+\subsubsection*{Connections to Derivative Rules}
+
+One of the ways that we can think about the integration technique \textbf{u-substitution} is as the \textbf{chain rule} in reverse. Recall that the chain rule is used to differentiate \textit{composite} functions.
+
+$$\frac{d}{dx}\Big(f\big(\textcolor{blue}{g(x)}\big)\Big)=f'\big(\textcolor{blue}{g(x)}\big)\cdot \textcolor{red}{g'(x)}$$
+
+$$\int f'\big(\textcolor{blue}{g(x)}\big)\cdot\textcolor{red}{g'(x)\,dx} = \int f'(\textcolor{blue}{u})\,\textcolor{red}{du}=f(\textcolor{blue}{u})+C=f\big(\textcolor{blue}{g(x)}\big)+C $$
+
+\vspace{3mm}
+
+Similarly, the integration technique introduced in this section, \textbf{integration by parts}, can be thought of as the \textbf{product rule} in reverse. To differentiate a \textit{product} of two functions $\textcolor{blue}{u=u(x)}$ and $\textcolor{red}{\varv=\varv(x)}$\dots
+
+\newpage
+
+\boxenv{Integration by Parts.}{Suppose $u$ and $v$ are differentiable functions. Then
+$$\int u\,d\varv=u\varv-\int \varv\,du.$$
+\vspace{-5mm}}
+
+\vspace{5mm}
+
+\textbf{Integration by parts }is useful for integrals where the integrand is a \textit{product} of two different types of functions. Whenever using this technique, we must choose one term of the product to be $\textcolor{blue}{u}$, the function we will \textit{differentiate} to find $\textcolor{blue}{du}$, and the other term to be $\textcolor{red}{\varv}$, which we will \textit{integrate} to find $\textcolor{red}{d\varv}$. The goal is to choose a $u$ that gets \textit{simpler} when differentiated. \\
+
+The acronym ``ILATE'' can serve as a guideline for how to prioritize your choice of $u$, from greatest priority to lowest priority.
+\begin{itemize}
+	\item[\textbf{I:}] Inverse trig functions
+	\item[\textbf{L:}] Logarithmic functions
+	\item[\textbf{A:}] Algebraic functions
+	\item[\textbf{T:}] Trigonometric functions
+	\item[\textbf{E:}] Exponential functions
+\end{itemize}
+
+\vspace{3mm}
+
+\Example Evaluate $\disp\int xe^x\,dx$.
+
+\newpage
+
+\Example Evaluate $\disp\int x^2\sin 2x\,dx$.
+
+\vfill
+
+\Example Evaluate $\disp\int\ln x\,dx$.
+
+\vfill
+
+\Example Evaluate $\disp\int\arctan y\,dy$.
+
+\vfill
+
+\newpage
+
+\Example Evaluate $\disp\int e^{-x}\sin(4x)\,dx$.
+
+\vfill
+
+\Example Consider the integral $\disp\int\sec^2 x\ln(\tan x+2)\,dx$. \\
+
+Evaluating this integral will involve integration by parts, but what substitution could be done first to simplify the integral?
+
+\vspace{40mm}
+\newpage
+
+\Example Find the volume of the solid that is generated when the region bounded by $f(x)=x\ln x$ and the $x$-axis on $\left[1,e^2\right]$ is revolved around the $x$-axis.
+
+\vspace{5mm}
+
+\begin{tikzpicture}[scale=.9]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+%    	xtick=\empty,
+%    	ytick=\empty,
+        xmax=8.5, xmin=-.5,
+        axis y line=center,
+        ymax=15.5, ymin=-1,
+        axis line style=<->,
+		xlabel=$x$,ylabel=$y$, axis on top                    	]
+
+    \addplot[->,name path=g,smooth,domain=0:7.4,color=blue,samples=500,very thick] {x*ln(x)};
+
+    \end{axis}
+\end{tikzpicture}
+
+
 
 \end{document}
