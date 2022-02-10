@@ -1,7 +1,9 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\usepackage{bm}
+
+\setcounter{page}{55}
 
 \begin{document}
 \section*{8.3: Trigonometric Integrals}
@@ -21,6 +23,108 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Trig Integrals}
+Recall the trig antiderivative rules that we know for sine and cosine.\\
 
+$$\disp\int\sin\,dx=\hspace{60mm}\int\cos\,dx=$$
+
+\vspace{5mm}
+
+We can also identify trig antiderivative rules for the tangent and cotangent functions.\\
+
+$\disp\int\tan x\,dx=$
+
+\vfill
+
+$\disp\int\cot x\,dx=$
+
+\vspace{10mm}
+
+\newpage
+
+What about our other two trig functions?\\
+
+$\disp\int\sec x\,dx=$
+
+\vspace{50mm}
+
+$\disp\int\csc x\,dx=$
+
+\vspace{10mm}
+
+\subsection*{A Review of Common Trig Identities}
+
+\vspace{3mm}
+
+\subsubsection*{Pythagorean Identities}
+
+\hspace{5mm}$\cos^2x+\sin^2x=1$\\
+
+\hspace{5mm}$1+\tan^2x = \sec^2 x$ \hfill (found by dividing each term of the first identity by $\cos^2x$)\\
+
+\hspace{5mm}$\cot^2x+1=\csc^2x$\hfill (found by dividing each term of the first identity by $\sin^2x$)
+
+\vspace{3mm}
+
+\subsubsection*{Half-Angle Identities}
+
+\vspace{2mm}
+
+$$\sin^2x=\frac{1-\cos 2x}{2}\hspace{20mm} \cos^2x=\frac{1+\cos 2x}{2}$$
+
+\vspace{3mm}
+
+\subsubsection*{Double-Angle Identities}
+
+\hspace{5mm}$\cos 2x=2\cos^2x-1=1-2\sin^2x=\cos^2x-\sin^2x$\\
+
+\hspace{5mm}$\sin 2x=2\sin x \cos x$
+
+\vfill
+
+Let's learn some other techniques for integrating trig functions.
+
+\newpage
+
+\subsection*{Tips for Integrating $\int\sin^m x\,dx$, $\int\cos^nx\,dx$, and $\int\sin^m x\cos^n x\,dx$}
+
+If the power of sine $m$ is \textbf{odd}, separate out a factor of $\sin x$ and write the remaining $\sin^{m-1}x$ in terms of cosines using the Pythagorean identity. Then use $u$-substitution with $u=\cos x$.
+
+\Example $\disp\int\sin^5 x\,dx$
+
+\vfill
+
+If the power of cosine $n$ is \textbf{odd}, separate out a factor of $\cos x$ and write the remaining $\cos^{n-1}x$ in terms of sines using the Pythagorean identity. Then use $u$-substitution with $u=\sin x$.
+
+\Example $\disp\int\frac{\cos^5 x}{\sin^{3/2}x}\,dx$
+
+\vfill
+
+\newpage
+
+If $m$ and $n$ are both \textbf{even}, use the half-angle identities.
+
+\Example $\disp\int\sin^2x\cos^4x\,dx$
+
+\newpage
+
+%\subsection*{Tips for Integrating $\int\tan^m x\sec^nx\,dx$}
+%
+%If the power of tangent $m$ is \textbf{odd}, separate out a factor of $\sec x\tan x$ and write the remaining $\tan^{m-1}x$ in terms of secants using the Pythagorean identity. Then use $u$-substitution with $u=\sec x$.\\
+%
+%If the power of secant $n$ is \textbf{even}, separate out a factor of $\sec^2x$ and write the remaining $\sec^{n-2}x$ in terms of tangents using the Pythagorean identity. Then use $u$-substitution with $u=\tan x$. 
+%
+%\Example $\disp\int\tan^5 x\sec^4x\,dx$
+%
+%\newpage
+%
+%If the power of tangent $m$ is \textbf{even} and the power of secand $n$ is \textbf{odd}, write $\tan^m x$ in terms of secants using the Pythagorean identity. This produces a polynomial in $\sec x$. 
+%
+%\Example $\disp\int\tan^2x\sec x \,dx$
+%
+%\vspace{40mm}
+%
+%\subsection*{Tips for Integrating $\int\tan^m x$ and $\int\sec^n x\,dx$}
+%
+%If the power of secant $n$ is \textbf{odd}, use integration by parts with $u=\sec^{n-2}x$ and $d\varv=\sec^2x\,dx$.
 \end{document}
