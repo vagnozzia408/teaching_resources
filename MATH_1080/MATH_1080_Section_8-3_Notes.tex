@@ -26,7 +26,7 @@
 \subsection*{Trig Integrals}
 Recall the trig antiderivative rules that we know for sine and cosine.\\
 
-$$\disp\int\sin\,dx=\hspace{60mm}\int\cos\,dx=$$
+$$\disp\int\sin x\,dx=\hspace{60mm}\int\cos x\,dx=$$
 
 \vspace{5mm}
 
@@ -108,23 +108,44 @@ If $m$ and $n$ are both \textbf{even}, use the half-angle identities.
 
 \newpage
 
-%\subsection*{Tips for Integrating $\int\tan^m x\sec^nx\,dx$}
+\subsection*{Tips for Integrating $\int\tan^m x\sec^nx\,dx$}
 %
-%If the power of tangent $m$ is \textbf{odd}, separate out a factor of $\sec x\tan x$ and write the remaining $\tan^{m-1}x$ in terms of secants using the Pythagorean identity. Then use $u$-substitution with $u=\sec x$.\\
-%
-%If the power of secant $n$ is \textbf{even}, separate out a factor of $\sec^2x$ and write the remaining $\sec^{n-2}x$ in terms of tangents using the Pythagorean identity. Then use $u$-substitution with $u=\tan x$. 
-%
-%\Example $\disp\int\tan^5 x\sec^4x\,dx$
-%
-%\newpage
-%
-%If the power of tangent $m$ is \textbf{even} and the power of secand $n$ is \textbf{odd}, write $\tan^m x$ in terms of secants using the Pythagorean identity. This produces a polynomial in $\sec x$. 
-%
-%\Example $\disp\int\tan^2x\sec x \,dx$
-%
-%\vspace{40mm}
-%
-%\subsection*{Tips for Integrating $\int\tan^m x$ and $\int\sec^n x\,dx$}
-%
-%If the power of secant $n$ is \textbf{odd}, use integration by parts with $u=\sec^{n-2}x$ and $d\varv=\sec^2x\,dx$.
+If the power of tangent $m$ is \textbf{odd}, separate out a factor of $\sec x\tan x$ and write the remaining $\tan^{m-1}x$ in terms of secants using the Pythagorean identity. Then use $u$-substitution with $u=\sec x$.\\
+
+If the power of secant $n$ is \textbf{even}, separate out a factor of $\sec^2x$ and write the remaining $\sec^{n-2}x$ in terms of tangents using the Pythagorean identity. Then use $u$-substitution with $u=\tan x$. \\
+
+\Example $\disp\int\tan^5 x\sec^4x\,dx$
+
+\newpage
+
+If the power of tangent $m$ is \textbf{even} and the power of secand $n$ is \textbf{odd}, write $\tan^m x$ in terms of secants using the Pythagorean identity. This produces a polynomial in $\sec x$. 
+
+\Example $\disp\int\tan^2x\sec x \,dx$
+
+\vspace{40mm}
+
+\subsection*{Tips for Integrating $\int\tan^m x$ and $\int\sec^n x\,dx$}
+
+If the power of secant $n$ is \textbf{odd}, use integration by parts with $u=\sec^{n-2}x$ and $d\varv=\sec^2x\,dx$.
+
+\ExampleCont Continue the example at the top of this page!
+
+
+\vfill
+
+If the power of secant $n$ is \textbf{even}, separate out a factor of $\sec^2x$ and write the remaining $\sec^{n-2}x$ in terms of tangents using the Pythagorean identity. Then use $u$-substitution with $u=\tan x$. 
+
+\newpage
+
+If the power of tangent $m$ is even or odd, separate out a factor of $\tan^2x$ and write it in terms of secants using the Pythagorean identity. Expand the integral to write it as a difference of integrals. Use $u$-substitution with $u=\tan x$ on the first integral and repeat the process if necessary on the second integral.
+
+\Example $\disp\int\tan^5 x\,dx$
+
+\vfill
+
+\subsection*{Additional Tips for Integrating Trig Functions}
+
+Integrating $\int\cot^m x\,dx$, $\int \csc^n x\,dx$, and $\int\cot^m x\csc^n x\,dx$ will use the same rules as those for powers and products of tangents and secants.\\
+
+If the trig function you wish to integrate does not fall under the tips from this section, use the definitions of the trig functions to convert the integrand in terms of sines and cosines.
 \end{document}
