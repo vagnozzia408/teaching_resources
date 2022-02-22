@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{78}
 
 \begin{document}
 \section*{8.6: Integration Strategies}
@@ -19,6 +19,60 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Summary of Techniques}
+\begin{itemize}
+	\item Basic integration rules
+	\item Using algebra to simplify
+	\item $U$-substitution
+	\item Integration by parts
+	\item Trig integrals
+	\item Trig substitution
+	\item Partial fraction decomposition
+\end{itemize}
 
+\subsection*{Strategy Overview}
+\begin{itemize}
+\item[\tc{1}] Simplify the integrand, if possible.
+\item[\tc{2}] Look for a substitution.
+\item[\tc{3}] Classify the integrand type.
+\begin{itemize}
+	\item Is it a \textbf{trig integral}? $\Longrightarrow$ Think about using trig identities and 8.4 techniques.
+	\item Is it a \textbf{rational function}? $\Longrightarrow$ Try a partial fraction decomposition.
+	\item Is it a \textbf{product} of two different types of functions? $\Longrightarrow$ Try integration by parts.
+	\item Does it involve \textbf{radicals}? 
+	\begin{itemize}		\item[$\Longrightarrow$] If you have a quadratic under a root, try trig substitution.
+	\item[$\Longrightarrow$] If not, try to make a substitution to make the integrand a rational function.
+	\end{itemize}
+\end{itemize}
+\item[\tc{4}] Try again. If the first thing you try doesn't work, go back and try a different approach. For some problems, it may take a few tries to find an approach that works. Often, several integration strategies will be used within one problem.
+\end{itemize}
+
+\newpage
+
+Identify a technique to evaluate each of the following integrals. What tells you that the technique you identified might be effective? If necessary, explain how to first simplify the integrand before applying the suggested technique. You do not need to evaluate the integrals.
+
+\Example $\disp\int 4xe^{5x}\,dx$
+
+\vfill
+
+\Example $\disp\int\frac{\ln x}{x\sqrt{1+(\ln x)^2}}\,dx$
+
+\vfill
+
+\Example $\disp\int\frac{x^3}{\sqrt{64-x^2}}\,dx$
+\vfill
+
+\newpage
+
+\Example $\disp\int\frac{\tan^2x+1}{\tan x}\,dx$
+
+\vfill
+
+\Example $\disp\int\frac{5x^2+18x+20}{(2x+3)(x^2+4x+8)}\,dx$
+
+\vfill
+
+\Example $\disp\int\frac{\cos^5x\sin^4x}{1-\sin^2x}\,dx$
+
+\vfill
 \end{document}
