@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{81}
 
 \begin{document}
 \section*{8.9: Improper Integrals}
@@ -20,6 +20,209 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Motivating Application}
 
+The energy required to launch a rocket from the surface of Earth ($R=6370$ km from the center of Earth) to an altitude $H$ is given by an integral of the form 
+
+$$\int_R^{R+H}\frac{k}{x^2}\,dx,$$
+
+\vspace{2mm}
+
+where $k$ is a constant that includes the mass of the rocket, the mass of Earth, and the gravitational constant. Suppose we want to launch the rocket to an arbitrarily large altitude~$H$ so that it escapes Earth's gravitational field. Then the energy required is
+
+$$\int_R^\infty\frac{k}{x^2}\,dx.$$
+
+\vspace{4mm}
+
+How could we evaluate this integral? Let's think back to one of our fundamental theorems.\\
+
+\boxenv{Second Fundamental Theorem of Calculus.}{Let $f$ be continuous on $[a,b]$ and \\ suppose that $F$ is an antiderivative for $f$ on the same interval. Then
+$$\int_a^b f(x)\,dx=\int_a^b F'(x)\,dx=F(b)-F(a).$$
+\vspace{-3mm}
+}
+
+\vspace{3mm}
+
+\newpage
+
+\Example Consider the following two integrals. Does the Second Fundamental Theorem of Calculus apply? Why or why not?\\
+
+\begin{multicols}{2}
+
+\begin{itemize}
+	\item[\tc{1}] $\disp\int_1^\infty\frac{1}{x}\,dx$
+	
+	\vfill
+	
+	\item[\tc{2}] $\disp\int_0^1\frac{1}{x}\,dx$
+	
+	\vfill
+\end{itemize}
+\begin{flushright}
+
+\begin{tikzpicture}[scale=.8]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+        xmax=5.2, xmin=-5.2,
+        axis y line=center,
+        ymax=5.2, ymin=-5.2,
+        axis line style=<->,
+%		xlabel=$x$,ylabel=$y$,
+		xticklabels={},
+		yticklabels={},
+		xtick={-5,-4,...,5},
+		ytick={-5,-4,...,5},
+		axis on top                    	
+		]
+    \addplot[<->,name path=f,smooth,domain=0.2:5,color=blue,samples=100,very thick] {1/x};
+    \addplot[<->,name path=f,smooth,domain=-5:-0.2,color=blue,samples=100,very thick] {1/x};
+    \end{axis}
+\end{tikzpicture}
+
+\vspace{5mm}
+
+\begin{tikzpicture}[scale=.8]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+        xmax=5.2, xmin=-5.2,
+        axis y line=center,
+        ymax=5.2, ymin=-5.2,
+        axis line style=<->,
+%		xlabel=$x$,ylabel=$y$,
+		xticklabels={},
+		yticklabels={},
+		xtick={-5,-4,...,5},
+		ytick={-5,-4,...,5},
+		axis on top                    	
+		]
+    \addplot[<->,name path=f,smooth,domain=0.2:5,color=blue,samples=100,very thick] {1/x};
+    \addplot[<->,name path=f,smooth,domain=-5:-0.2,color=blue,samples=100,very thick] {1/x};
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
+
+\end{multicols}
+
+\subsection*{Improper Integrals of Type~1}
+
+\begin{itemize}
+\item[(a)] If $f(x)$ is continuous on $[a,\infty)$, then\\
+
+$\disp\int_a^\infty f(x)\,dx=$
+
+\vfill
+
+\item[(b)] If $f(x)$ is continuous on $(-\infty,b]$, then\\
+
+$\disp\int_{-\infty}^b f(x)\,dx=$
+
+\vfill
+
+\newpage
+
+\item[(c)] If $f(x)$ is continuous on $(-\infty,\infty)$, then\\
+
+$\disp\int_{-\infty}^\infty f(x)\,dx=$
+
+\vspace{40mm}
+
+\end{itemize}
+
+\Example Find the area under the curve $y=\disp\frac{1}{x}$ for $x\geq 1$.
+
+\newpage
+
+\Example Find the volume of the solid generated when $y=\disp\frac{1}{x}$ for $x\geq 1$ is rotated about the $x$-axis.
+
+\vfill
+
+\textbf{Fact:} $\disp\int_1^\infty\frac{1}{x^p}\,dx$ \textbf{converges} for \underline{\hspace{30mm}} and \textbf{diverges} for \underline{\hspace{30mm}}.
+
+\newpage
+
+\Example Evaluate $\disp\int_0^\infty \frac{x}{\sqrt{x^4+1}}\,dx$.
+
+\newpage
+
+\subsection*{Improper Integrals with an Unbounded Integrand (Type~2)}
+
+\begin{itemize}
+
+\item[(a)] If $f(x)$ is continuous on $(a,b]$ with $\disp\lim_{x\to a^+}f(x)=\pm\infty$, then\\
+
+$\disp\int_a^bf(x)\,dx=$
+
+\vspace{40mm}
+
+\item[(b)] If $f(x)$ is continuous on $[a,b)$ with $\disp\lim_{x\to b^-}f(x)=\pm\infty$, then\\
+
+$\disp\int_a^b f(x)\,dx=$
+
+\vspace{40mm}
+
+\item[(c)] If $f(x)$ is continuous on $[a,b]$ except at the interior point $p$ where $f$ is unbounded, then\\
+
+$\disp\int_a^b f(x)\,dx=$
+
+\vspace{40mm}
+\end{itemize}
+
+
+\newpage
+
+\Example Evaluate $\disp\int_{-1}^1\frac{1}{x}\,dx$.
+
+
+\newpage
+
+\Example Evaluate $\disp\int_0^8\frac{1}{\sqrt[3]{x}}\,dx$.
+
+\newpage
+
+\Example Evaluate $\disp\int_0^{\pi/2}\tan\theta\,d\theta$.
+
+\newpage
+
+\Example Evaluate $\disp\int_0^1\ln x\,dx$.
+
+\newpage
+
+\boxenv{Comparison Theorem.}{Suppose $f$, $g$ are continuous functions with $f(x)\geq g(x)\geq 0$, for $x \geq a$.\\
+
+If $\disp\int_a^\infty f(x)\,dx$ converges, then 
+
+\vspace{6mm}
+
+If $\disp\int_a^\infty g(x)\,dx$ diverges, then 
+
+}
+
+\vspace{5mm}
+
+\textbf{Caution:} We have to be careful with what we conclude using the Comparison Theorem.
+
+\vspace{5mm}
+
+If $\disp\int_a^\infty f(x)\,dx$ diverges, then
+
+\vspace{25mm}
+
+If $\disp\int_a^\infty g(x)\,dx$ converges, then
+
+\vspace{25mm}
+
+\Example Determine whether $\disp\int_1^\infty e^{-x^2}\,dx$ converges or diverges.
+
+\newpage
+
+\boxenv{Recall:}{$\disp\int_1^\infty\frac{1}{x^p}\,dx$ \textbf{converges} for $p\geq 1$ and \textbf{diverges} for $p\leq 1$.}
+
+
+\Example Determine whether $\disp\int_1^\infty\frac{2+e^{-x}}{x}\,dx$ converges or diverges.
+
+\vfill
+
+\Example Determine whether $\disp\int_1^\infty\frac{x}{x^3+1}\,dx$ converges or diverges.
+
+\vfill
 \end{document}
