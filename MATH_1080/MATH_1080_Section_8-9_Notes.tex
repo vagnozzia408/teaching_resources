@@ -118,7 +118,13 @@ $\disp\int_{-\infty}^b f(x)\,dx=$
 
 \vfill
 
+\end{itemize}
+
+\noindent We say that an integral \textbf{converges} if the limit exists. Otherwise, we say it \textbf{diverges}.
+
 \newpage
+
+\begin{itemize}
 
 \item[(c)] If $f(x)$ is continuous on $(-\infty,\infty)$, then\\
 
@@ -130,9 +136,52 @@ $\disp\int_{-\infty}^\infty f(x)\,dx=$
 
 \Example Find the area under the curve $y=\disp\frac{1}{x}$ for $x\geq 1$.
 
+\begin{flushright}
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+        xmax=4.2, xmin=-4.2,
+        axis y line=center,
+        ymax=4.2, ymin=-4.2,
+        axis line style=<->,
+%		xlabel=$x$,ylabel=$y$,
+		xticklabels={},
+		yticklabels={},
+		xtick=\empty,
+		ytick=\empty,
+		axis on top                    	
+		]
+    \addplot[<->,name path=f,smooth,domain=0.25:4,color=blue,samples=100,very thick] {1/x};
+    \addplot[<->,name path=f,smooth,domain=-4:-0.25,color=blue,samples=100,very thick] {1/x};
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
+
+
 \newpage
 
 \Example Find the volume of the solid generated when $y=\disp\frac{1}{x}$ for $x\geq 1$ is rotated about the $x$-axis.
+
+\begin{flushright}
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+        xmax=4.2, xmin=-4.2,
+        axis y line=center,
+        ymax=4.2, ymin=-4.2,
+        axis line style=<->,
+%		xlabel=$x$,ylabel=$y$,
+		xticklabels={},
+		yticklabels={},
+		xtick=\empty,
+		ytick=\empty,
+		axis on top                    	
+		]
+    \addplot[<->,name path=f,smooth,domain=0.25:4,color=blue,samples=100,very thick] {1/x};
+    \addplot[<->,name path=f,smooth,domain=-4:-0.25,color=blue,samples=100,very thick] {1/x};
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
 
 \vfill
 
@@ -172,6 +221,28 @@ $\disp\int_a^b f(x)\,dx=$
 
 \Example Evaluate $\disp\int_{-1}^1\frac{1}{x}\,dx$.
 
+\begin{flushright}
+
+\vspace{-15mm}
+\begin{tikzpicture}[scale=1]
+	\begin{axis}[grid=none,
+    	axis x line=middle,
+        xmax=4.2, xmin=-4.2,
+        axis y line=center,
+        ymax=4.2, ymin=-4.2,
+        axis line style=<->,
+%		xlabel=$x$,ylabel=$y$,
+		xticklabels={},
+		yticklabels={},
+		xtick=\empty,
+		ytick=\empty,
+		axis on top                    	
+		]
+    \addplot[<->,name path=f,smooth,domain=0.25:4,color=blue,samples=100,very thick] {1/x};
+    \addplot[<->,name path=f,smooth,domain=-4:-0.25,color=blue,samples=100,very thick] {1/x};
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
 
 \newpage
 
@@ -180,6 +251,30 @@ $\disp\int_a^b f(x)\,dx=$
 \newpage
 
 \Example Evaluate $\disp\int_0^{\pi/2}\tan\theta\,d\theta$.
+
+\begin{flushright}
+
+\vspace{-15mm}
+\begin{tikzpicture}
+                \begin{axis}[
+                	axis x line=middle,
+                	xmax=3*pi/2+.2, xmin=-3*pi/2-.2,
+                	axis y line=center,
+                	ymax=4.5, ymin=-4.5,
+                	axis line style={<->},
+                	xlabel=$x$,ylabel=$y$,
+                	ytick=\empty,
+                	xtick={-3*pi/2,-pi,-pi/2,0,pi/2,pi,3*pi/2},
+                	xticklabels={$-\frac{3\pi}{2}$,$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$}
+                    ]
+%                    \addplot[name path=f,smooth,domain=-2*pi-.4:-4.96,color=blue,samples=100,<->,thick] {tan(deg(x))}; 
+                	\addplot[name path=f,smooth,domain=-4.46:-1.82,color=blue,samples=100,<->,thick] {tan(deg(x))};      
+                	\addplot[name path=f,smooth,domain=-1.32:1.32,color=blue,samples=100,<->,thick] {tan(deg(x))};      
+                	\addplot[name path=f,smooth,domain=1.82:4.46,color=blue,samples=100,<->,thick] {tan(deg(x))};      
+%                	\addplot[name path=f,smooth,domain=4.95:2*pi+.4,color=blue,samples=100,<->,thick] {tan(deg(x))};      
+                     \end{axis}
+            \end{tikzpicture}
+\end{flushright}
 
 \newpage
 
