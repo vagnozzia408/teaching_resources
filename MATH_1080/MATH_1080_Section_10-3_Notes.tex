@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{104}
 
 \begin{document}
 \section*{10.3: Infinite Series}
@@ -21,6 +21,95 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Introduction}
 
+In Section 10.1, an infinite series was defined as a sum of infinitely many terms. More formally, given a sequence $\left\{a_1,a_2,a_3,\dots\right\}$, the sum of its terms
+$$a_1+a_2+a_3+\cdots=\sum_{k=1}^\infty a_k$$
+is called an \textbf{infinite series}.
+
+\vspace{5mm}
+
+The \textbf{sequence of partial sums} $\left\{S_n\right\}$ associated with this series has the terms\dots
+
+\begin{align*}
+	S_1 &= a_1\\
+	S_2 &= a_1+a_2\\
+	S_3 &= a_1+a_2+a_3\\
+	\vdots & \\
+	S_n &= a_1+a_2+a_3+\cdots + a_n=\sum_{k=1}^n a_k,\text{ for }n=1,2,3,\dots
+\end{align*}
+
+If the sequence of partial sums $\left\{S_n\right\}$ has a limit $L$, the infinite series \textbf{converges} to that limit, and we write
+$$\disp\lim_{k=1}^\infty a_k=\lim_{n\to\infty}\sum_{k=1}^n a_k=\lim_{n\to\infty}S_n=L.$$
+If the sequence of partial sums diverges, the infinite series also \textbf{diverges}.
+
+\newpage
+
+\Example Determine if the series $\disp\sum_{i=2}^\infty\frac{2}{i^2-1}$ converges or diverges. \\
+ 
+If it converges, determine the value to which it converges. (Note: This is a special type of series called a \textbf{telescoping series}.)
+
+\vfill
+\vfill
+
+\subsection*{Geometric Series Test}
+
+The geometric series  $\disp\sum_{n=1}^\infty ar^{n-1}=a+ar+ar^2+ar^3+\cdots, a\neq 0$\dots
+
+\vspace{4mm}
+
+\hspace{5mm} converges if \underline{\hspace{50mm}}.
+
+\vspace{6mm}
+
+\hspace{5mm} diverges if \underline{\hspace{50mm}}.
+
+\Examples For each of the following, determine if the series converges or diverges. If it converges, find its sum.
+
+\vspace{5mm}
+
+$\disp\sum_{n=1}^\infty \frac{1}{2^n}$
+
+\vfill
+
+\newpage
+
+\ExamplesCont For each of the following, determine if the series converges or diverges. If it converges, find its sum.
+
+\vspace{5mm}
+
+$\disp 0.3+0.03+0.003+0.0003+\cdots$
+
+\vfill
+
+$3-4+\disp\frac{16}{3}-\frac{64}{9}+\dots$
+
+\vfill
+
+$\disp\sum_{n=1}^\infty \frac{(-3)^{n-1}}{4^n}$
+
+\vfill
+
+\newpage
+
+\subsection*{Properties of Convergent Series}
+\begin{itemize}
+	\item[\tc{1}] Suppose $\sum a_k$ converges to $A$ and $c$ is a real number. Then the series $\sum c a_k$ converges, and $\sum ca_k=c\sum a_k=cA$.
+	\item[\tc{2}] Suppose $\sum a_k$ diverges. Then $\sum ca_k$ also diverges, for any real number $c\neq 0$.
+	\item[\tc{3}] Suppose $\sum a_k$ converges to $A$ and $\sum b_k$ converges to $B$. Then the series $\sum(a_k\pm b_k)$ converges, and $\sum(a_k\pm b_k)=\sum a_k\pm \sum b_k=A\pm B$.
+	\item[\tc{4}] Suppose $\sum a_k$ diverges and $\sum b_k$ converges. Then $\sum(a_k\pm b_k)$ diverges.
+	\item[\tc{5}] If $M$ is a positive integer, then for $\disp\sum_{k=1}^\infty a_k$ and $\disp\sum_{k=M}^\infty a_k$, either both converge or both diverge.
+	\begin{itemize}
+		\item In general, \textit{whether} a series converges or diverges does not depend on a finite number of terms added to or removed from the series.
+		\item The \textit{value} of a convergent series, however, does change if nonzero terms are added or removed.
+	\end{itemize}
+\end{itemize}
+
+\Example Evaluate the following series or state that it diverges.
+
+\vspace{5mm}
+
+$\disp\sum_{k=0}^\infty \left(3\left(\frac{2}{5}\right)^k-2\left(\frac{5}{7}\right)^k\right)$
+
+\vfill
 \end{document}
