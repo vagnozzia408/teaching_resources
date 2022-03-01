@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{98}
 
 \begin{document}
 \section*{10.2: Sequences}
@@ -23,6 +23,160 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Computing Limits of Sequences}
+
+In Section 10.1, we introduced the general idea of what it means for a \textbf{sequence} to converge or diverge. We said that if the terms of a sequence $\left\{a_n\right\}$ approach some number $L$, then $\disp\lim_{n\to\infty}a_n=L$ exists and the sequence \textbf{converges} to $L$. \\
+
+If the terms of the sequence do not approach a single number as $n$ increases, then the sequence has no limit and we say that it \textbf{diverges}.
+
+\vspace{5mm}
+
+\boxenv{Theorem: Limits of Sequences from Limits of Functions.}{Suppose that $f$ is a function such that $f(n)=a_n$, for positive integers $n$. If $\disp\lim_{x\to\infty}f(x)=L$, then the limit of the sequence $\left\{a_n\right\}$ is also $L$ $\left(\disp\lim_{n\to\infty}a_n=L\right)$, where $L$ may be $\pm\infty$.}
+
+\paragraph{Limit Laws for Sequences.} Assume the sequences $\left\{ a_n\right\}$ and $\left\{ b_n \right\}$ have limits $A$ and $B$, respectively (that is, both sequences converge), and $c$ is a constant.
+
+\vspace{2mm}
+ 
+%\begin{multicols}{2}
+\begin{itemize}
+	\item[\tc{1}] $\disp\lim_{n\to\infty}\left(a_n\pm b_n\right)=A\pm B$ 
+	\item[\tc{2}] $\disp\lim_{n\to\infty}c a_n=cA$, where $c\in\R$
+	\item[\tc{3}] $\disp\lim_{n\to\infty}\left(a_n b_n\right)=AB$
+	\item[\tc{4}] $\disp\lim_{n\to\infty}\frac{a_n}{b_n}=\frac{A}{B}$, provided $B\neq 0$
+\end{itemize}
+%\end{multicols}
+
+\newpage
+
+\Examples Determine if each of the following sequences converges or diverges. If the sequence converges, find the value to which it converges.
+
+\vspace{5mm}
+
+$\disp a_n=\frac{3+5n^2}{n+n^2}$
+
+\vfill
+
+$\disp\left\{\frac{n^3+2n}{n+1}\right\}$
+
+\vfill
+
+$\disp\left\{\tan\left(\frac{2n\pi}{1+8n}\right)\right\}$
+
+\vfill
+
+\boxenv{Definition.}{Let $r$ be a real number ($r\in\R$). Then $\left\{ r^n\right\}$ is a \textbf{geometric sequence}.}
+
+\vspace{3mm}
+
+For what value of $r$ does a geometric sequence converge?
+
+\vfill
+\vfill
+
+\newpage
+\boxenv{The Squeeze Theorem.}{If $a_n\leq b_n\leq c_n$ for all $n\geq N$ and $\disp\lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=L$, then $\disp\lim_{n\to\infty}b_n=L$.}
+
+\Examples Determine if each of the following sequences converges or diverges. If the sequence converges, find the value to which it converges.
+
+\vspace{5mm}
+
+$\disp\left\{\frac{\cos^2n}{2^n}\right\}$
+
+\vfill
+
+$\left\{2^{n+1} 3^{-n}\right\}$
+
+\vfill
+
+$a_n=\disp\frac{(-1)^n}{2\sqrt{n}}$
+
+\vfill
+
+$\left\{0,1,0,0,1,0,0,0,1,\dots\right\}$
+
+\vfill
+
+\newpage
+\Example $\disp\left\{\left(\frac{n}{n+5}\right)^n\right\}$ \hfill Hint: Recall from Section 4.7 that $\disp\lim_{x\to\infty}\left(1+\frac{a}{x}\right)^x=e^a$.
+\vfill
+\vfill
+\vfill
+
+\subsection*{Terminology for Sequences}
+\begin{itemize}
+	\item $\left\{a_n\right\}$ is \textbf{increasing} if
+	
+	\vfill
+	
+	\item $\left\{a_n\right\}$ is \textbf{nondecreasing} if
+	\vfill
+
+	\item $\left\{a_n\right\}$ is \textbf{decreasing} if
+	\vfill
+
+	\item $\left\{a_n\right\}$ is \textbf{nonincreasing} if
+	\vfill
+
+	\item $\left\{a_n\right\}$ is \textbf{monotonic} if it is either \textbf{nonincreasing} or \textbf{nondecreasing}.
+	\vfill
+
+	\item $\left\{a_n\right\}$ is \textbf{bounded above} if
+	\vfill
+
+	\item $\left\{a_n\right\}$ is \textbf{bounded below} if
+	\vfill
+
+	\item If $\left\{a_n\right\}$ is bounded above and below, then we say that $\left\{a_n\right\}$ is a \textbf{bounded} sequence.
+	\vfill
+
+\end{itemize}
+
+\newpage
+
+\Example Determine whether the sequence $\left\{ (-2)^{n+1} \right\}$ converges or diverges and state whether it is monotonic or whether it oscillates. Give the limit if the sequence converges.
+
+\vfill
+
+\boxenv{Monotonic Sequence Theorem.}{Every bounded monotonic sequence is convergent.}
+
+\vspace{5mm}
+
+\textbf{Notes on this theorem:}
+
+\vfill
+
+\newpage
+
+\subsection*{Growth Rates of Sequences}
+
+The relative growth rates of functions (established in Section 4.7: L'H\^opital's Rule) are now applied to sequences. A few notes:
+\begin{itemize}
+	\item To compare growth rates of two nondecreasing sequences of positive terms $\left\{a_n\right\}$ and $\left\{b_n\right\}$, evaluate $\disp\lim_{n\to\infty}\frac{a_n}{b_n}$.
+	\begin{itemize}
+		\item If $\disp\lim_{n\to\infty}\frac{a_n}{b_n}=0$, then $\left\{b_n\right\}$ grows faster than $\left\{a_n\right\}$.
+		\item If $\disp\lim_{n\to\infty}\frac{a_n}{b_n}=\infty$, then $\left\{a_n\right\}$ grows faster than $\left\{b_n\right\}$.
+	\end{itemize}
+\item The notation $\left\{a_n\right\}<<\left\{b_n\right\}$ means that $\left\{b_n\right\}$ grows faster than $\left\{a_n\right\}$. 
+\end{itemize}
+
+\vspace{2mm}
+
+\boxenv{Theorem: Growth Rates of Sequences.}{The following sequences are ordered according to increasing growth rates as $n\to\infty$; that is, if $\left\{a_n\right\}$ appears before $\left\{b_n\right\}$ in the list, then $\disp\lim_{n\to\infty}\frac{a_n}{b_n}=0$ and $\disp\lim_{n\to\infty}\frac{b_n}{a_n}=\infty$:
+
+$$\left\{\ln^q n\right\}<<\left\{n^p\right\}<<\left\{n^p\ln^r n\right\}<<\left\{n^{p+s}\right\} << \left\{b^n\right\}<<\left\{n!\right\}<<\left\{n^n\right\}$$
+
+The ordering applies for positive real numbers $p$, $q$, $r$, $s$, and $b>1$.}
+
+\Examples Use the theorem on growth rates to find the limit of the following sequences or state that they diverge.
+
+\vspace{5mm}
+
+$\disp\left\{\frac{n^{10}}{\ln^{1000}n}\right\}$
+
+\vfill
+
+$a_n=\disp\frac{6^n+3^n}{6^n+n^{1000}}$
+
+\vfill
 
 \end{document}
