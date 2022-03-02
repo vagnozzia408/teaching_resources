@@ -7,5 +7,5 @@ STAT 3090: Introductory Business Statistics
 
 These resources are made publicly available for any instructor who wishes to use them for their classes!
 
-If you have any questions, please reach out at avagnoz@clemson.edu.
+If you have any questions or notice any errors in the content, please reach out at avagnoz@clemson.edu.
 - Anna Marie Vagnozzi ("Ms. V")
