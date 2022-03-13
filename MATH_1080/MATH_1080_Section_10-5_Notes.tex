@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{116}
 
 \begin{document}
 \section*{10.5: Comparison Tests}
@@ -18,9 +18,57 @@
 
 \vspace{5mm}
 
-\subsection*{Part 1: The Divergence Test and P-Series Test}
+\subsection*{The (Direct) Comparison Test}
 
-\subsection*{Part 2: The Integral Test and Estimation Theorem}
+Similar to the Comparison Theorem for Improper Integrals that was introduced in Section~8.9, we can compare a given infinite series to a series that we know to be convergent or divergent. We will usually do comparisons to a $p$-series or a geometric series.
 
+\vspace{5mm}
+
+\boxenv{Comparison Test.}{Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms. Then\dots
+\vspace{2mm}
+\begin{itemize}
+\item[(1)] If $\sum b_n$ converges and $a_n\leq b_n$ for all $n$, then $\sum a_n$ converges.
+\vspace{2mm}
+\item[(2)] If $\sum b_n$ diverges and $a_n\geq b_n$ for all $n$, then $\sum a_n$ diverges.
+\end{itemize}
+}
+
+\Example $\disp\sum_{n=1}^\infty\dfrac{n}{2n^3+1}$
+
+\newpage
+
+\Example $\disp\sum_{k=2}^\infty \dfrac{\ln k}{k}$
+
+\vfill
+
+\subsubsection*{Important Notes on Using Comparison Tests}
+
+\vspace{60mm}
+
+\newpage
+
+\subsection*{The Limit Comparison Test}
+
+\boxenv{Limit Comparison Test.}{Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms.\\
+
+If $\disp\lim_{n\to\infty}\dfrac{a_n}{b_n}=c$, where $0<c<\infty$,\\
+
+then either $\sum a_n$ and $\sum b_n$ both converge or both diverge.}
+
+\Example $\disp\sum_{n=1}^\infty\dfrac{n}{2n^3-1}$
+
+\newpage
+
+\Example $\disp\sum_{n=1}^\infty\dfrac{\sqrt{n^4+1}}{n^3+n^2}$
+
+\vfill
+
+\Example $\disp\sum_{n=1}^\infty\tan\left(\dfrac{1}{n}\right)$
+
+\vfill
+
+\newpage
+
+\Example $\disp\sum_{n=1}^\infty\dfrac{n+4^n}{n+6^n}$
 
 \end{document}
