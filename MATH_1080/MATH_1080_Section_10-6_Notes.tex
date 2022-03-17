@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{121}
 
 \begin{document}
 \section*{10.6: Alternating Series}
@@ -21,9 +21,196 @@
 
 \vspace{5mm}
 
-\subsection*{Part 1: The Divergence Test and P-Series Test}
+\subsection*{Introduction}
 
-\subsection*{Part 2: The Integral Test and Estimation Theorem}
+Both the Integral Test and the Comparison Tests apply only to series with \textit{positive terms}. An important type of series with positive and negative terms is called an \textbf{alternating} series.
 
+\Examples Consider the terms of each of the following series.
+
+\vspace{2mm}
+
+$\disp\sum_{n=1}^\infty\left(-\dfrac{1}{2}\right)^n$
+
+\vfill
+
+$\disp\sum_{n=1}^\infty\left(-1\right)^{n+1}e^{2/n}$
+
+\vfill
+
+$\disp\sum_{n=1}^\infty\left(-1\right)^{n-1}\dfrac{1}{n}$
+
+\vfill
+
+\newpage
+
+\boxenv{Definition.}{An \textbf{alternate series} is an infinite sum of the form
+
+$$\disp\sum_{n=1}^\infty\left(-1\right)^{n-1}b_n\text{ or } \sum_{n=1}^\infty\left(-1\right)^{n}b_n\text{ with } b_n>0.$$
+
+The terms of an alternating series will \textit{alternate} between positive and negative values.
+
+}
+
+\vspace{4mm}
+
+\boxenv{Alternating Series Test.}{Consider an alternating series defined as above. If both of the following are true\dots
+
+\vspace{2mm}
+
+\begin{enumerate}
+	\item $b_{n+1}\leq b_n$ for all $n\geq N$, and
+	\item $\disp\lim_{n\to\infty}b_n=0$,
+\end{enumerate}
+then the series converges.
+}
+
+\vspace{5mm}
+
+\paragraph{Thinking about the conditions of the Alternating Series Test.} Is it possible to have a sequence that decreases but does not converge to 0? Give an example or explain why not.
+
+\vfill
+
+Is it possible to have a sequence that converges to 0 but doesn't decrease? Give an example or explain why not.
+
+\vfill
+
+\newpage
+
+\paragraph{Idea behind the proof of the Alternating Series Test.} Why do the conditions of the test imply convergence?
+
+\vfill
+
+\Examples Determine whether the following series converge or diverge.
+
+\vspace{2mm}
+
+\begin{itemize}
+\item[\tc{1}] The \textbf{alternating harmonic series}: $\disp\sum_{n=1}^\infty(-1)^{n-1}\dfrac{1}{n}$
+
+\end{itemize}
+
+\vfill
+
+\newpage
+
+\ExamplesCont
+
+\begin{itemize}
+\item[\tc{2}] $\disp\sum_{n=1}^\infty(-1)^{n+1}e^{2/n}$
+
+\vfill
+
+\item[\tc{3}] $\disp\sum_{n=1}^\infty (-1)^{n+1}\dfrac{n^2}{n^3+4}$
+
+\vfill
+
+\end{itemize}
+
+\newpage
+
+\ExamplesCont
+
+\begin{itemize}
+\item[\tc{4}] $\disp\sum_{n=0}^\infty \dfrac{\sin\left(n+\frac{1}{2}\right)\pi}{1+\sqrt{n}}$
+\end{itemize}
+
+\vfill
+
+\subsection*{Estimating Sums}
+
+Recall that the error in estimating the sum $S$ of a convergent series by $S_n$ is the \textbf{remainder} $R_n=S-S_n$. The Integral Estimation Theorem allows us to find the bounds on the remainder,
+$$\int_{n+1}^\infty f(x)\,dx\leq R_n\leq \int_n^\infty f(x)\,dx$$
+
+where $f(x)$ is continuous, positive, and decreasing for $x\geq 1$ and $f(n)=a_n$. This theorem will not work for alternating series because the terms are, by definition, not always positive, so we'll need a different theorem.
+
+\vspace{4mm}
+
+\boxenv{Alternating Series Estimation Theorem.}{If $S=\disp\sum_{n=1}^\infty (-1)^{n-1}b_n$ is the sum of an alternating series that satisfies (1) $b_{n+1}\leq b_n$ and (2) $\disp\lim_{n\to\infty}b_n=0$, then\dots
+
+\vspace{30mm}}
+
+\vspace{30mm}
+
+\newpage
+
+\Example Consider the infinite series $\disp\sum_{n=1}^\infty\dfrac{(-1)^{n+1}}{n^6}$.
+
+\begin{enumerate}
+\item[(a)] If we use the sum of the first three terms to estimate the sum of the series, what is the bound on the error?
+
+\vfill
+
+\item[(b)] How many terms of the series do we need to add in order to estimate the sum so that $\big|$error$\big|<1/10^6$?
+
+\vfill
+\end{enumerate}
+
+\newpage
+
+\subsection*{Absolute Convergence and Conditional Convergence}
+
+So far, we have only considered \textit{whether} a series converges or diverges, but now we will also consider the \textit{type} of convergence. The types of convergence we're interested in has to do with the relationship between the convergence/divergence of $\sum a_n$ and $\sum |a_n|$. 
+
+\vspace{5mm}
+
+\boxenv{Definition.}{A series $\disp\sum a_n$ is called \textbf{absolutely convergent} if the series $\disp\sum|a_n|$ is convergent.}
+
+\vspace{5mm}
+
+\textbf{Important Notes:}
+\begin{itemize}
+	\item If a series $\sum a_n$ is absolutely convergent, then it is convergent.
+	\item This means that if $\sum |a_n|$ converges, then $\sum a_n$ converges.
+	\item So if $\sum a_n$ is absolutely convergent, then both $\sum |a_n|$ and $\sum a_n$ converge.
+	\item \textbf{\underline{Caution:}} If $\sum a_n$ converges, $\sum |a_n|$ may converge or diverge.
+\end{itemize}
+
+\vspace{5mm}
+
+\boxenv{Definition.}{A series $\disp\sum a_n$ is called \textbf{conditionally convergent} if $\disp\sum a_n$ converges but $\disp\sum |a_n|$ diverges.}
+
+\vspace{5mm}
+
+\paragraph{Steps to Determine if a Series is Absolutely Convergent, Conditionally \\ Convergent, or Divergent.}
+\begin{enumerate}
+	\item[\tc{1}] Look at $\sum |a_n|$. Determine if this series converges or diverges.
+	\begin{itemize}
+		\item[(a)] If $\sum |a_n|$ converges, then $\sum a_n$ is absolutely convergent and we are done.
+		\item[(b)] If $\sum|a_n|$ diverges, then go to Step 2.
+	\end{itemize}
+	\item[\tc{2}] Look at $a_n$. Determine if this series converges or diverges.
+	\begin{itemize}
+		\item[(a)] If $\sum a_n$ converges, then $\sum a_n$ is conditionally convergent.
+		\item[(b)] If $\sum a_n$ diverges, then $\sum a_n$ is divergent.
+	\end{itemize}
+\end{enumerate}
+
+\newpage
+
+\Examples Determine if each of the following series is absolutely convergent, conditionally convergent, or divergent.
+
+\begin{itemize}
+\item[\tc{1}] $\disp\sum_{n=1}^\infty \dfrac{(-1)^n}{n^4}$
+
+\vfill
+
+\item[\tc{2}] $\disp\sum_{n=1}^\infty \dfrac{(-1)^n}{n}$
+
+\vfill
+\end{itemize}
+
+\newpage
+
+\ExamplesCont Determine if each of the following series is absolutely convergent, conditionally convergent, or divergent.
+
+\begin{itemize}
+\item[\tc{3}] $\disp\sum_{n=1}^\infty(-1)^n\arctan(n)$
+
+\vfill
+
+\item[\tc{4}] $\disp\sum_{n=1}^\infty \dfrac{\sin(4n)}{4^n}$
+
+\vfill
+\end{itemize}
 
 \end{document}
