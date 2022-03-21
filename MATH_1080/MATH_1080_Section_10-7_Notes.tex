@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{130}
 
 \begin{document}
 \section*{10.7: The Ratio and Root Tests}
@@ -9,7 +9,7 @@
 \boxenv{Learning Objectives.}{Upon successful completion of Section 10.7, you will be able to\dots
 		
 	\begin{itemize}[leftmargin=6mm]
-		\item Answer conceptual questoins involving the root and ratio tests.
+		\item Answer conceptual questions involving the root and ratio tests.
 		\item Apply the root and ratio tests.
 		\item Determine if a series converges absolutely, converges conditionally, or diverges.
 		\item Determine values for which a series converges.
@@ -19,9 +19,100 @@
 
 \vspace{5mm}
 
-\subsection*{Part 1: The Divergence Test and P-Series Test}
+\subsection*{The Ratio Test}
 
-\subsection*{Part 2: The Integral Test and Estimation Theorem}
+\vspace{1mm}
 
+\boxenv{Ratio Test.}{Consider the series $\disp\sum_{n=1}^\infty a_n$.
+\begin{enumerate}
+\item[\tc{1}] If $\disp\lim_{n\to\infty}\bigg|\dfrac{a_{n+1}}{a_n}\bigg|=L <1$, then $\sum a_n$ is absolutely convergent.
+\item[\tc{2}] If $\disp\lim_{n\to\infty}\bigg|\dfrac{a_{n+1}}{a_n}\bigg|=L >1$, then $\sum a_n$ is divergent.
+\item[\tc{3}] If $\disp\lim_{n\to\infty}\bigg|\dfrac{a_{n+1}}{a_n}\bigg|=L =1$, then the Ratio Test is inconclusive.
+\end{enumerate}
+\vspace{-2mm}
+}
+
+\paragraph*{Notes about the Ratio Test.}
+\begin{itemize}
+\item The Ratio test is useful for series whose terms contain exponential functions, factorials, or exponentials times powers of $n$.
+
+\vfill
+
+\item The Ratio Test is \textbf{not} useful for $p$-series type series (only powers of $n$ involved).
+
+\vfill
+
+\item A series cannot converge conditionally by the Ratio Test.
+\end{itemize}
+
+\newpage
+
+\Examples Determine if each of the following series converges conditionally, absolutely, or diverges.
+
+\begin{itemize}
+\item[\tc{1}] $\disp\sum_{n=0}^\infty\dfrac{(-3)^n}{(2n+1)!}$
+
+\vfill
+
+\item[\tc{2}] $\disp\sum_{n=1}^\infty\dfrac{n^2 5^{n-1}}{(-2)^n}$
+
+\vfill
+
+\newpage
+
+\end{itemize}
+
+\Example Determine if the series converges conditionally, absolutely, or diverges.
+
+\vspace{3mm}
+
+$\disp\sum_{n=1}^\infty(-1)^n\dfrac{n}{n^2+4}$
+\vfill
+
+\paragraph*{Extra Examples.} Determine if the series converges conditionally, absolutely, or diverges.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item[\tc{1}] $\disp\sum_{k=1}^\infty\dfrac{(-1)^{k+1}k^{2k}}{k!k!}$
+
+\item[\tc{2}] $\disp\sum_{k=1}^\infty\dfrac{(-1)^k}{k^{0.99}}$
+\end{enumerate}
+
+\end{multicols}
+\vspace{3mm}
+
+\boxenv{Note.}{For the first example, recall that $\disp\lim_{n\to\infty}\left(1+\dfrac{a}{n}\right)^n=e^a$.}
+
+\newpage
+
+\subsection*{The Root Test}
+
+\boxenv{Ratio Test.}{Consider the series $\disp\sum_{n=1}^\infty a_n$.
+\begin{enumerate}
+\item[\tc{1}] If $\disp\lim_{n\to\infty}\sqrt[n]{\big|a_n\big|} =L <1$, then $\sum a_n$ is absolutely convergent.
+\item[\tc{2}] If $\disp\lim_{n\to\infty}\sqrt[n]{\big|a_n\big|} =L >1$, then $\sum a_n$ is divergent.
+\item[\tc{3}] If $\disp\lim_{n\to\infty}\sqrt[n]{\big|a_n\big|} =L =1$, then the Root Test is inconclusive.
+\end{enumerate}
+\vspace{-2mm}
+}
+
+\paragraph*{Notes about the Root Test.}
+\begin{itemize}
+	\item If the Ratio Test is inconclusive, then the Root Test will be, too (and vice versa).
+	\item A series cannot be conditionally convergent by the Root Test.
+\end{itemize}
+
+\Examples Determine if each of the following series converges conditionally, absolutely, or diverges.
+
+\begin{enumerate}
+\item[\tc{1}] $\disp\sum_{n=1}^\infty\left(\dfrac{n^2+1}{2n^2+1}\right)^{2n}$
+
+\vfill 
+
+\item[\tc{2}] $\disp\sum_{k=1}^\infty\left(1+\dfrac{3}{k}\right)^{k^2}$
+
+\vfill
+
+\end{enumerate}
 
 \end{document}
