@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{134}
 
 \begin{document}
 \section*{10.8: Choosing a Convergence Test}
@@ -18,9 +18,97 @@
 
 \vspace{5mm}
 
-\subsection*{Part 1: The Divergence Test and P-Series Test}
+\subsection*{What Convergence/Divergence Tests Do We Know?}
+\begin{multicols}{3}
+\begin{itemize}
+\item Geometric Series Test
+\item Divergence Test
+\item Integral Test
+\item $p$-Series Test
+\item Direct Comparison Test
+\item Limit Comparison Test
+\item Alternating Series Test
+\item Ratio Test
+\item Root Test
+\end{itemize}
+\end{multicols}
 
-\subsection*{Part 2: The Integral Test and Estimation Theorem}
+\subsection*{Strategy Overview}
 
+We want to identify the \textit{form} of a series to help us determine what test will be best to use. Sometimes it's helpful to write out the first few terms to see what the form is. (This is particularly helpful when looking for geometric or alternating series.)
+
+\begin{enumerate}
+\item[\tc{1}] If the series is a $p$-series $\disp\left(\sum\dfrac{1}{n^p}\right)$ or a geometric series $\disp\left(a r^{n-1}=a+ar+ar^2+\cdots\right)$, \\
+then use the \textbf{\textit{p}-Series Test} or \textbf{Geometric Series Test}.
+
+\item[\tc{2}] If the series is \textit{similar to} a $p$-series or geometric series, then try a \textbf{Comparison Test}.
+\begin{itemize}
+	\item For series composed of powers of $n$, e.g., $\disp\sum_{n=1}^\infty\dfrac{n^2-5n}{n^3+n+1}$ or $\disp\sum_{n=1}^\infty\dfrac{\sqrt{n+2}}{2n^2+1}$, compare with $\disp\sum_{n=1}^\infty \dfrac{\text{highest numerator power of }n}{\text{highest denominator power of }n}$, which is a $p$-series after simplifying.
+	\item The series must have positive terms to use a Comparison Test. 
+	\item If the series has some negative terms, try to apply a Comparison Test to $\sum|a_n|$. The series may converge absolutely.
+\end{itemize}
+
+\item[\tc{3}] If it is not complicated to show that $\disp\lim_{n\to\infty}a_n\neq 0$, then use the \textbf{Divergence Test}.
+
+\item[\tc{4}] If the series is alternating, then try the \textbf{Alternating Series Test}.
+\end{enumerate}
+
+\newpage
+
+\subsection*{Strategy Overview (continued)}
+\begin{enumerate}
+\item[\tc{5}] If the series involves products with factorials or exponentials, e.g., $2^n$ or $(-3)^{n+1}$,  then try the \textbf{Ratio Test}.
+\begin{itemize}
+	\item For all $p$-series and rational or algebraic functions of $n$, the Ratio Test will be inconclusive.
+\end{itemize}
+\item[\tc{6}] If $a_n$ has the form $\left(b_n\right)^n$, then try the \textbf{Root Test}.
+
+\item[\tc{7}] If $a_n=f(n)$, where $\disp\int_1^\infty f(x)\,dx$ is not too bad to evaluate, then try the \textbf{Integral Test} \textbf{\underline{IF}} the conditions of the test are met.
+\end{enumerate}
+
+\Examples Without performing the whole test, identify which convergence/divergence test would be best to use in each of the following examples \textbf{and why}.
+
+\begin{enumerate}
+\item[\tc{1}] $\disp\sum_{n=1}^\infty\dfrac{1}{n\sqrt{n^2+1}}$
+
+\vfill
+
+\item[\tc{2}] $\disp\sum_{n=1}^\infty\left(\dfrac{n}{n+1}\right)^{2n^2}$
+
+\vfill
+
+\item[\tc{3}] $\disp\sum_{n=1}^\infty\left(-1\right)^n\dfrac{n}{n^2+2}$
+
+\vfill
+
+\end{enumerate}
+
+\newpage
+
+\ExamplesCont Without performing the whole test, identify which convergence/divergence test would be best to use in each of the following examples \textbf{and why}.
+
+\begin{enumerate}
+
+\item[\tc{4}] $\disp\sum_{n=1}^\infty\left(-1\right)^n\dfrac{n}{n+2}$
+
+\vfill
+
+\item[\tc{5}] $\disp\sum_{n=1}^\infty n^2e^{-n^3}$
+
+\vfill
+
+\item[\tc{6}] $\disp\sum_{n=1}^\infty\dfrac{(-1)^n2^{4n}}{(2n+1)!}$
+
+\vfill
+
+\item[\tc{7}] $\disp\sum_{n=1}^\infty\dfrac{1}{n+n\cos^2n}$
+
+\vfill
+
+\item[\tc{8}] $\disp\sum_{n=1}^\infty\dfrac{e^{1/n}}{n^2}$
+
+\vfill
+
+\end{enumerate}
 
 \end{document}
