@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{137}
 
 \begin{document}
 \section*{11.1: Approximating Functions with Polynomials}
@@ -22,9 +22,194 @@
 
 \vspace{5mm}
 
-\subsection*{Part 1: The Divergence Test and P-Series Test}
+\subsection*{Power Series}
 
-\subsection*{Part 2: The Integral Test and Estimation Theorem}
+Chapter 11 focuses on a particular type of infinite series called a \textbf{power series}. 
+
+\vspace{3mm}
+
+\boxenv{Definition.}{A \textbf{power series} is an infinite series of the form
+$$\disp\sum_{k=0}^\infty c_k x^k=c_0+c_1x+c_2x^2+\cdots+c_nx^n+c_{n+1}x^{n+1}\cdots,$$
+
+or, more generally,
+\vspace{-1mm}
+$$\disp\sum_{k=0}^\infty c_k(x-a)^k=c_0+c_1(x-a)+c_2(x-a)^2+\cdots+c_n(x-a)^n+c_{n+1}(x-a)^{n+1}\cdots,$$
+
+where $a$ and $c_k$ are constants. The values of $c_k$ are called the \textbf{coefficients}.
+}
+
+\vspace{3mm}
+
+\paragraph*{Motivation.} Why are power series important?
+\begin{itemize}
+\item Functions can be represented by power series.
+\item Functions can be defined as power series.
+\item Power series are like infinitely long polynomials, and polynomials have a lot of nice properties that make them straightforward to work with.
+\item Power series can be used to solve differential equations. (Differential equations were introduced in Section 4.9 in MATH 1060.)
+\end{itemize}
+
+\newpage
+
+\textbf{Question:} What should the form of the coefficients $c_k$ be to provide a good approximation of a function? Let's explore! We will consider the function $f(x)=e^x$ centered at $x=0$.
+
+\begin{enumerate}
+	\item[\tc{1}] First, we will find a \textit{linear approximation} for $f(x)$ at $x=0$. In other words, we will find the equation $p_1(x)=c_0+c_1 x$ of the line tangent to $f(x)$ at $x=0$.
+	
+	\vfill
+	
+	\vfill
+
+	\textbf{Note:} $p_1(x)$ and $f(x)$ have the same \underline{$y$-value} and same \underline{first\phantom{y}derivative} at $x=0$.
+	
+	\item[\tc{2}] To obtain a better approximation, let's consider a \textit{quadratic approximation} that adds a quadratic term to $p_1(x)$:
+	$$p_2(x)=p_1(x)+c_2x^2=c_0+c_1x+c_2x^2$$
+	
+	We want a value for $c_2$ that results in a good approximation of $f(x)$ near \mbox{$x=0$.} $p_1(x)$~was a good linear approximation to $f(x)$ because the $y$-values and first derivatives matched. It would be reasonable to want a value $c_2$ so that the \underline{second\phantom{y}derivatives} match as well.
+
+\begin{enumerate}
+	\item[(a)] Calculate $p_2(0)$ to show that the \underline{$y$-values} match.
+	
+	\vfill
+	
+	\item[(b)] Calculate $p_2'(0)$ to show that the \underline{first\phantom{y}derivatives} match.
+	
+	\vfill
+	
+	\item[(c)] Calculate $p_2''(x)$. Then find a value for $c_2$ so that the \underline{second\phantom{y}derivatives} match.
+	
+		\vfill
+
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}
+\item[\tc{3}] We can keep adding higher-order terms to get a better approximation to $f(x)$ at $x=0$. Let 
+$$p_3(x)=c_0+c_1x+c_2x^2+c_3x^3.$$
+
+Based on our work from the previous page, we know what $c_0$, $c_1$, and $c_2$ are. Let's find $c_3$ so that the \underline{third\phantom{y}derivatives} match.
+
+\vfill
+
+\item[\tc{4}] Let's look at one more approximation:
+$$p_4(x)=c_0+c_1x+c_2x^2+c_3x^3+c_4x^4.$$
+Find the value of $c_4$ so that the \underline{fourth\phantom{y}derivatives} are equal. 
+
+\vfill
+\end{enumerate}
+
+\newpage
+
+\subsection*{Taylor Polynomials}
+
+The polynomial approximations we explored on the previous two pages are referred to as \textbf{Taylor polynomials}.
+
+\vspace{5mm}
+
+\boxenv{Definition.}{The \textbf{\textit{n}th-order Taylor polynomial} $p_n(x)$ for $f$ centered at $x=a$ is
+
+\vspace{40mm}}
+
+\vspace{10mm}
+
+\Example Consider the function $f(x)=\sqrt{x}$.
+
+\begin{enumerate}
+\item[(a)] Find the Taylor polynomial $p_3$ at $a=1$ for $f(x)=\sqrt{x}$.
+
+\vfill
+
+\vfill
+
+\item[(b)] Now use $p_3$ to approximate $\sqrt{1.06}$.
+
+\vfill
+\end{enumerate}
+
+\newpage
+
+\subsubsection*{Approximations with Taylor Polynomials}
+
+Taylor polynomials provide a good approximation of $f$ near the center $a$, and the approximation gets better as the order of the Taylor polynomial increases. Similar to our work when approximating the sum of a series, we can determine \textit{how accurate} an approximation is through the idea of looking at remainders and error bounds.
+
+\vspace{5mm}
+
+\boxenv{Definition.}{Let $p_n$ be the \textit{n}th-order Taylor polynomial for $f$. The \textbf{remainder} in using $p_n$ to approximate $f$ at the point $x$ is
+
+\vspace{20mm}
+
+$\big|R_n(x)\big|$ is the \textbf{error} made in approximating $f$ by $p_n$.}
+
+\vspace{5mm}
+
+There are two theorems that will allow us to estimate bounds on the error in approximation with Taylor polynomials.
+
+\vspace{5mm}
+
+\boxenv{Taylor's Theorem (Remainder Theorem).}{Let $f$ have continuous derivatives up to $f^{(n+1)}$ on an open interval containing $a$. For all $x$-values in the interval,
+
+\vspace{15mm}
+
+where $p_n$ is the $n$th-order Taylor polynomial for $f$ centered at $a$ and the remainder is
+
+$$R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},$$
+
+for some point $x$ between $x$ and $a$.
+}
+
+\vspace{5mm}
+
+\boxenv{Theorem: Estimate of the Remainder.}{Let $n$ be a fixed positive integer. Suppose there exists a number $M$ such that $\big|f^{(n+1)}(c)\big|\leq M$ for all $c$ between $a$ and $x$ inclusive. The remainder in the $n$th-order Taylor polynomial for $f$ centered at $a$ satisfies
+
+$$\big| R_n(x)\big|=\big| f(x)=p_n(x)\big|\leq  M\dfrac{\big|x-a\big|^{n+1}}{(n+1)!}$$
+
+\vspace{-2mm}
+}
+
+\vspace{5mm}
+
+As a result of the two theorems above, we can get a \textbf{bound on the error} by\dots
+\begin{itemize}
+	\item finding $f^{(n+1)}(x)$,
+	\item finding a number $M$ so that $\big|f^{(n+1)}(c)\big|\leq M$ for all $c\in\left[a,x\right]$, and then
+	\item plugging $M$ into the formula from the second Theorem above.
+\end{itemize}
+
+\newpage
+
+\boxenv{Finding Error Bounds.}{For a Taylor polynomial used to approximate $f$\dots
+\begin{enumerate}
+	\item[\tc{1}] Find $f^{(n+1)}(x)$.
+	\item[\tc{2}] Find a number $M$ so that $\big|f^{(n+1)}(c)\big|\leq M$ for all $c\in\left[a,x\right]$.
+	\item[\tc{3}] Plug $M$ into the estimation theorem to find the error bound:
+	$$\big| R_n(x)\big| \leq  M\dfrac{\big|x-a\big|^{n+1}}{(n+1)!}$$
+\end{enumerate}
+
+\vspace{-3mm}}
+
+\Example Consider the function $f(x)=\cos x$ centered at $a=0$. 
+
+\begin{itemize}
+\item[(a)] Find the Taylor polynomials of order $n=2$ and $n=3$ for $f$. 
+
+\vfill
+
+\item[(b)] Use the remainder term to find a bound on the error in the approximation $p_3(x)$ to $f(x)$ on the interval $\left[-\frac{\pi}{4},\frac{\pi}{4}\right]$.
+
+\vfill
+\end{itemize}
+
+\newpage
+
+\Example Let $\sqrt{x}\approx 2+\dfrac{1}{4}(x-4)-\dfrac{1}{64}(x-4)^2$ on $[4,4.2]$. Use the remainder term to find a bound on the error in the approximation on the given interval.
+
+\vfill
+
+\Example What is the minimum order of Taylor polynomial required to approximate $e^{-0.5}$ with an absolute error no greater than $10^{-3}$?
+
+\vfill
 
 
-\end{document}
+
+\end{document} 
