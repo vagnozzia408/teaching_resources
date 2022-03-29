@@ -111,7 +111,7 @@ In these three examples, we have actually observed the only three possible types
 \vspace{-2mm}
 \end{enumerate}}
 
-\Example Given $\dfrac{1}{1=x}=\disp\sum_{k=0}^\infty x^k=1+x+x^2+x^3+\cdots$, for $|x|<1$, find the power series and interval of convergence for the function\dots
+\Example Given $\dfrac{1}{1-x}=\disp\sum_{k=0}^\infty x^k=1+x+x^2+x^3+\cdots$, for $|x|<1$, find the power series and interval of convergence for the function\dots
 
 \begin{enumerate}
 	\item[(a)] $\dfrac{1}{1+x^2}$
@@ -136,7 +136,11 @@ In these three examples, we have actually observed the only three possible types
 \begin{enumerate}
 \item[\tc{1}] Then $f$ is differentiable (which implies continuous) for $|x-a|<R$, and $f'$ is found by differentiating the power series $f$ term by term; that is, 
 
+\vspace{-2mm}
+
 $$f'(x)=\sum k c_k(x-a)^{k-1},$$
+
+\vspace{-2mm}
 
 for $|x-a|<R$.
 
@@ -145,7 +149,12 @@ $$\int f(x)\,dx=\sum c_k\dfrac{(x-a)^{k+1}}{k+1}+C,$$
 
 for $|x-a|<R$, where $C$ is an arbitrary constant.
 \end{enumerate}
+\vspace{-3mm}
+
 }
+
+\vspace{-3mm}
+
 
 \Example Given $f(x)=\dfrac{1}{1-x}=\disp\sum_{k=0}^\infty x^k=1+x+x^2+x^3+\cdots$, for $|x|<1$\dots
 
@@ -154,26 +163,38 @@ for $|x-a|<R$, where $C$ is an arbitrary constant.
 
 \vfill
 
+\end{enumerate}
+
+\newpage
+
+\ExampleCont Given $f(x)=\dfrac{1}{1-x}=\disp\sum_{k=0}^\infty x^k$, for $|x|<1$\dots 
+
+\begin{enumerate}
 \item[(b)] Find the power series for $\int f(x)\,dx$ and its interval of convergence. Also identify what function the power series represents.
 
 \vfill
 \end{enumerate}
 
 
-\newpage
+%\newpage
+
+%\boxenv{Note:}{$\dfrac{1}{1-x}=\disp\sum_{k=0}^\infty x^k$ for $|x|<1$.}
 
 \Example Find the power series representation for $g(x)=-\dfrac{1}{(1+x)^2}$ centered at $0$ by differentiating or integrating the power series for $f(x)=\dfrac{1}{1+x}$.
 
 \vfill
 
-\Example We found a power series representation for $\dfrac{1}{1+x^2}$ in a previous example.
+\newpage
+
+\Example We found a power series representation for $\dfrac{1}{1+x^2}$ on page~148:
+$$\dfrac{1}{1+x^2}=\disp\sum_{k=0}^\infty (-1)^k x^{2k}$$
 
 \begin{enumerate}
 \item[(a)] Use this power series to find a power series representation centered at $0$ for $\arctan(x)$. Give the interval of convergence for the resulting series.
 
 \vfill
 
-\item[(b)] Use the above series to find a power series representation centered at $0$ for $f(x)=\arctan(4x^2)$ and find the interval of convergence.
+\item[(b)] Use the series in Part (a) to find a power series representation centered at $0$ for \mbox{$f(x)=\arctan(4x^2)$} and find the interval of convergence.
 
 \vfill
 \end{enumerate}
