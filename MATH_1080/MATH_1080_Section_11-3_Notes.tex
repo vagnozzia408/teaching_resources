@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{152}
 
 \begin{document}
 \section*{11.3: Taylor Series}
@@ -20,9 +20,89 @@
 
 \vspace{5mm}
 
-\subsection*{Part 1: The Divergence Test and P-Series Test}
+\subsection*{Taylor and Maclaurin Series}
 
-\subsection*{Part 2: The Integral Test and Estimation Theorem}
+In the previous sections, we learned about power series and $n$th-order Taylor polynomials. We'll now combine these two ideas by formally defining \textbf{Taylor series}, which are power series where the coefficients have a specific form.
 
+\vspace{3mm}
+
+\boxenv{Definition.}{Suppose the function $f$ has derivatives of all orders on an interval containing the point $a$. The \textbf{Taylor series for \textit{f} centered at \textit{a}} is
+
+\vspace{15mm}
+}
+
+\vspace{5mm}
+
+\boxenv{Definition.}{A \textbf{Maclaurin series} for a function $f$ is the Taylor series for $f$ centered at the point $a=0$.
+
+\vspace{15mm}
+}
+
+\paragraph{Notes about Taylor Series.}
+\begin{itemize}
+\item If $f$ has a power series representation at $a$, then that power series must be the Taylor series of $f$ centered at $a$.
+\item It is possible for a function to not equal its Taylor series.
+\item For Taylor series to be useful, we need to know\dots
+\begin{itemize}
+	\item The values of $x$ for which the Taylor series converges (the interval of convergence).
+	\item The values of $x$ or which the Taylor series for $f$ \underline{equals} $f$.
+\end{itemize}
+\end{itemize}
+
+\newpage
+
+
+\subsection*{Finding the Interval of Convergence for a Taylor Series}
+\Example Find the Maclaurin series for $f(x)=e^x$. Also find the interval of convergence.
+
+\vfill
+
+\Example Find the Taylor series for $f(x)=\cos x$ centered at $a=\pi$. Also find the interval of convergence.
+
+\vfill
+
+\newpage
+
+\subsection*{Determining When a Function Equals Its Taylor Series}
+
+Recall from Section 11.1 that the \textbf{remainder} when using a Taylor polynomial $p_n$ to approximate $f$ is
+$$R_n(x)=f(x)-p_n(x).$$
+
+We can use the remainder to to determine when a function $f$ is \underline{equal to} its Taylor series representation.
+
+\vspace{4mm}
+
+\boxenv{Theorem: Convergence of Taylor Series.}{Let $f$ have derivatives of all orders on an open interval containing the point $a$. The Taylor series for $f$ centered at $a$ \textbf{converges to $f$} for all $x$ in the interval if and only if
+
+\vspace{15mm}
+
+where $R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$ is the remainder at $x$, with $c$ between $x$ and $a$.
+}
+
+\vspace{5mm}
+
+\boxenv{Taylor's Inequality.}{If $\big|f^{(n+1)}(x)\big|\leq M$ for $|x-a|\leq d$, then
+
+\vspace{2mm}
+
+$$\big|R_n(x)\big|\leq\dfrac{M|x-a|^{n+1}}{(n+1)!}\text{ for }|x-a|<d.$$
+
+}
+
+\Example Prove that $e^x$ is equal to its Maclaurin series for all $x$.
+
+\newpage
+
+\Example Prove that $\cos x$ is equal to its Taylor series centered at $a=\pi$ for all $x$.
+
+\vfill
+
+\subsection*{Manipulating Taylor Series}
+
+We can use the tools from the previous section to manipulate Taylor series like any other power series.
+
+\Example Use the Taylor series $\arctan(x)=\disp\sum_{k=0}^\infty\dfrac{(-1)^k x^{2k+1}}{2k+1}$, for $|x|\leq 1$, to find the first four nonzero terms of the Taylor series for the function $x\arctan\left(x^2\right)$ centered at $0$.
+
+\vfill
 
 \end{document}
