@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{156}
 
 \begin{document}
 \section*{11.4: Working with Taylor Series}
@@ -23,7 +23,51 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Working with Taylor Series}
 
+So far, we've manipulated series by \textit{differentiation}, \textit{integration}, \textit{multiplication} by a value, and making a \textit{substitution} for $x$. In this section, we'll see a few more ways we can work with Taylor series.
+
+\Example We can use series to evaluate limits. Use series to evaluate $\disp\lim_{x\to\infty}\dfrac{x-\ln(1+x)}{x^2}$.\\
+
+Note: $\ln(1+x)=\disp\sum_{n=1}^\infty\left(-1\right)^{n+1}\dfrac{x^n}{n}$, for $-1<x\leq 1$.
+
+\newpage
+
+\subsubsection*{Common Maclaurin Series (Taylor Series Centered at \textit{a} = 0)}
+We will often need to manipulate series using known power series. Some common Maclaurin series are included below for reference.
+\begin{alignat*}{3}
+\dfrac{1}{1-x} &= 1+x+x^2+\cdots + x^k+\cdots & &= \disp\sum_{k=0}^\infty x^k, & \text{ for }|x|<1\\
+\dfrac{1}{1+x} &= 1-x+x^2-\cdots+(-1)^kx^k+\cdots & &= \disp\sum_{k=0}^\infty(-1)^kx^k, & \text{ for }|x|<1\\
+e^x &= 1+x+\dfrac{x^2}{2!}+\cdots+\dfrac{x^k}{k!}+\cdots & &= \disp\sum_{k=0}^\infty\dfrac{x^k}{k!}, & \text{ for }|x|<\infty\\
+\sin(x) &= x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots+\dfrac{(-1)^k x^{2k+1}}{(2k+1)!}+\cdots  & &= \disp\sum_{k=0}^\infty\dfrac{(-1)^kx^{2k+1}}{(2k+1)!}, & \text{ for } |x|<\infty\\
+\cos(x) &= 1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots +\dfrac{(-1)^k x^{2k}}{(2k)!}+\cdots & &= \disp\sum_{k=0}^\infty\dfrac{(-1)^{k}x^{2k}}{(2k)!}, & \text{ for }|x|<\infty\\
+\ln(1+x) &= x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots+\dfrac{(-1)^{k+1}x^k}{k}+\cdots & &= \disp\sum_{k=1}^\infty\dfrac{(-1)^{k+1}x^k}{k}, & \text{ for }-1< x\leq 1\\
+-\ln(1-x) &= x+\dfrac{x^2}{2}+\dfrac{x^3}{3}+\cdots+\dfrac{x^k}{k}+\cdots & &= \disp\sum_{k=1}^\infty\dfrac{x^k}{k}, & \text{ for }-1\leq x < 1\\
+\arctan(x) &= x-\dfrac{x^3}{3}+\dfrac{x^5}{5}-\cdots +\dfrac{(-1)^kx^{2k+1}}{2k+1}+\cdots & &= \disp\sum_{k=0}^\infty\dfrac{(-1)^kx^{2k+1}}{2k+1}, & \text{ for }|x|\leq 1\\
+\end{alignat*}
+
+\Example Use a known power series to find the sum of the series $\disp\sum_{n=0}^\infty\dfrac{(-1)^n\pi^{2n+1}}{4^{2n+1}(2n+1)!}$.
+
+\vfill
+
+\Example Use a known power series to find the sum of the series $\disp\sum_{n=0}^\infty\dfrac{3^n}{5^n n!}$.
+
+\vfill
+
+\newpage
+
+\Example Identify the function represented by the power series $\disp\sum_{k=0}^\infty 2^k x^{2k+1}$.
+
+\vfill
+
+\Example We can also use Taylor series to approximate integrals. Use a Taylor series to approximate the integral $\disp\int_{0}^{0.35}\arctan x\,dx$. Retain as many terms needed to ensure that the error is less than $1/10^4$.
+
+\vfill
+\vfill
+\vfill
+
+\newpage
+
+\Example Lastly, we can use power series to solve \textit{differential equations}. Find a power series for the solution of the differential equation $y'(t)-3y=10$ with initial condition $y(0)=2$. Then identify the function represented by the power series.
 
 \end{document}
