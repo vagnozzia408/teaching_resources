@@ -120,13 +120,159 @@ What parametric equations correspond to the segment of the parabola where $-1\le
 
 Suppose we have a set of parametric equations $x=f(t)$ and $y=g(t)$ describing a curve $C$. If $f$ and $g$ are differentiable, how do we find the slope of the tangent line to a point on $C$?
 
-\vspace{40mm}
+\vspace{5mm}
+
+\boxenv{Derivatives for Parametric Equations.}{
+\hfill
+
+\vspace{30mm}
+}
 
 \Example A curve is defined by the parametric equations $x=e^t$, $y=te^{-t}$. Find $\dfrac{dy}{dx}$.
 
 \vspace{45mm}
 
-%\Example A curve is defined by the parametric equations $x=\sin^3t$, $y=\cos^3t$, $0\leq t\leq 2\pi$. Find an equation of the tangent line at the point where $t=\pi/6$.
-%
-%\Example Find all points at which the curve $x=2+\sqrt{t}$, $y=2-4t$ has a slope of $-8$. 
+\newpage
+
+\Example A curve is defined by the parametric equations $x=\sin^3t$, $y=\cos^3t$, \mbox{$0\leq t\leq2\pi$.} Find an equation of the tangent line at the point where $t=\pi/6$.
+
+\begin{flushright}
+	\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=1.45, xmin=-1.45,
+       	xtick={-1,0,1},
+       	axis y line=center,
+       	ymax=1.25, ymin=-1.25,
+       	ytick={-1,0,1},
+       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({(sin(deg(x)))^3},{(cos(deg(x)))^3});
+    \end{axis}
+    \end{tikzpicture}
+\end{flushright}
+
+%    	\addplot[name path=f,smooth,domain=-5.25:5.25,color=blue,samples=100,<->,thick] {(2*x)/(x^2+1)^2};
+
+
+\vfill
+
+\Example Find all points at which the curve $x=2+\sqrt{t}$, $y=2-4t$ has the slope $-8$.
+
+\begin{flushright}
+	\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=4.5, xmin=-0.5,
+%       	xtick={-1,0,1},
+       	axis y line=center,
+       	ymax=2.25, ymin=-5.25,
+%       	ytick={-1,0,1},
+       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+	\addplot [domain=0:2*pi,samples=100,color=blue,thick]({2+sqrt(x)},2-4*x);
+    \end{axis}
+    \end{tikzpicture}
+\end{flushright}
+
+\vfill
+
+\newpage
+
+\boxenv{Arc Length for Parametric Equations.}{Suppose a curve $C$ is described by the parametric equations $x=f(t)$ and $y=g(t)$, $\alpha\leq t\leq \beta$, where $\dfrac{dx}{dt}>0$, $f'$ and $g'$ are continuous, and $C$ is transversed once as $t$ increases from $\alpha$ to $\beta$. \\
+
+Then the \textbf{arc length \textit{L}} of the curve $C$ is 
+
+\vspace{20mm}
+ }
+
+\Example Find the total length of the astroid curve $x=\cos^3\theta$, $y=\sin^3\theta$, which is traced out once for $0\leq\theta\leq 2\pi$.
+
+\begin{flushright}
+	\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=1.45, xmin=-1.45,
+       	xtick={-1,0,1},
+       	axis y line=center,
+       	ymax=1.25, ymin=-1.25,
+       	ytick={-1,0,1},
+       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
+    \end{axis}
+    \end{tikzpicture}
+\end{flushright}
+
+\vfill
+
+\newpage
+
+
+\boxenv{Area and Parametric Equations.}{Suppose $y=h(x)$ is nonnegative and continuous on $\left[a,b\right]$, implying that the area bounded by the graph of $h$ and the $x$-axis on $\left[a, b\right]$ equals $\disp\int_a^b h(x)\,dx=\int_a^b y\,dx$. \\
+
+If the graph of $y=h(x)$ on $\left[a,b\right]$ is traced exactly once by the parametric equations $x=f(t)$, $y=g(t)$, for $\alpha\leq t\leq \beta$, then (by substitution) the area bounded by $h$ is
+
+\vspace{30mm}}
+
+\Example Use parametric requations of an ellipse centered at the origin $x=a\cos\theta$, $y=b\sin\theta$, $0\leq\theta\leq 2\pi$, to find the area that it encloses.
+
+\begin{flushright}
+	\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=2.25, xmin=-2.25,
+       	xtick=\empty,
+       	axis y line=center,
+       	ymax=2.25, ymin=-2.25,
+       	ytick=\empty,
+       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({1*(cos(deg(x)))},{2*(sin(deg(x)))});
+    \end{axis}
+    \end{tikzpicture}
+\end{flushright}
+
+\vfill
+
+\newpage
+
+\boxenv{Surface Area and Parametric Equations.}{Let $C$ be the curve $x=f(t)$, $y=g(t)$, for $\alpha\leq t\leq \beta$, where $f'$ and $g'$ are continuous, and $C$ does not intersect itself (except possibly at its endpoints). \\
+
+If $g$ is nonnegative on $\left[\alpha,\beta\right]$, then the area of the surface obtained by revolving $C$ around the $x$-axis is
+
+\vspace{15mm}
+
+Likewise, if $f$ is nonnegative on $\left[\alpha,\beta\right]$, then the area of the surface obtained by revolving $C$ about the $y$-axis is
+
+\vspace{15mm}
+
+
+}
+
+\Example Find the exact area of the surface obtained by rotating the curve given by $x=\cos^3\theta$, $y=\sin^3\theta$, $0\leq\theta\leq \pi/2$ about the $x$-axis.
+
+\begin{flushright}
+	\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=1.45, xmin=-1.45,
+       	xtick={-1,0,1},
+       	axis y line=center,
+       	ymax=1.25, ymin=-1.25,
+       	ytick={-1,0,1},
+       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
+    \end{axis}
+    \end{tikzpicture}
+\end{flushright}
+
+\vfill
+
 \end{document}
