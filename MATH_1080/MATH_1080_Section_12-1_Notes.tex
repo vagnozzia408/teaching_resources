@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \input{MATH_1080_Preamble.tex}
 
-\setcounter{page}{1}
+\setcounter{page}{160}
 
 \begin{document}
 \section*{12.1: Parametric Equations}
@@ -25,7 +25,108 @@
 
 \vspace{5mm}
 
-\subsection*{Title}
+\subsection*{Introduction}
 
+A \textbf{parametric curve} $C$ is a curve in the $xy$-plane described by three variables: $x$, $y$, and a \textit{parametric variable} (often $t$ or $\theta$). 
 
+\begin{itemize}
+	\item We call $x=f(t)$ and $y=g(t)$ \textbf{parametric equations}, where $t$ is the parameter.
+	\item As $t$ varies, the point $(x,y)=\big(f(t),g(t)\big)$ varies and traces out the curve $C$.
+\end{itemize}
+
+\vfill
+
+The curve $C$ is traced out in a specific direction. When sketching parametric curves, we use arrows to indicate this direction, called the \textbf{orientation} of the curve.
+\newpage
+
+\Example Consider the parametric equations $x=1-t^2$ and $y=t-2$ for $-2\leq t\leq 2$. 
+\begin{enumerate}
+	\item[(a)] Eliminate the parameter to obtain an equation in $x$ and $y$.
+	
+	\vfill
+	
+	\item[(b)] Sketch the parametric curve, indicating the positive orientation (increasing $t$). 
+	
+	\vfill
+	\vfill
+\end{enumerate}
+
+\Example Consider the equations $x=\sin\left(\frac{\theta}{2}\right)$ and $y=\cos\left(\frac{\theta}{2}\right)$ for $-\pi\leq\theta\leq\pi$.
+\begin{enumerate}
+	\item[(a)] Eliminate the parameter to obtain an equation in $x$ and $y$.
+	
+	\vfill
+	
+	\item[(b)] Sketch the parametric curve, indicating the positive orientation. 
+	
+	\vfill
+	\vfill
+\end{enumerate}
+
+\newpage
+
+\subsection*{Finding Parametric Equations for a Curve}
+
+\boxenv{Parametric Equations of a Circle.}{The parametric equations
+
+$$x=x_0+a\cos(bt)\text{ and } y=y_0+a\sin(bt)$$
+
+\vspace{2mm}
+
+describe all or part of the \textbf{circle} $(x-x_0)^2+(y-y_0)^2=a^2$ centered at $(x_0,y_0)$ with radius $|a|$. If $b>0$, then the circle is generated in the counterclockwise direction.\\
+
+if $x=x_0+a\sin(bt)$ and $y=y_0+a\cos(bt)$ with $b>0$, then the circle is generated in the clockwise direction.
+
+}
+
+\Example Find parametric equations for a circle centered at $(2,3)$ with a radius of $1$, generated counterclockwise. 
+
+\vfill
+
+What parametric equations correspond to only the lower half of the circle?
+
+\vspace{30mm}
+
+\newpage
+
+\boxenv{Parametric Equations of a Line.}{The parametric equations
+
+$$x=x_0+at\text{ and }y=y_0+bt\text{, for }-\infty<t<\infty,$$
+
+where $x_0$, $y_0$, $a$, and $b$ are constants with $a\neq 0$, describe a \textbf{line} with a slope $\dfrac{b}{a}$ passing through the point $(x_0,y_0)$. If $a=0$ and $b\neq 0$, the line is vertical.
+}
+
+\Example Find parametric equations for the line segment starting at $P(-1,-3)$ and ending at $Q(6,-16)$.
+
+\vfill
+
+\vfill
+
+\Example Find parametric equations for the complete parabola $y=2x^2-4$. 
+
+\vspace{45mm}
+
+What parametric equations correspond to the segment of the parabola where $-1\leq x\leq 5$?
+
+\vspace{30mm}
+
+\newpage
+
+\Example The tip of the 15-inch second hand of a clock completes one revolution in 60 seconds. Find the parametric equations that describe the circular path of the tip of the second hand. Assume $(x,y)$ denotes the position relative to the origin at the center of the circle.
+
+\vfill
+
+\subsection*{Calculus in Parametric Equations}
+
+Suppose we have a set of parametric equations $x=f(t)$ and $y=g(t)$ describing a curve $C$. If $f$ and $g$ are differentiable, how do we find the slope of the tangent line to a point on $C$?
+
+\vspace{40mm}
+
+\Example A curve is defined by the parametric equations $x=e^t$, $y=te^{-t}$. Find $\dfrac{dy}{dx}$.
+
+\vspace{45mm}
+
+%\Example A curve is defined by the parametric equations $x=\sin^3t$, $y=\cos^3t$, $0\leq t\leq 2\pi$. Find an equation of the tangent line at the point where $t=\pi/6$.
+%
+%\Example Find all points at which the curve $x=2+\sqrt{t}$, $y=2-4t$ has a slope of $-8$. 
 \end{document}
