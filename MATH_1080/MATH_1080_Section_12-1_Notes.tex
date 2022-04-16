@@ -148,7 +148,7 @@ Suppose we have a set of parametric equations $x=f(t)$ and $y=g(t)$ describing a
        	xlabel=$x$,ylabel=$y$,
        	axis line style=<->
     ]
-	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({(sin(deg(x)))^3},{(cos(deg(x)))^3});
+	\addplot [domain=0:2*pi,samples=1000,color=blue,thick]({(sin(deg(x)))^3},{(cos(deg(x)))^3});
     \end{axis}
     \end{tikzpicture}
 \end{flushright}
@@ -202,7 +202,7 @@ Then the \textbf{arc length \textit{L}} of the curve $C$ is
        	xlabel=$x$,ylabel=$y$,
        	axis line style=<->
     ]
-	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
+	\addplot [domain=0:2*pi,samples=1000,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
     \end{axis}
     \end{tikzpicture}
 \end{flushright}
@@ -232,7 +232,7 @@ If the graph of $y=h(x)$ on $\left[a,b\right]$ is traced exactly once by the par
        	xlabel=$x$,ylabel=$y$,
        	axis line style=<->
     ]
-	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({1*(cos(deg(x)))},{2*(sin(deg(x)))});
+	\addplot [domain=0:2*pi,samples=1000,color=blue,thick]({1*(cos(deg(x)))},{2*(sin(deg(x)))});
     \end{axis}
     \end{tikzpicture}
 \end{flushright}
@@ -268,7 +268,7 @@ Likewise, if $f$ is nonnegative on $\left[\alpha,\beta\right]$, then the area of
        	xlabel=$x$,ylabel=$y$,
        	axis line style=<->
     ]
-	\addplot [domain=0:2*pi,samples=50,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
+	\addplot [domain=0:2*pi,samples=1000,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
     \end{axis}
     \end{tikzpicture}
 \end{flushright}
