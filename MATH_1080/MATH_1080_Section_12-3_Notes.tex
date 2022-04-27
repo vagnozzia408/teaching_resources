@@ -52,4 +52,107 @@ $$\dfrac{dy}{dx}=\dfrac{dy/d\theta}{dx/d\theta}.$$
 
 \Example Let's again consider the polar curve $r=1+\cos\theta$. Find the points $(r,\theta)$ where the graph has horizontal or vertical tangents.
 
+\newpage
+
+\subsection*{Area of a Polar Region}
+
+\textbf{Note:} The area of the sector of a circle is $A=\dfrac{1}{2}r^2\theta$.
+
+\vspace{50mm}
+
+Let $R$ be the region bounded by $r=f(\theta)$ between $\theta=a$ and $\theta=b$ where $f$ is positive and continuous and $0<b-a\leq 2\pi$. How can we find the area of this region?
+
+\newpage
+
+\Example Consider the rose curve $r=4\sin(3\theta)$ traced out on the interval $[0,\pi]$.
+
+\begin{enumerate}
+
+\item[(a)] Sketch the polar curve.
+
+\begin{flushright}
+\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=1.45, xmin=-1.45,
+       	xtick=\empty,
+       	axis y line=center,
+       	ymax=1.25, ymin=-1.25,
+       	ytick=\empty,
+%       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+%	\addplot [domain=0:2*pi,samples=1000,color=blue,thick]({(cos(deg(x)))^3},{(sin(deg(x)))^3});
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
+
+\vspace{10mm}
+
+\item[(b)] Set up a few different integrals that represent the area of one petal of the rose curve.
+
+\vfill
+\vfill
+
+\item[(c)] Evaluate one of the representations above to determine the area enclosed by one petal.
+
+\vfill
+\end{enumerate}
+
+\newpage
+
+\Example Consider the region that lies inside $r=3\cos\theta$ and outside $r=1+\cos\theta$. Set up a few different integrals that could represent the area of this region.
+
+\begin{flushright}
+\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=3.5, xmin=-1.5,
+       	xtick=\empty,
+       	axis y line=center,
+       	ymax=2, ymin=-2,
+       	ytick=\empty,
+%       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+	\addplot[domain=0:180,samples=1000,color=blue,thick,data cs=polar] (x,{3*cos(x)}); 
+	
+\addplot[domain=0:360,samples=1000,color=red,thick,data cs=polar] (x,{1+cos(x)}); 
+
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
+
+\newpage
+
+\Example Set up the integral(s) representing the area inside the larger loop and outside the smaller loop of $r=\dfrac{1}{2}+\cos\theta$.
+
+
+\begin{flushright}
+\begin{tikzpicture}
+    \begin{axis}[
+       	axis x line=center,
+       	xmax=2, xmin=-0.5,
+       	xtick=\empty,
+       	axis y line=center,
+       	ymax=1, ymin=-1,
+       	ytick=\empty,
+%       	xlabel=$x$,ylabel=$y$,
+       	axis line style=<->
+    ]
+
+\addplot[domain=0:360,samples=1000,color=blue,thick,data cs=polar] (x,{0.5+cos(x)}); 
+
+    \end{axis}
+\end{tikzpicture}
+\end{flushright}
+
+\newpage
+
+\subsection*{Polar Arc Length}
+
+\boxenv{Polar Arc Length.}{The length of a curve with polar equation $r=f(\theta)$, $a\leq\theta\leq b$ is
+$$L=\disp\int_a^b\sqrt{r^2+\left(\dfrac{dr}{d\theta}\right)^2}\,d\theta.$$}
+
+\Example Find the length of the polar curve $r=2\cos\theta$, $0\leq\theta\leq\pi$. 
 \end{document}
